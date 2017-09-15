@@ -1,0 +1,15 @@
+@media only screen and (max-width: 1080px) {
+    .single-post {
+        figcaption {
+            position: static;
+            width: auto;
+            text-align: center;
+        }
+    }
+
+    .go-to-top {
+        transform: translateX(0);
+        right: 50px;
+        left: auto;
+    }
+}

@@ -1,0 +1,296 @@
+// header
+.main-header {
+    margin-bottom: 40px;
+    padding-top: 10rem;
+    background-size: cover;
+    background-position: center;
+
+    &.has-cover {
+        .page-title,
+        .page-title a,
+        .page-description,
+        .nav a {
+            color: $color-white;
+            text-shadow: 1px 1px 5px rgba($color-black, 0.5);
+        }
+
+        .nav {
+            &:before, &:after {
+                background: linear-gradient(to right, rgba($color-white, 0) 0%,rgba($color-white, 1) 50%,rgba($color-white, 0) 100%);
+            }
+        }
+    }
+
+    .nav,
+    .page-title,
+    .page-description {
+        width: 90%;
+        max-width: 500px;
+        margin: auto;
+    }
+
+    .nav {
+        margin: 40px auto 50px;
+        padding-bottom: 20px;
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            min-width: 80px;
+            margin: 5px;
+            display: inline-block;
+            font-size:  16px;
+            text-transform: uppercase;
+        }
+    }
+
+    .page-title {
+        margin: 0 auto 15px;
+        a {
+            font-family: Mrs Saint Delafield;
+            font-size: 70px;
+            text-decoration: none;
+            text-shadow: 1px 1px 5px rgba($color-black, 0.3);
+        }
+    }
+
+    .page-description {
+        font-size: 18px;
+        font-weight: normal;
+        font-style: italic;
+        font-family: 'Merriweather', 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+        color: rgba($color-text-header, 0.8);
+    }
+}
+
+.nav:before,
+.nav:after,
+.site-footer:before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, rgba($color-black,0) 0%,rgba($color-black,1) 50%,rgba(0,0,0,0) 100%);
+}
+
+// post list
+.post-title {
+    font-size: 3.6rem;
+}
+
+.post-excerpt, .post-content {
+    text-align: left;
+}
+
+.post-meta {
+    margin-bottom: 20px;
+    font-style: italic;
+    a {
+        text-decoration: underline;
+        font-size: 15px;
+        color: #666666;
+    }
+}
+
+.post-excerpt {
+    p {
+        text-indent: 2em;
+        margin-bottom: 10px;
+    }
+
+    .read-more {
+        font-style: italic;
+        text-decoration: underline;
+    }
+}
+
+.post {
+    font-size: 14px;
+    line-height: 2;
+}
+
+.content {
+    .short-diver {
+        position: relative;
+        margin-bottom: 60px;
+
+        &:after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 4px;
+            background: #eeeeee;
+            margin: 60px auto 0;
+        }
+    }
+}
+
+// pagination
+.pagination {
+    font-size: 15px;
+    margin-top: 20px;
+    position: relative;
+}
+
+.newer-posts, .older-posts {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.older-posts {
+    left: auto;
+    right: 0;
+}
+
+
+.site-footer {
+    max-width: 500px;
+    width: 90%;
+    padding: 20px 0;
+    font-size: 12px;
+    line-height: 1.3;
+}
+
+.site-footer p {
+    margin: 0;
+}
+
+.site-footer:before {
+    margin-bottom: 20px;
+}
+
+.go-to-top {
+    background-image: url('../assets/go-to-top.png');
+    width: 30px;
+    height: 30px;
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(400px);
+    border: none;
+    display: none;
+    opacity: 0.8;
+    transition: all 0.3s;
+
+    &.show {
+        display: block;
+    }
+
+    &.hide {
+        display: none;
+    }
+
+    &.less-opacity {
+        opacity: 0.2;
+    }
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+
+// make the content center and given a width
+.post-list .post,
+.pagination,
+.site-footer,
+.single-post .kg-card-markdown > h1,
+.single-post .kg-card-markdown > h2,
+.single-post .kg-card-markdown > h3,
+.single-post .kg-card-markdown > h4,
+.single-post .kg-card-markdown > h5,
+.single-post .kg-card-markdown > h6,
+.single-post .kg-card-markdown > p,
+.single-post .kg-card-markdown > ul,
+.single-post .kg-card-markdown > ol,
+.single-post .kg-card-markdown > blockquote,
+.single-post .kg-card-markdown .single-post-header,
+.single-post .kg-card-markdown > table,
+.single-post .kg-card-markdown > address,
+.single-post .kg-card-markdown > article,
+.single-post .kg-card-markdown > aside,
+.single-post .kg-card-markdown > canvas,
+.single-post .kg-card-markdown > dd,
+.single-post .kg-card-markdown > dl,
+.single-post .kg-card-markdown > fieldset,
+.single-post .kg-card-markdown > figcaption,
+.single-post .kg-card-markdown > figure,
+.single-post .kg-card-markdown > footer,
+.single-post .kg-card-markdown > form,
+.single-post .kg-card-markdown > header,
+.single-post .kg-card-markdown > hgroup,
+.single-post .kg-card-markdown > li,
+.single-post .kg-card-markdown > main,
+.single-post .kg-card-markdown > nav,
+.single-post .kg-card-markdown > noscript,
+.single-post .kg-card-markdown > output,
+.single-post .kg-card-markdown > section,
+.single-post .kg-card-markdown > tfoot,
+.single-post .kg-card-markdown > video,
+.single-post .kg-card-markdown > iframe,
+.single-post .kg-card-markdown > .tip,
+.single-post .kg-card-markdown > .preface,
+.read-next,
+.load-comments {
+    width: 90%;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    word-wrap: break-word;
+}
+
+.single-post {
+    iframe {
+        min-height: 300px;
+    }
+}
+
+.load-comments {
+    margin: 60px auto;
+    button {
+        display: block;
+        width: 100%;
+        padding: 25px;
+        background: none;
+        color: #888888;
+        border: 1px solid #eeeeee;
+        border-radius: 3px;
+    }
+}
+
+.comment-container {
+    display: none;
+
+    p {
+        margin: 20px 0;
+        font-size: 1.4rem;
+    }
+}
+
+.post-list {
+    .featured {
+        .post-header {
+            padding: 0 10px;
+            border-left: 5px solid #3A4145;
+        }
+    }
+}
+
+
+
+.go-home-page {
+    width: 4rem;
+    height: 4rem;
+    position: absolute;
+    top: 3rem;
+    left: 3rem;
+    border: none;
+    background-size: cover;
+    background-position: center;
+
+}

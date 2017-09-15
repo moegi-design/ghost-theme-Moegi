@@ -1,0 +1,25 @@
+{{!< default}}
+{{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
+
+{{! If we have a tag cover, display that - else blog cover - else nothing }}
+<header class="main-header tag-head detail-page image-bg {{#if tag.feature_image}}has-cover" style="background-image: url({{tag.feature_image}}){{else}}{{#if @blog.cover_image}}has-cover" style="background-image: url({{@blog.cover_image}}){{else}}no-cover{{/if}}{{/if}}">
+    <a href="{{@blog.url}}" class="go-home-page" style="background-image:url({{#if @blog.logo}}{{@blog.logo}}{{else}}{{asset "/assets/go-home.png"}}{{/if}}")></a>
+    <h1 class="page-title">{{tag.name}}</h1>
+    <h2 class="page-description">
+        {{#if tag.description}}
+            {{tag.description}}
+        {{else}}
+            A {{pagination.total}}-post collection
+        {{/if}}
+    </h2>
+    {{navigation}}
+</header>
+
+
+{{! The main content area on the homepage }}
+<main class="content post-list" role="main">
+
+    {{! The tag below includes the post loop - partials/loop.hbs }}
+    {{> "loop"}}
+
+</main>
