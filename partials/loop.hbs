@@ -8,8 +8,8 @@
         <p>{{excerpt words="50"}} ... <a href="{{url}}">more</a></p>
     </section>
     <section class="post-meta">
-        <time class="small" datetime="{{date format=" YYYY-MM-DD "}}">{{date format="YYYY MMM DD"}}</time>
-        <span class="small">{{tags prefix=" | "}}</span>
+        <time datetime="{{date format=" YYYY-MM-DD "}}">{{date format="YYYY MMM DD"}}</time>
+        <span class="tags">{{tags separator=""}}</span>
     </section>
 </article>
 {{/foreach}} 

@@ -3,8 +3,8 @@ html {
 }
 
 body {
-    font-family: "source-han-serif-sc",serif;
-    font-size: 1.8rem;
+    font-family: "source-han-serif-sc", serif;
+    font-size: 1.6rem;
     font-weight: 200;
     height: 100%;
     max-height: 100%;
@@ -19,7 +19,7 @@ body {
 
 a {
     font-weight: 400;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
     text-decoration: none;
     color: #4a4a4a;
 }
@@ -34,10 +34,11 @@ a:hover {
     margin-top: 4rem;
 }
 
+
 /* HEADER */
 
 .blog-title {
-    font-size: 4rem;
+    font-size: 3.5rem;
     margin-top: 4rem;
 }
 
@@ -58,6 +59,7 @@ a:hover {
     border-bottom: 1px solid #3a4145;
 }
 
+
 /* POST */
 
 .post-header {
@@ -70,14 +72,14 @@ a:hover {
 
 .post-meta {
     display: block;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     line-height: 2.2rem;
     color: #9EABB3;
 }
 
 .post-meta a {
     font-weight: 400;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
     text-decoration: none;
     color: #9EABB3;
 }
@@ -114,6 +116,28 @@ article {
     box-shadow: #eee 0 0 0 5px;
 }
 
+.tags {
+    margin-left: 0.6rem;
+}
+
+.tags a {
+    position: relative;
+    padding: 0.1rem 0.6rem;
+    margin-right: 0.5rem;
+    background: #f0f0f0;
+    border-radius: 0.24rem;
+}
+
+.tags a:hover {
+    background: rgba(134, 184, 27, 0.6);
+    color: #fff;
+}
+
+.tags a::before {
+    content: "#"
+}
+
+
 
 /* FOOTER */
 
@@ -126,21 +150,20 @@ article {
 
 .blog-footer p {
     display: block;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: #9EABB3;
     line-height: 0.5;
 }
 
 .blog-footer a {
-    font-weight: 400;
-    transition: color 0.3s ease;
-    text-decoration: none;
     color: #9EABB3;
 }
 
 .blog-footer a:hover {
     color: #86B81B;
+    background: rgba(134, 184, 27, 0.1);
 }
+
 
 
 /* GO TO TOP */
@@ -168,6 +191,7 @@ article {
 }
 
 
+
 /* POSITIONING */
 
 .left {
@@ -187,6 +211,7 @@ article {
 .justify {
     text-align: justify;
 }
+
 
 
 
@@ -216,7 +241,7 @@ h1 {
 }
 
 h2 {
-    font-size: 2.8rem;
+    font-size: 2.5rem;
     letter-spacing: -1px;
 }
 
@@ -239,7 +264,7 @@ h6 {
 
 p {
     margin: 1rem 0;
-    line-height: 2;
+    line-height: 1.8;
 }
 
 .container {
@@ -249,14 +274,20 @@ p {
 }
 
 @media only screen and (min-width: 540px) {
-  .container {
-    width: 80%;
-  }
+    html {
+        font-size: 6px;
+    }
+    .container {
+        width: 80%;
+    }
 }
 
 @media only screen and (min-width: 960px) {
-  .container {
-    width: 75%;
-    max-width: 60rem;
-  }
+    html {
+        font-size: 10px;
+    }
+    .container {
+        width: 75%;
+        max-width: 60rem;
+    }
 }
