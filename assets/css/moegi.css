@@ -274,18 +274,12 @@ p {
 }
 
 @media only screen and (min-width: 540px) {
-    html {
-        font-size: 6px;
-    }
     .container {
         width: 80%;
     }
 }
 
 @media only screen and (min-width: 960px) {
-    html {
-        font-size: 10px;
-    }
     .container {
         width: 75%;
         max-width: 60rem;
