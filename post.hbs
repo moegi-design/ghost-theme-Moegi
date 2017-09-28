@@ -7,9 +7,8 @@
 {{#post}}
 
 
-<main class="content" role="main">
+<main role="main">
     <article class="{{post_class}} single-post">
-
         <header class="post-header short-diver">
             <h1 class="post-title">{{title}}</h1>
             <section class="post-meta">
@@ -26,50 +25,6 @@
 
         <footer class="post-footer">
 
-        {{! Everything inside the #author tags pulls data from the author }}
-        {{#author}}
-
-            {{#if profile_image}}
-            <div class="author-image">
-                <a class="img image-bg" href="{{url}}" style="background-image: url({{img_url profile_image}})"><span class="hidden">{{name}}'s Picture</span></a>
-            </div>
-            {{/if}}
-
-            <section class="author short-diver">
-                <h4 class="author-name"><a href="{{url}}">{{name}}</a></h4>
-
-                {{#if bio}}
-                    <p class="author-bio">{{bio}}</p>
-                {{else}}
-                    <p>Read <a href="{{url}}">more posts</a> by this author.</p>
-                {{/if}}
-                <div class="author-meta">
-                    {{#if location}}
-                        <li class="author-location">
-                            <a href="https://www.google.com/maps/search/{{location}}" class="icon-location" title="{{location}}"></a>
-                        </li>
-                    {{/if}}
-                    {{#if website}}
-                        <li class="author-link">
-                            <a class="icon-link" href="{{website}}" title="{{website}}"></a>
-                        </li>
-                    {{/if}}
-                    {{#if twitter}}
-                        <li class="author-twitter">
-                            <a class="icon-twitter" href="{{twitter_url}}" title="{{twitter}}"></a>
-                        </li>
-                    {{/if}}
-                    {{#if facebook}}
-                        <li class="author-facebook">
-                            <a class="icon-facebook" href="{{facebook_url}}" title="{{facebook}}"></a>
-                        </li>
-                    {{/if}}
-                </div>
-            </section>
-
-        {{/author}}
-
-
         </footer>
 
     </article>
@@ -77,56 +32,25 @@
 
 {{> "comment"}}
 
-<aside class="read-next">
-    {{#prev_post}}<a class="read-next-story prev" href="{{url}}">
-        {{!-- <i aria-hidden="true">←</i> --}}
-        {{title}}
-    </a>
-    {{/prev_post}}
-    {{#next_post}}
-    <a class="read-next-story next" href="{{url}}">
-        {{title}}
-        {{!-- <i aria-hidden="true">→</i> --}}
-    </a>{{/next_post}}
+<aside class="post-readmore">
+    <div class="prev">
+        {{#prev_post}}
+        <a href="{{url}}">
+            {{!-- <i aria-hidden="true">←</i> --}}
+            <i class="iconfont icon-prev"></i>&nbsp;{{title}}
+        </a>
+        {{/prev_post}}
+    </div>
+    <div class="next">
+        {{#next_post}}
+        <a href="{{url}}">
+            {{title}}&nbsp;<i class="iconfont icon-next"></i>
+            {{!-- <i aria-hidden="true">→</i> --}}
+        </a>
+        {{/next_post}}
+    </div>
 </aside>
 
 {{/post}}
 
-<!-- Root element of PhotoSwipe. Must have class pswp. -->
-<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="pswp__bg"></div>
-    <div class="pswp__scroll-wrap">
-        <div class="pswp__container">
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-        </div>
-        <div class="pswp__ui pswp__ui--hidden">
-            <div class="pswp__top-bar">
-                <div class="pswp__counter"></div>
-                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-                <button class="pswp__button pswp__button--share" title="Share"></button>
-                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-                <div class="pswp__preloader">
-                    <div class="pswp__preloader__icn">
-                      <div class="pswp__preloader__cut">
-                        <div class="pswp__preloader__donut"></div>
-                      </div>
-                    </div>
-                </div>
-            </div>
-            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                <div class="pswp__share-tooltip"></div>
-            </div>
-            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-            </button>
-            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-            </button>
-            <div class="pswp__caption">
-                <div class="pswp__caption__center"></div>
-            </div>
-        </div>
-    </div>
-</div>
 

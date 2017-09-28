@@ -92,16 +92,15 @@ article {
     margin: 2.4rem 0;
 }
 
-.post {
+.index-post {
     position: relative;
     max-width: 710px;
-    margin: 2rem auto;
-    padding-bottom: 2rem;
+    padding-bottom: 3rem;
     border-bottom: #EBF2F6 1px solid;
     word-wrap: break-word;
 }
 
-.post:after {
+.index-post:after {
     display: block;
     content: "";
     width: 7px;
@@ -137,6 +136,33 @@ article {
     content: "#"
 }
 
+/* READ NEXT */
+.post-readmore {
+    display: -webkit-box;
+    display: -moz-box;
+    display: flex
+}
+
+.post-readmore div {
+    width: 50%;
+    position: relative;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 1.6rem;
+    white-space: nowrap;
+}
+
+.post-readmore .prev {
+    text-align: left
+}
+
+.post-readmore .next {
+    text-align: right
+}
+
+.iconfont {
+    color: #86B81B
+}
 
 
 /* FOOTER */
@@ -282,6 +308,6 @@ p {
 @media only screen and (min-width: 960px) {
     .container {
         width: 75%;
-        max-width: 60rem;
+        max-width: 55rem;
     }
 }

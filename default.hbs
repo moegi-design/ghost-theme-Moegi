@@ -12,6 +12,7 @@
 
     <link rel="shortcut icon" href="{{asset "favicon.ico"}}"> {{! Styles'n'Scripts }}
     <link rel="stylesheet" type="text/css" href="{{asset "css/moegi.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "fonts/iconfont.css"}}">
     <script src="https://use.typekit.net/ueu5sio.js"></script>
     <script>try{Typekit.load({ async: true });}catch(e){}</script>
     {{! Ghost outputs important style and meta data with this tag }}
@@ -20,13 +21,6 @@
 
 <body>
     <div class="container">
-        {{! The big featured header }}
-        <header class="center">
-            <div class="blog-title"><a href="{{@blog.url}}">{{@blog.title}}</a></div>
-            <div class="blog-description">{{@blog.description}}</div>
-            {{navigation}}
-        </header>
-
         {{! Everything else gets inserted here }} {{{body}}}
 
         <footer class="blog-footer">
