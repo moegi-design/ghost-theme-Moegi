@@ -159,7 +159,6 @@ article {
     overflow: hidden;
     text-overflow: ellipsis;
     font-size: 1.6rem;
-    white-space: nowrap;
 }
 
 .post-readmore .prev {
