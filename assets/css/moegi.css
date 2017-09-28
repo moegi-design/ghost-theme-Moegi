@@ -92,9 +92,12 @@ article {
     margin: 2.4rem 0;
 }
 
-.index-post {
+.post {
     position: relative;
     max-width: 710px;
+}
+
+.index-post {
     padding-bottom: 3rem;
     border-bottom: #EBF2F6 1px solid;
     word-wrap: break-word;
@@ -136,11 +139,18 @@ article {
     content: "#"
 }
 
+.post-footer .tags {
+    display: block;
+    margin: 4rem 0.6rem 1rem 0;
+}
+
 /* READ NEXT */
 .post-readmore {
     display: -webkit-box;
     display: -moz-box;
-    display: flex
+    display: flex;
+    padding-top: 1rem;
+    border-top: #EBF2F6 1px solid;
 }
 
 .post-readmore div {

@@ -15,7 +15,6 @@
                 Published at <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>,
                 updated at <time class="post-date" datetime="{{date updated_at format='YYYY-MM-DD'}}">{{date updated_at format="DD MMMM YYYY"}}</time>
                 <br>
-                {{tags prefix=" on "}}
             </section>
         </header>
 
@@ -24,32 +23,31 @@
         </section>
 
         <footer class="post-footer">
-
+            <span class="tags">{{tags separator=""}}</span>
+            <aside class="post-readmore">
+                <div class="prev">
+                    {{#prev_post}}
+                    <a href="{{url}}">
+                        {{!-- <i aria-hidden="true">←</i> --}}
+                        <i class="iconfont icon-prev"></i>&nbsp;{{title}}
+                    </a>
+                    {{/prev_post}}
+                </div>
+                <div class="next">
+                    {{#next_post}}
+                    <a href="{{url}}">
+                        {{title}}&nbsp;<i class="iconfont icon-next"></i>
+                        {{!-- <i aria-hidden="true">→</i> --}}
+                    </a>
+                    {{/next_post}}
+                </div>
+            </aside>
         </footer>
 
     </article>
 </main>
 
 {{> "comment"}}
-
-<aside class="post-readmore">
-    <div class="prev">
-        {{#prev_post}}
-        <a href="{{url}}">
-            {{!-- <i aria-hidden="true">←</i> --}}
-            <i class="iconfont icon-prev"></i>&nbsp;{{title}}
-        </a>
-        {{/prev_post}}
-    </div>
-    <div class="next">
-        {{#next_post}}
-        <a href="{{url}}">
-            {{title}}&nbsp;<i class="iconfont icon-next"></i>
-            {{!-- <i aria-hidden="true">→</i> --}}
-        </a>
-        {{/next_post}}
-    </div>
-</aside>
 
 {{/post}}
 
