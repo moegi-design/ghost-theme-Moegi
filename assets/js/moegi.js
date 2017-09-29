@@ -1,4 +1,5 @@
 window.onscroll = function () {
+    "use strict";
     var goTop = document.getElementById("go-to-top");
     if (goTop) {
         goTop.style.display = document.documentElement.scrollTop >= 200 || document.body.scrollTop >= 200 ? 'block' : 'none';

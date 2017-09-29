@@ -25,9 +25,10 @@ a {
 }
 
 a:hover {
-    /*padding-bottom: 3px;*/
+    padding-bottom: 3px;
     color: #86B81B;
     /*border-bottom: 1px solid #3a4145;*/
+    border-bottom: 1px solid #86B81B;
 }
 
 .content {
@@ -61,6 +62,24 @@ a:hover {
 
 
 /* POST */
+
+.single-post {
+    margin: 0;
+}
+
+.post-blog-title {
+    font-size: 1.6rem;
+    margin-top: 2.4rem;
+}
+
+.post-blog-title a {
+    font-weight: 400;
+    color: #999999;
+}
+
+.post-blog-title a:hover {
+    color: #86B81B;
+}
 
 .post-header {
     margin-bottom: 1rem;
@@ -132,6 +151,7 @@ article {
 .tags a:hover {
     background: rgba(134, 184, 27, 0.6);
     color: #fff;
+    border: none;
 }
 
 .tags a::before {
@@ -155,8 +175,6 @@ article {
 .post-readmore div {
     width: 50%;
     position: relative;
-    overflow: hidden;
-    text-overflow: ellipsis;
     font-size: 1.6rem;
 }
 
@@ -196,6 +214,7 @@ article {
 .blog-footer a:hover {
     color: #86B81B;
     background: rgba(134, 184, 27, 0.1);
+    border: none;
 }
 
 
