@@ -85,6 +85,10 @@ a:hover {
     margin-bottom: 1rem;
 }
 
+.post-title {
+    margin-bottom: 0.4rem;
+}
+
 .post-excerpt {
     color: #999999;
 }
