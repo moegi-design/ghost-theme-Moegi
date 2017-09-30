@@ -82,7 +82,7 @@ a:hover {
 }
 
 .post-header {
-    margin-bottom: 1rem;
+    margin-bottom: 2.4rem;
 }
 
 .post-title {
@@ -278,6 +278,13 @@ article {
 /* CONTENT */
 
 article img {
+    width: 100%;
+    max-width: 100%;
+    margin: 0.5rem 0;
+    box-shadow: 0 0 1.2rem 0 rgba(0, 0, 0, 0.2);
+}
+
+article iframe {
     width: 100%;
     max-width: 100%;
     margin: 0.5rem 0;
