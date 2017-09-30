@@ -169,6 +169,7 @@ article {
 }
 
 /* READ NEXT */
+
 .post-readmore {
     display: -webkit-box;
     display: -moz-box;
@@ -270,7 +271,14 @@ article {
     text-align: justify;
 }
 
+/* CONTENT */
 
+article img {
+    width: 100%;
+    max-width: 100%;
+    margin: 0.5rem 0;
+    box-shadow: 0 0 1.2rem 0 rgba(0, 0, 0, 0.2);
+}
 
 
 
