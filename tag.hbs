@@ -8,12 +8,12 @@
 
 <main role="main">
     <header class="post-header short-diver">
-        <h1 class="post-title">#{{tag.name}}</h1>
+        <div class="post-title">#{{tag.name}}</div>
         <section class="post-meta">
             {{#if tag.description}}
                 {{tag.description}}
             {{else}}
-                共有{{pagination.total}}篇文章
+                标签下共有{{pagination.total}}篇文章
             {{/if}}
             <br>
         </section>
