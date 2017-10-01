@@ -24,26 +24,26 @@
             {{content}}
         </section>
 
-        <footer class="post-footer">
-            <span class="tags">{{tags separator=""}}</span>
-            <aside class="post-readmore">
-                <div class="prev">
-                    {{#prev_post}}
-                    <a href="{{url}}">
-                        <i class="iconfont icon-prev"></i>&nbsp;{{title}}
-                    </a>
-                    {{/prev_post}}
-                </div>
-                <div class="next">
-                    {{#next_post}}
-                    <a href="{{url}}">
-                        {{title}}&nbsp;<i class="iconfont icon-next"></i>
-                    </a>
-                    {{/next_post}}
-                </div>
-            </aside>
-        </footer>
     </article>
+    <footer class="post-footer">
+        <span class="tags">{{tags separator=""}}</span>
+        <aside class="post-readmore">
+            <div class="prev">
+                {{#prev_post}}
+                <a href="{{url}}">
+                    <i class="iconfont icon-prev"></i>&nbsp;{{title}}
+                </a>
+                {{/prev_post}}
+            </div>
+            <div class="next">
+                {{#next_post}}
+                <a href="{{url}}">
+                    {{title}}&nbsp;<i class="iconfont icon-next"></i>
+                </a>
+                {{/next_post}}
+            </div>
+        </aside>
+    </footer>
 </main>
 
 {{> "comment"}}

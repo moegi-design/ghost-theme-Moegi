@@ -329,20 +329,38 @@ index-post .post-header {
 
 /* CONTENT */
 
-article img {
+.single-post a {
+    font-weight: 300;
+    padding-bottom: 3px;
+    color: #86B81B;
+    border-bottom: 1px dashed #86B81B;
+}
+
+.single-post a:hover {
+    font-weight: 300;
+    color: #86B81B;
+    background: rgba(134, 184, 27, 0.1);
+    border: none;
+}
+
+.single-post img {
     width: 100%;
     max-width: 100%;
     margin: 0.5rem 0;
     box-shadow: 0 0 1.2rem 0 rgba(0, 0, 0, 0.2);
 }
 
-article iframe {
+.single-post iframe {
     width: 100%;
     max-width: 100%;
     margin: 0.5rem 0;
     box-shadow: 0 0 1.2rem 0 rgba(0, 0, 0, 0.2);
 }
 
+.single-post mark {
+    color: #876633;
+    background: rgba(135, 102, 51, 0.08);
+}
 
 
 /* TYPOGRAPHY */
@@ -392,8 +410,8 @@ h6 {
 }
 
 p {
-    margin: 1rem 0;
-    line-height: 1.8;
+    margin: 0.8rem 0;
+    line-height: 2;
 }
 
 .container {
