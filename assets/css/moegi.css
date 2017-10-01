@@ -68,7 +68,7 @@ a:hover {
 }
 
 .post-blog-title {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     margin-top: 2.4rem;
 }
 
@@ -81,7 +81,7 @@ a:hover {
     color: #86B81B;
 }
 
-.post-header {
+.single-post .post-header {
     margin-bottom: 2.4rem;
 }
 
@@ -105,6 +105,7 @@ a:hover {
     transition: all 0.3s ease;
     text-decoration: none;
     color: #9EABB3;
+    font-weight: 300;
 }
 
 .post-meta a:hover {
@@ -139,6 +140,10 @@ article {
     background: #fbfbfb;
     border-radius: 100%;
     box-shadow: #eee 0 0 0 5px;
+}
+
+index-post .post-header {
+    margin-bottom: 1.2rem;
 }
 
 .tags {
@@ -188,6 +193,10 @@ article {
     font-size: 1.5rem;
 }
 
+.post-readmore a {
+    font-weight: 300;
+}
+
 .post-readmore .prev {
     text-align: left
 }
@@ -213,12 +222,12 @@ article {
 .blog-footer p {
     display: block;
     font-size: 1.1rem;
-    color: #9EABB3;
+    color: rgba(158, 171, 179, 0.5);
     line-height: 0.5;
 }
 
 .blog-footer a {
-    color: #9EABB3;
+    color: rgba(158, 171, 179, 0.5);
 }
 
 .blog-footer a:hover {
