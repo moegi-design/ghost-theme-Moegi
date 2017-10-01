@@ -1,0 +1,19 @@
+<nav class="pagination" role="navigation">
+    <div class="prev">
+        {{#if prev}}
+        <a href="{{page_url prev}}">
+            <i class="iconfont icon-prev"></i>&nbsp;较新的文章
+        </a>
+        {{/if}}
+    </div>
+
+    <span class="page-number">Page {{page}} of {{pages}}</span>
+
+    <div class="next">
+        {{#if next}}
+        <a href="{{page_url next}}">
+            较早的文章&nbsp;<i class="iconfont icon-next"></i>
+        </a>
+        {{/if}}
+    </div>
+</nav>

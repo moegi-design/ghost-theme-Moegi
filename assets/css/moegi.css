@@ -60,6 +60,12 @@ a:hover {
     border-bottom: 1px solid #3a4145;
 }
 
+/* INDEX */
+.tag-cloud {
+    margin-top: 2.4rem;
+    line-height: 2;
+    max-width: 95%;
+}
 
 /* POST */
 
@@ -155,7 +161,7 @@ index-post .post-header {
 .tags a {
     position: relative;
     padding: 0.1rem 0.6rem;
-    margin-right: 0.5rem;
+    margin-right: 0.4rem;
     background: #f0f0f0;
     border-radius: 0.24rem;
     color: #9EABB3;
@@ -202,6 +208,43 @@ index-post .post-header {
 }
 
 .post-readmore .next {
+    text-align: right
+}
+
+.iconfont {
+    color: #86B81B
+}
+
+/* PAGINATION */
+.pagination {
+    display: -webkit-box;
+    display: -moz-box;
+    display: flex;
+    font-size: 1.5rem;
+}
+
+.pagination div {
+    position: relative;
+}
+
+.pagination a {
+    font-weight: 300;
+}
+
+.pagination .prev {
+    width: 40%;
+    text-align: left
+}
+
+.pagination .page-number {
+    width: 20%;
+    text-align: center;
+    font-size: 1.3rem;
+    color: #9EABB3
+}
+
+.pagination .next {
+    width: 40%;
     text-align: right
 }
 
