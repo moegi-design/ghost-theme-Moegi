@@ -6,9 +6,9 @@ A simple theme for [Ghost](http://github.com/tryghost/ghost/).
 
 试过Ghost之后发现嗯，好，是我想要的，于是就这么留下来了...
 
-这几年的审美被==Pinterest==宠得偏爱简洁风，所以一直在找一套好看简约的主题。
+这几年的审美被Pinterest宠得偏爱简洁风，所以一直在找一套好看简约的主题。
 
-Ghost 0.x版本默认的==Casper==十分好看，可惜1.0版本之后就改成cms样式了...
+Ghost 0.x版本默认的Casper十分好看，可惜1.0版本之后就改成cms样式了...
 
 所以抽了点时间自己写了一套，起名为==Moegi==。
 
@@ -31,12 +31,11 @@ Ghost 0.x版本默认的==Casper==十分好看，可惜1.0版本之后就改成c
 * 标签底色：`#F0F0F0`
 
 ## 截图
-
-![](http://ostfcwjy3.bkt.clouddn.com/17-10-2/89978259.jpg)
+请到[Blog](https://blog.ddiu.site/moegi-theme)查看
 
 # 下载
 在[Github](https://github.com/ddiu8081/Moegi-theme)下载zip后，上传到Ghost后台即可。
 
 * 主题免费使用，但请勿修改底部版权信息（虽然颜色已经调得快看不见了😂）
 * 该主题仅适用于Ghost 1.0及以上版本，0.x版本不支持
-* 思源宋体托管于==Adobe Typekit==，可能不能正常应用于其他站点。如需修改请在`default.hbs`、`assets/css/moegi.css`自行修改
+* 思源宋体托管于Adobe Typekit，可能不能正常应用于其他站点。如需修改请在`default.hbs`、`assets/css/moegi.css`自行修改
