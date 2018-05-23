@@ -1,11 +1,11 @@
 {{! This is the post loop - each post will be output using this markup }} 
 {{#foreach posts}}
 <article class="index-post {{post_class}}">
-    <header class="post-header">
+    <header class="post-toptitle">
         <h2><a href="{{url}}">{{{title}}}</a></h2>
     </header>
     <section class="post-excerpt">
-        <p>{{excerpt characters="140"}} ...</p>
+        <p>{{excerpt characters="100"}} ...</p>
     </section>
     <section class="post-meta">
         <time datetime="{{date format=" YYYY-MM-DD "}}">{{date format="YYYY MMM DD"}}</time>
