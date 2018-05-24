@@ -377,6 +377,10 @@ pre {
     margin-left: 1em;
 }
 
+#archives-list a:hover {
+    color: #86B81B;
+}
+
 /* POSITIONING */
 
 .left {
