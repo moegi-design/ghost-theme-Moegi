@@ -188,6 +188,14 @@ a:hover {
     border: none;
 }
 
+.single-post img {
+    display: block;
+    margin: auto;
+    max-width: 100%;
+    min-width: 50%;
+    height: auto;
+}
+
 code {
     color: #A96360;
     padding: 0.08rem 0.5rem;
@@ -222,7 +230,7 @@ blockquote {
     left: 0;
 }
 
-.single-post li {
+.single-post li, .typo li {
     list-style: circle;
 }
 
@@ -320,8 +328,14 @@ pre {
     opacity: 1
 }
 
+/* ARCHIVES */
+#archives-list time {
+    color: #666666;
+}
 
-
+#archives-list a {
+    margin-left: 1em;
+}
 
 /* POSITIONING */
 

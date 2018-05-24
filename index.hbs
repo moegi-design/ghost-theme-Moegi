@@ -5,7 +5,9 @@
 <header class="center">
     <div class="blog-title"><a href="{{@blog.url}}">{{@blog.title}}</a></div>
     <div class="blog-description">{{@blog.description}}</div>
-    {{navigation}}
+    {{#if @blog.navigation}}
+        {{navigation}}
+    {{/if}}
 </header>
 
 {{! The main content area on the homepage }}

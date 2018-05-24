@@ -7,19 +7,20 @@
 </header>
 
 <main role="main">
-    <header class="post-header short-diver">
-        <h1 class="post-title">#{{tag.name}}</h1>
-        <section class="post-meta">
-            {{#if tag.description}}
-                {{tag.description}}
-            {{else}}
-                标签下共有{{pagination.total}}篇文章
-            {{/if}}
-            <br>
-        </section>
-    </header>
+    <article class="page-tag">
+        <header class="post-header short-diver">
+            <h1 class="post-title">#{{tag.name}}</h1>
+            <section class="post-meta">
+                {{#if tag.description}}
+                    {{tag.description}}
+                {{else}}
+                    标签下共有{{pagination.total}}篇文章
+                {{/if}}
+            </section>
+        </header>
 
-    {{! The tag below includes the post loop - partials/loop.hbs }}
-    {{> "loop"}}
+        {{! The tag below includes the post loop - partials/loop.hbs }}
+        {{> "loop"}}
+    </article>
 
 </main>
