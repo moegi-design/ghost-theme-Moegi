@@ -1,0 +1,15 @@
+{{!-- <div id="toc-panel">
+    <ul data-toc="div.container" data-toc-headings="h2,h3,h4"></ul>
+</div> --}}
+<div id="toc"></div>
+
+{{!-- <script src="{{asset "js/jquery.toc.js"}}"></script> --}}
+<script src="https://cdn.bootcss.com/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery.tocify/1.9.0/javascripts/jquery.tocify.min.js"></script>
+<script>
+    var toc = $("#toc").tocify({
+        selectors: "h2,h3,h4,h5",
+        extendPage: false,
+        highlightDefault: false
+    });
+</script>

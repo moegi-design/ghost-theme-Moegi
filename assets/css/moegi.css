@@ -23,19 +23,19 @@ a:hover {
     color: #999999;
 }
 
-.nav ul {
+.top-nav ul {
     display: block;
     margin: 1em 0;
     list-style: none;
     padding: 0;
 }
 
-.nav li {
+.top-nav li {
     margin: 0 4px;
     display: inline-block;
 }
 
-.nav a {
+.top-nav a {
     border: none;
 }
 
@@ -303,6 +303,46 @@ pre {
     border: none;
 }
 
+/* TOC */
+#toc {
+    position: fixed;
+    left: 50%;
+    top: 20%;
+    margin-left: 400px;
+    border-left: 1px solid #dddddd;
+}
+
+/* #toc:before {
+    content: "目录";
+    margin-left: 1em;
+    border-bottom: 1px solid #333333;
+    margin-bottom: 0.6em;
+    color: #333333;
+    display: inline-block;
+} */
+
+#toc a {
+    display: block;
+    color: #cccccc;
+}
+
+#toc a:hover {
+    padding: 0;
+    border: none;
+    color: #86B81B;
+}
+
+#toc .active a {
+    color: #86B81B;
+}
+
+#toc ul {
+    margin-left: 1em;
+}
+
+#toc li {
+    display: block;
+}
 
 /* GO TO TOP */
 

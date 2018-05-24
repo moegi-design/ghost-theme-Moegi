@@ -1,3 +1,7 @@
+# Moegi「萌黄」 - 一个优雅的Ghost主题
+
+[博客介绍页](https://blog.ddiu.site/ghost-theme-moegi/)
+
 陆陆续续跟风玩过不少的博客= =...从 Wordpress 转到 Typecho 再到现在的 Ghost..
 试过 Ghost 之后发现嗯，好，是我想要的，于是就这么留下来了...
 
@@ -6,19 +10,22 @@ Ghost 0.x版本默认的 Casper 十分好看，可惜1.0版本之后就改成 cm
 
 ## 设计风格
 
+简约。单栏。
+主色调为Moegi（萌黄）。
+
 主题名称和主要颜色的来源取自[NIPPON COLORS - 日本の伝統色](http://nipponcolors.com)。这是一个相当文艺的取色网站，收录的几百种颜色全部是日本的传统颜色，十分耐看，同时名字也非常好听。比如一斥染、柳染、利休茶等等。强烈建议颜色方面没有灵感的话来这里看看~
 
 ~~主题的文字为[思源宋体](https://source.typekit.com/source-han-serif/cn/)。这是Adobe与Google联合发布的一套开源字体，个人感觉放在网页里真心好看😂~~（180523：思源宋体已从主题移除）
 
-### 颜色
+### 特性
 
-* 背景： `#FBFBFB`
-* 标题色：`#52433D 紅消鼠`
-* 主题色：`#86B81B 萌黄`
-* 强调色：`#8F5A3C 雀茶`
-* 默认文字：`#4F4F48 丼鼠`
-* Code段：`#A96360 蘇芳香`
-* 标签底色：`#F0F0F0`
+* 标签云
+* 归档页
+* 文章目录
+* 顶部进度条（待实现）
+* 评论功能（待实现）
+
+[Features Todo List](https://github.com/ddiu8081/ghost-theme-Moegi/issues/2)
 
 ### MarkDown
 ```
@@ -43,7 +50,8 @@ Ghost 0.x版本默认的 Casper 十分好看，可惜1.0版本之后就改成 cm
 
 ### Screenshot & Demo
 
-![Screenshot](http://ostfcwjy3.bkt.clouddn.com/18-5-24/82860263.jpg)
+![index](http://ostfcwjy3.bkt.clouddn.com/18-5-24/82860263.jpg)
+![article](http://ostfcwjy3.bkt.clouddn.com/18-5-24/61599666.jpg)
 
 [Demo](https://blog.ddiu.site)
 
@@ -53,6 +61,7 @@ Ghost 0.x版本默认的 Casper 十分好看，可惜1.0版本之后就改成 cm
 * 2018.02.16 v1.1.0 添加代码高亮（使用[prism.js](http://prismjs.com)）
 * 2018.05.23 v1.2.0 使用[Typo.css](https://typo.sofi.sh/)重构了页面的行距等样式；代码高亮更换为[Highlight.js](https://highlightjs.org/)；背景改为#ffffff；超链接、强调色、引用等其他样式更改
 * 2018.05.24 v1.3.0 添加归档页；细节优化
+* 2018.05.24 v1.4.0 添加文章目录
 
 ## 下载与使用
 
@@ -78,6 +87,7 @@ Ghost 0.x版本默认的 Casper 十分好看，可惜1.0版本之后就改成 cm
 * [Moment.js](http://momentjs.cn/)：js时间处理插件，用于归档页面。
 * [jQuery](https://jquery.com/)：最流行的JavaScript工具库。
 * [@ldsun](https://ldsun.com/2016/07/23/ghost-archives/)：归档页实现灵感来源。
+* [jquery.tocify.js](https://github.com/gfranko/jquery.tocify.js)：快速生成动态文章目录，并且有scrollspy功能。
 
 ### License
 
