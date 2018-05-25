@@ -1,0 +1,26 @@
+{{!< default}}
+
+{{#post}}
+<header>
+    <div class="post-blog-title"><a href="{{@blog.url}}"><i class="iconfont icon-back"></i>&nbsp;{{@blog.title}}</a></div>
+</header>
+
+<main role="main">
+    <article class="page-archives">
+        <header class="post-header short-diver">
+            <h1 class="post-title">标签</h1>
+            <section class="post-meta">
+                {{#get "tags" as |tags postTags|}}
+                共有{{postTags.total}}个标签
+                {{/get}}
+            </section>
+        </header>
+
+        <div class="left">
+            {{> "tag-cloud"}}
+        </div>
+
+    </article>
+</main>
+
+{{/post}}

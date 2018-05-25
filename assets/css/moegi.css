@@ -46,7 +46,7 @@ a:hover {
 
 /* INDEX */
 
-.tag-cloud {
+.index-tag-cloud {
     margin-top: 1.2rem;
     line-height: 2;
     max-width: 90%;
@@ -109,6 +109,10 @@ a:hover {
     color: #86B81B;
 }
 
+.post-meta .tags {
+    margin-left: 0.6em;
+}
+
 .index-post {
     padding: 1.6em 0;
     border-bottom: #EBF2F6 1px solid;
@@ -116,10 +120,6 @@ a:hover {
 }
 
 /* TAGS */
-
-.tags {
-    margin-left: 0.6em;
-}
 
 .tags a {
     position: relative;
@@ -142,6 +142,10 @@ a:hover {
 .post-footer .tags {
     display: block;
     margin: 4em 0.6em 1em 0;
+}
+
+.tag-cloud {
+    line-height: 2;
 }
 
 

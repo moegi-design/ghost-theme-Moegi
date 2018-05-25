@@ -1,5 +1,5 @@
 {{! Tag Cloud }}
-<div class="tag-cloud tags center">
+<div class="tag-cloud tags">
     {{#get "tags" limit="all" include="count.posts" order="count.posts desc" }}
         {{#foreach tags}}
             <a href="/tag/{{slug}}" class="tag-item">{{name}} ({{count.posts}})</a>
