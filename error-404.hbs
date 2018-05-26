@@ -1,0 +1,48 @@
+{{!--
+This error template is used for all 404 errors, which might occur on your site.
+It's a good idea to keep this template as minimal as possible in terms of both file size and complexity.
+--}}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>{{meta_title}}</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="{{asset "css/moegi.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "fonts/iconfont.css"}}">
+</head>
+<body class="error-template">
+    <div class="container">
+
+        <header>
+            <div class="post-blog-title"><a href="{{@blog.url}}"><i class="iconfont icon-back"></i>&nbsp;{{@blog.title}}</a></div>
+        </header>
+
+        <main id="site-main" class="site-main outer">
+            <div class="inner">
+
+                <section class="error-message">
+                    <h1 class="error-code">{{code}}</h1>
+                    <p class="error-description">{{message}}</p>
+                </section>
+            </div>
+        </main>
+
+        {{!-- {{#get "posts" limit="3"}}
+        <div id="archives-list" class="typo">
+            <h2>你可能喜欢</h2>
+            {{#foreach posts}}
+            <div class='archives-item' date="{{date format='YYYY'}}">
+                <time>{{date published_at format="MM-DD"}}</time>
+                <a href='{{url}}'>{{title}}</a>
+            </div>
+            {{/foreach}}
+        </div>
+        {{/get}} --}}
+
+    </div>
+</body>
+</html>
