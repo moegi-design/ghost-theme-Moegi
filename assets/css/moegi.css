@@ -358,6 +358,138 @@ pre {
     display: block;
 }
 
+/* COMMENT */
+#comment {
+    margin-top: 3.2em;
+    position: relative;
+}
+
+#comment .comment-header {
+    margin: 0.6em 0;
+    font-size: 1.6em;
+}
+
+#comment .comment-header::before {
+    color: #86B81B;
+    content: "@ ";
+    position: relative;
+    left: 0;
+}
+
+#comment-box .vwrap {
+    border: none;
+    border-radius: 0;
+    padding: 0;
+}
+
+#comment-box .vlist .vcard .vhead .vname:hover {
+    color: #86B81B;
+}
+
+#comment-box .veditor {
+    font-size: 1em;
+    padding: 0.6em 0.8em;
+    border-radius: 5px;
+    border: 1px solid #f0f0f0;
+    background: #fcfcfc;
+    min-height: 4em;
+    height: 4em;
+}
+
+#comment-box .veditor:focus {
+    border: 2px solid #86B81B90;
+    height: 7em;
+    background: #ffffff;
+}
+
+#comment-box ::-webkit-input-placeholder {
+    color: #cccccc;
+}
+
+#comment-box ::-moz-placeholder {
+    color: #cccccc;
+}
+
+#comment-box :-ms-input-placeholder {
+    color: #cccccc;
+}
+
+#comment-box .vwrap .vheader .vinput {
+    width: 100%;
+    border: 1px solid #f0f0f0;
+    margin-right: 1em;
+    margin-bottom: 8px;
+    padding: 0.4em 1em;
+    display: none;
+    border-radius: 8px;
+    background: #fcfcfc;
+    font-size: 0.8em;
+}
+
+#comment-box .vwrap .vheader .vinput:focus {
+    border: 2px solid #86B81B90;
+}
+
+#comment-box .vwrap .vheader .vinput:focus {
+    background: #ffffff;
+}
+
+#comment-box .display {
+    display: inline !important;
+}
+
+#comment-box .vwrap .vcontrol {
+    padding-top: 8px;
+    display: none;
+}
+
+#comment-box .vwrap .vedit .vctrl {
+    display: none;
+}
+
+#comment-box .vwrap .vcontrol .col.col-60 {
+    display: none;
+}
+
+#comment-box .vwrap .vcontrol .col.col-40 {
+    width: 100%;
+}
+
+#comment-box .vbtn:active, #comment-box .vbtn:hover {
+    color: #fff;
+    border-color: #86B81B;
+    background-color: #86B81BD0;
+}
+
+#comment-box .vlist .vcard section .vfooter .vat {
+    color: #b3b3b3;
+}
+
+#comment-box .vlist .vcard section .vfooter .vat:hover {
+    color: #86B81B;
+}
+
+#comment-box .vlist .vcard .vcontent {
+    font-size: 1em;
+}
+
+#comment-box .vlist .vcard .vhead .vsys {
+    background: #f6f6f6;
+}
+
+#comment-box .power {
+    color: #cccccc;
+}
+
+#comment-box a {
+    color: #bbbbbb;
+}
+
+#comment-box a:hover {
+    color: #86B81B;
+    border: none;
+}
+
 /* GO TO TOP */
 
 .go-to-top {
@@ -453,6 +585,15 @@ pre {
     .typo h2::before {
         position: absolute;
         left: -1em;
+    }
+
+    #comment .comment-header::before {
+        position: absolute;
+        left: -1em;
+    }
+
+    #comment .vwrap .vheader.item2 .vinput, #comment .vwrap .vheader .vinput {
+        width: 25%;
     }
 }
 

@@ -22,8 +22,7 @@ Ghost 0.x版本默认的 Casper 十分好看，可惜1.0版本之后就改成 cm
 * 标签云
 * 归档页
 * 文章目录
-* 顶部进度条（待实现）
-* 评论功能（待实现）
+* 评论功能
 
 [Features Todo List](https://github.com/ddiu8081/ghost-theme-Moegi/issues/2)
 
@@ -34,18 +33,19 @@ Ghost 0.x版本默认的 Casper 十分好看，可惜1.0版本之后就改成 cm
 
 > 本站准备了一篇主题样式测试的文章，展示了长文排版、文字样式等效果，欢迎访问
 >  
-> [主题样式测试](https://blog.ddiu.site/theme-test/)
+> [主题样式测试](https://blog.ddiu.site/theme-test/)  
 > [博客Demo](https://blog.ddiu.site)
 
 ## 更新日志
 
 * 2017.10.02 v1.0.0 Moegi主题完成
-* 2018.02.16 v1.1.0 添加代码高亮（使用[prism.js](http://prismjs.com)）
+* 2018.02.16 v1.1.0 添加代码高亮
 * 2018.05.23 v1.2.0 使用[Typo.css](https://typo.sofi.sh/)重构了页面的行距等样式；代码高亮更换为[Highlight.js](https://highlightjs.org/)；背景改为#ffffff；超链接、强调色、引用等其他样式更改
 * 2018.05.24 v1.3.0 添加归档页；细节优化
 * 2018.05.24 v1.4.0 添加文章目录
 * 2018.05.25 v1.4.1 标签云支持显示为独立页面
 * 2018.05.26 v1.4.2 添加404页面
+* 2018.05.26 v1.5.0 添加评论功能
 
 ## 下载与使用
 
@@ -53,13 +53,36 @@ Ghost 0.x版本默认的 Casper 十分好看，可惜1.0版本之后就改成 cm
 
 在[Github](https://github.com/ddiu8081/ghost-theme-Moegi)下载zip后，上传到Ghost后台即可。
 
+### 功能开启方式
+
+#### 归档页
+
+在 Ghost 后台新建独立页面（勾选`Turn this post into a page`），标题随意（如`归档`），页面地址为`archives`，在设置中添加指向该地址的菜单即可。
+
+#### 标签云
+
+默认显示在首页底部。如要做成单独页面方法同上，在 后台新建独立页面，页面地址为`tags`，最后修改菜单即可。
+
+#### 评论功能
+
+本主题使用 [Valine](https://valine.js.org/) 作为评论系统。要开启评论功能，请参照 [这篇教程](https://valine.js.org/quickstart/#appidappkey) 注册 LeanCloud 并获取 appId 和 appKey（注意配置好安全域名）。
+
+然后进入 Ghost 后台 - Code injection，在`Blog Header`中插入以下代码：
+
+```
+<script>
+    var lc_appId = '这里填上面获得的appid';
+    var lc_appKey = '这里填上面获得的appkey';
+</script>
+```
+
+保存即可。
+
 ### 注意事项
 
-1. 归档页的使用：在 Ghost 后台新建独立页面（勾选`Turn this post into a page`），标题随意（如`归档`），页面地址为`archives`，在设置中添加指向该地址的菜单即可。
-2. 标签云的使用：默认显示在首页底部。如要做成单独页面方法同上，在 后台新建独立页面，页面地址为`tags`，最后修改菜单即可。
-3. 主题免费使用，但请勿修改底部版权信息（虽然颜色已经调得快看不见了😂）。
-4. 该主题仅适用于 Ghost 1.0 及以上版本，0.x版本不支持。
-5. 欢迎 Fork 本项目并修改成自己喜欢的样子。欢迎提 issue。
+1. 主题免费使用，但请勿修改底部版权信息（虽然颜色已经调得快看不见了😂）。
+2. 该主题仅适用于 Ghost 1.0 及以上版本，0.x版本不支持。
+3. 欢迎 Fork 本项目并修改成自己喜欢的样子。欢迎提 issue。
 
 ## 其他
 
@@ -73,6 +96,7 @@ Ghost 0.x版本默认的 Casper 十分好看，可惜1.0版本之后就改成 cm
 * [jQuery](https://jquery.com/)：最流行的JavaScript工具库。
 * [@ldsun](https://ldsun.com/2016/07/23/ghost-archives/)：归档页实现灵感来源。
 * [jquery.tocify.js](https://github.com/gfranko/jquery.tocify.js)：快速生成动态文章目录，并且有scrollspy功能。
+* [Valine](https://valine.js.org/)：一款快速、简洁且高效的无后端评论系统。
 
 ### License
 

@@ -1,0 +1,38 @@
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+
+<div id="comment">
+    <h2 class="comment-header">评论</h2>
+    <div id="comment-box"></div>
+</div>
+
+<script>
+    var lc_appId, lc_appKey
+    if (lc_appId && lc_appKey) {
+        new Valine({
+            el: '#comment-box' ,
+            notify:false, 
+            verify:false, 
+            appId: lc_appId,
+            appKey: lc_appKey,
+            placeholder: '添加一条评论...',
+            path:window.location.pathname, 
+            avatar:'retro' 
+        });
+    }
+    else {
+        $("#comment").hide();
+    }
+
+    $("#comment-box .veditor").focus(function(){
+        $("#comment-box .vnick").addClass("display");
+        $("#comment-box .vcontrol").addClass("display");
+        $("#comment-box .veditor").css("min-height", "7em");
+    });
+
+    $("#comment-box .vnick").focus(function(){
+        $("#comment-box .vmail").addClass("display");
+        $("#comment-box .vlink").addClass("display");
+    });
+    
+</script>
