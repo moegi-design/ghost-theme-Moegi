@@ -206,6 +206,10 @@ a:hover {
     height: auto;
 }
 
+em {
+    font-style: italic;
+}
+
 code {
     color: #A96360;
     padding: 0.08rem 0.5rem;

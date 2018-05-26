@@ -32,7 +32,10 @@ Ghost 0.x版本默认的 Casper 十分好看，可惜1.0版本之后就改成 cm
 ![index](http://ostfcwjy3.bkt.clouddn.com/18-5-24/82860263.jpg)
 ![article](http://ostfcwjy3.bkt.clouddn.com/18-5-24/61599666.jpg)
 
-[Demo](https://blog.ddiu.site)
+> 本站准备了一篇主题样式测试的文章，展示了长文排版、文字样式等效果，欢迎访问
+>  
+> [主题样式测试](https://blog.ddiu.site/theme-test/)
+> [博客Demo](https://blog.ddiu.site)
 
 ## 更新日志
 
