@@ -10,8 +10,8 @@
         <header class="post-header short-diver">
             <h1 class="post-title">标签</h1>
             <section class="post-meta">
-                {{#get "tags" as |tags postTags|}}
-                共有{{postTags.total}}个标签
+                {{#get "tags" as |tags pages|}}
+                共有{{pages.total}}个标签
                 {{/get}}
             </section>
         </header>
