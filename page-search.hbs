@@ -10,7 +10,7 @@
 <main role="main">
     <article class="page-archives">
         <header class="post-header short-diver">
-            <h1 class="post-title">归档</h1>
+            <h1 class="post-title">搜索</h1>
             <section class="post-meta">
                 {{#get "posts" as |posts pages|}}
                 共有{{pages.total}}篇文章
@@ -19,33 +19,10 @@
         </header>
 
         <div id="archives-list" class="typo"></div>
-        {{!-- {{#get "posts" limit="all" order="published_at desc"}}
-            {{#foreach posts}}
-            <div class='archives-item' date="{{date format='YYYY'}}">
-                <time>{{date published_at format="MM-DD"}}</time>
-                <a href='{{url}}'>{{title}}</a>
-            </div>
-            {{/foreach}}
-        {{/get}} --}}
 
     </article>
 </main>
 <script>
-    // 方法1：先输出列表再添加年份，修改自 @xiaoluoboding
-    // var yearArray = new Array();
-    // $(".archives-item").each(function() {
-    //     var archivesYear = $(this).attr("date");
-    //     yearArray.push(archivesYear);
-    // });
-    // var uniqueYear = $.unique(yearArray);
-    // for (var i = 0; i < uniqueYear.length; i++) {
-    //     var html = "<div class='archives-year'>" +
-    //         "<h3><time>" + uniqueYear[i] + "</time></h3>" +
-    //         "</div>";
-    //     $("[date='" + uniqueYear[i] + "']:first").before(html);
-    // }
-
-    //方法2：同时输出年份和列表，修改自 @ldsun
     $.get(ghost.url.api('posts', {
         limit: 'all',
         order: "published_at desc"
