@@ -5,16 +5,31 @@
 <header class="center">
     <div class="blog-title"><a href="{{@blog.url}}">{{@blog.title}}</a></div>
     <div class="blog-description">{{@blog.description}}</div>
-    {{#if @blog.navigation}}
-        {{navigation}}
-    {{/if}}
+    <div class="top-nav">
+        {{#if @blog.navigation}}
+            {{navigation}}
+        {{/if}}
+        <div class="search-bar">
+            <div id="input-div">
+                <input id="search-input" type="text" placeholder="搜索文章..." />
+                <i id="close-btn" class="iconfont icon-close"></i>
+            </div>
+            <div id="search-btn">
+                <i class="iconfont icon-search"></i>
+            </div>
+        </div>
+    </div>
 </header>
 
 {{! The main content area on the homepage }}
 <main role="main">
 
+    <div id="archives-list" class="index-search-list typo"></div>
+
     {{! The tag below includes the post loop - partials/loop.hbs }}
-    {{> "loop"}}
+    <div id="articles">
+        {{> "loop"}}
+    </div>
 
     <div class="index-tag-cloud center">
         {{> "tag-cloud"}}

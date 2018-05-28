@@ -17,7 +17,7 @@ a:hover {
     text-decoration: none;
 }
 
-/* HEADER */
+/* INDEX */
 
 .blog-title {
     font-size: 2.6em;
@@ -30,10 +30,8 @@ a:hover {
 }
 
 .top-nav ul {
-    display: block;
-    margin: 1em 0;
+    display: inline-block;
     list-style: none;
-    padding: 0;
 }
 
 .top-nav li {
@@ -49,15 +47,53 @@ a:hover {
     border-bottom: 1px solid #3a4145;
 }
 
-
-/* INDEX */
-
 .index-tag-cloud {
     margin-top: 1.2rem;
     line-height: 2;
     max-width: 90%;
 }
 
+.top-nav {
+    margin: 1em 0;
+}
+
+.search-bar {
+    display: inline-block;
+    margin-left: 4px;
+}
+
+.search-bar .iconfont {
+    color: #4a4a4a;
+}
+
+.search-bar .iconfont:hover {
+    color: #86B81B;
+}
+
+#input-div {
+    display: none;
+    padding: 0.2em 1em;
+    background: #f6f6f6;
+    border-radius: 8px;
+}
+
+#search-input {
+    border: none;
+    /* border-bottom: 1px solid #4a4a4a; */
+    width: 10em;
+    margin: 0;
+    background: transparent;
+    outline: none;
+}
+
+#search-btn {
+    padding: 0.2em 0;
+}
+
+.index-search-list {
+    padding: 1.6em 0;
+    display: none;
+}
 
 /* POST */
 
@@ -240,8 +276,8 @@ blockquote {
 .typo h2::before {
     color: #86B81B;
     content: "# ";
-    position: relative;
-    left: 0;
+    position: absolute;
+    left: -1em;
 }
 
 .single-post li, .typo li {
@@ -372,8 +408,8 @@ pre {
 #comment .comment-header::before {
     color: #86B81B;
     content: "@ ";
-    position: relative;
-    left: 0;
+    position: absolute;
+    left: -1em;
 }
 
 #comment-box .vwrap {
@@ -415,7 +451,7 @@ pre {
 }
 
 #comment-box .vwrap .vheader .vinput {
-    width: 100%;
+    width: 25%;
     border: 1px solid #f0f0f0;
     margin-right: 1em;
     margin-bottom: 8px;
@@ -522,7 +558,7 @@ pre {
     opacity: 1
 }
 
-/* ARCHIVES */
+/* ARCHIVES & SEARCH */
 #archives-list time {
     color: #666666;
 }
@@ -534,6 +570,14 @@ pre {
 #archives-list a:hover {
     color: #86B81B;
     border: none;
+}
+
+#archives-list .search-item {
+    font-size: 1.2em;
+}
+
+#archives-list .no-result {
+    color: #999999;
 }
 
 /* ERROR */
@@ -580,28 +624,32 @@ pre {
 /* TYPOGRAPHY */
 
 .container {
-    width: 90%;
+    width: 80%;
     margin-right: auto;
     margin-left: auto;
 }
 
-@media only screen and (min-width: 540px) {
+@media only screen and (max-width: 540px) {
     .container {
-        width: 80%;
+        width: 90%;
     }
 
     .typo h2::before {
-        position: absolute;
-        left: -1em;
+        position: relative;
+        left: 0;
     }
 
     #comment .comment-header::before {
-        position: absolute;
-        left: -1em;
+        position: relative;
+        left: 0;
     }
 
     #comment .vwrap .vheader.item2 .vinput, #comment .vwrap .vheader .vinput {
-        width: 25%;
+        width: 100%;
+    }
+
+    #toc {
+        display: none;
     }
 }
 

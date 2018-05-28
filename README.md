@@ -6,16 +6,7 @@
 试过 Ghost 之后发现嗯，好，是我想要的，于是就这么留下来了...
 
 Ghost 0.x版本默认的 Casper 十分好看，可惜1.0版本之后就改成 cms 样式了...
-所以抽了点时间自己写了一套，起名为 Moegi。
-
-## 设计风格
-
-简约。单栏。
-主色调为Moegi（萌黄）。
-
-主题名称和主要颜色的来源取自[NIPPON COLORS - 日本の伝統色](http://nipponcolors.com)。这是一个相当文艺的取色网站，收录的几百种颜色全部是日本的传统颜色，十分耐看，同时名字也非常好听。比如一斥染、柳染、利休茶等等。强烈建议颜色方面没有灵感的话来这里看看~
-
-~~主题的文字为[思源宋体](https://source.typekit.com/source-han-serif/cn/)。这是Adobe与Google联合发布的一套开源字体，个人感觉放在网页里真心好看😂~~（180523：思源宋体已从主题移除）
+所以抽了点时间自己写了一套，起名为 Moegi 。
 
 ### 特性
 
@@ -23,6 +14,7 @@ Ghost 0.x版本默认的 Casper 十分好看，可惜1.0版本之后就改成 cm
 * 归档页
 * 文章目录
 * 评论功能
+* 按标题搜索
 
 [Features Todo List](https://github.com/ddiu8081/ghost-theme-Moegi/issues/2)
 
@@ -47,6 +39,7 @@ Ghost 0.x版本默认的 Casper 十分好看，可惜1.0版本之后就改成 cm
 * 2018.05.26 v1.4.2 添加404页面
 * 2018.05.26 v1.5.0 添加评论功能
 * 2018.05.27 v1.5.1 修复在非https站下无法加载库文件的bug
+* 2018.05.28 v1.6.0 添加文章搜索功能；新增多个配置项以控制功能的开启
 
 ## 下载与使用
 
@@ -54,7 +47,29 @@ Ghost 0.x版本默认的 Casper 十分好看，可惜1.0版本之后就改成 cm
 
 在[Github](https://github.com/ddiu8081/ghost-theme-Moegi)下载zip后，上传到Ghost后台即可。
 
-### 功能开启方式
+### 主题配置
+
+#### 搜索、评论与目录功能
+
+本主题使用 [Valine](https://valine.js.org/) 作为评论系统。要开启评论功能，请参照 [这篇教程](https://valine.js.org/quickstart/#appidappkey) 注册 LeanCloud 并获取 appId 和 appKey（注意配置好安全域名）。
+
+然后进入 Ghost 后台 - Code injection，在`Blog Header`中插入以下代码：
+
+```
+<script>
+    var show_search = true; //是否开启搜索功能，默认为true
+    var show_toc = true; //是否开启文章目录，默认为true
+    var show_valine = true; //是否开启评论功能，默认为true
+    
+    //要开启评论功能需正确填写lc_appId与lc_appKey，并保证show_valine为true
+    var lc_appId = '这里填上面获得的appid';
+    var lc_appKey = '这里填上面获得的appkey';
+</script>
+```
+
+搜索、评论、文章目录功能均可以通过修改上述配置项进行开启与关闭。
+
+注：**搜索功能目前仅支持标题搜索**。
 
 #### 归档页
 
@@ -63,21 +78,6 @@ Ghost 0.x版本默认的 Casper 十分好看，可惜1.0版本之后就改成 cm
 #### 标签云
 
 默认显示在首页底部。如要做成单独页面方法同上，在 后台新建独立页面，页面地址为`tags`，最后修改菜单即可。
-
-#### 评论功能
-
-本主题使用 [Valine](https://valine.js.org/) 作为评论系统。要开启评论功能，请参照 [这篇教程](https://valine.js.org/quickstart/#appidappkey) 注册 LeanCloud 并获取 appId 和 appKey（注意配置好安全域名）。
-
-然后进入 Ghost 后台 - Code injection，在`Blog Header`中插入以下代码：
-
-```
-<script>
-    var lc_appId = '这里填上面获得的appid';
-    var lc_appKey = '这里填上面获得的appkey';
-</script>
-```
-
-保存即可。
 
 ### 注意事项
 

@@ -1,7 +1,7 @@
 {{!< default}}
 
 {{#post}}
-<script src="//cdn.bootcss.com/moment.js/2.22.1/moment.min.js"></script>
+
 
 <header>
     <div class="post-blog-title"><a href="{{@blog.url}}"><i class="iconfont icon-back"></i>&nbsp;{{@blog.title}}</a></div>
@@ -10,10 +10,10 @@
 <main role="main">
     <article class="page-archives">
         <header class="post-header short-diver">
-            <h1 class="post-title">搜索</h1>
-            <section class="post-meta">
+            <h1 id="search-str" class="post-title">搜索</h1>
+            <section id="search-meta" class="post-meta">
                 {{#get "posts" as |posts pages|}}
-                搜索到{{pages.total}}篇文章
+                
                 {{/get}}
             </section>
         </header>
@@ -23,28 +23,36 @@
     </article>
 </main>
 <script>
+    var str = decodeURI(location.search);
+    var pattern = new RegExp("[`~!@#$^&*()=|{}':;',\\[\\].<>/?~！@#￥……&*（）——|{}【】‘；：”“'。，、？]","g")
+    str = str.replace(pattern, '');
+    $("#search-str").text('"'+str+'"搜索结果');
+    var amount = 0;
     $.get(ghost.url.api('posts', {
         limit: 'all',
         order: "published_at desc"
     })).done(function(data) {
         var posts = data.posts;
         var count = posts.length;
-        for (var i = 0, pre_year = 0; i < count; i++) {
-            //调用moment.js对时间戳进行操作
-            var time = moment(posts[i].published_at);
-            var year = time.year();
-            var title = posts[i].title;
-            var url = posts[i].url;
+        for (var i = 0; i < count; i++) {
+            if (posts[i].title.toLowerCase().indexOf(str.toLowerCase()) != -1) {
+                amount++;
+                //调用moment.js对时间戳进行操作
+                var time = moment(posts[i].published_at);
+                var year = time.year();
+                var title = posts[i].title;
+                var url = posts[i].url;
 
-            if (year != pre_year) {
-                var html = "<h2>"+year+"</h2>"+
-                "<ul id='year-"+year+"'></ul>"
+                var html = "<div class='search-item'><time>"+time.format("YYYY-MM-DD")+"</time><a href='"+url+"'>"+title+"</a></div>";
                 $(html).appendTo("#archives-list");
             }
-            var html = "<li><time>"+time.format("MM-DD")+"</time><a href='"+url+"'>"+title+"</a></li>";
-            $(html).appendTo("#year-"+year);
-            pre_year = year;   
+             
         }
+        if (amount == 0) {
+            var html = "<div class='no-result'>没有结果</div>";
+            $(html).appendTo("#archives-list");
+        }
+        $("#search-meta").text('搜索到'+amount+'篇文章');
     }).fail(function(err) {
         console.log(err);
     });

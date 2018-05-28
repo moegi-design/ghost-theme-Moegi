@@ -7,8 +7,11 @@
 </div>
 
 <script>
-    var lc_appId, lc_appKey
-    if (lc_appId && lc_appKey) {
+    var lc_appId, lc_appKey;
+    if (typeof show_valine == 'undefined') {
+        var show_valine = true;
+    }
+    if (show_valine && lc_appId && lc_appKey) {
         new Valine({
             el: '#comment-box' ,
             notify:false, 
