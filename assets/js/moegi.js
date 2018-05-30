@@ -74,3 +74,11 @@ $("#search-input").on('input propertychange', function() {
         $("#archives-list").hide();
     }
 });
+
+/* AUTHOR-CARD */
+if (typeof show_author == 'undefined') {
+    var show_author = false;
+}
+if (!show_author) {
+    $("#author-card").hide();
+}

@@ -1,0 +1,20 @@
+{{!-- Everything inside the #author tags pulls data from the author --}}
+{{#author}}
+
+<section id="author-card" class="author-card">
+    {{#if profile_image}}
+        <a class="author-profile-image-a" href="{{url}}"><img class="author-profile-image" src="{{profile_image}}" alt="{{name}}" /></a>
+    {{else}}
+        <a class="author-profile-image-a" href="{{url}}"><img class="author-profile-image" src="{{asset "images/avatar.jpg"}}" alt="{{name}}" /></a>
+    {{/if}}
+    <section class="author-card-content">
+        <h4 class="author-card-name"><a href="{{url}}">{{name}}</a></h4>
+        {{#if bio}}
+            <p class="author-card-bio">{{bio}}</p>
+        {{else}}
+            <p class="author-card-bio">查看此作者的 <a href="{{url}}">更多文章</a> 。</p>
+        {{/if}}
+    </section>
+</section>
+
+{{/author}}

@@ -11,9 +11,7 @@ a {
 }
 
 a:hover {
-    padding-bottom: 3px;
     color: #86B81B;
-    border-bottom: 1px solid #86B81B;
     text-decoration: none;
 }
 
@@ -174,16 +172,10 @@ a:hover {
 .tags a:hover {
     background: #86B81BD0;
     color: #fff;
-    border: none;
 }
 
 .tags a::before {
     content: "#"
-}
-
-.post-footer .tags {
-    display: block;
-    margin: 4em 0.6em 1em 0;
 }
 
 .tag-cloud {
@@ -230,8 +222,7 @@ a:hover {
 
 .single-post a:hover {
     color: #86B81B;
-    background: rgba(134, 184, 27, 0.1);
-    border: none;
+    background: #86B81B10;
 }
 
 .single-post img {
@@ -288,6 +279,61 @@ pre {
     background: #f0f0f0;
     font-size: 0.85em;
     line-height: 1.3;
+}
+
+/* POST-FOOTER */
+
+.post-footer {
+    margin-top: 4.8em;
+}
+
+/* POST-FOOTER AUTHOR */
+
+.author-card {
+    background: #f6f6f6;
+    padding: 0.8em 1.2em;
+    border-radius: 8px;
+    display: flex;
+    margin-bottom: 2em;
+}
+
+.author-card .author-profile-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+}
+
+.author-card .author-profile-image-a {
+    margin: 0;
+    padding: 0;
+    margin-right: 0.8em;
+    line-height: 0;
+}
+
+.author-card .author-card-name {
+    font-size: 1.2em;
+    margin: 0;
+    line-height: 1.65;
+    font-weight: bold;
+}
+
+.author-card .author-card-bio {
+    color: #999999;
+}
+
+.author-card .author-card-bio a {
+    color: #86B81BD0;
+}
+
+.author-card .author-card-bio a:hover {
+    color: #86B81B;
+}
+
+/* POST-FOOTER TAGS */
+
+.post-footer .tags {
+    display: block;
+    margin: 0.6em 0;
 }
 
 /* PAGINATION */
@@ -350,7 +396,6 @@ pre {
 .blog-footer a:hover {
     color: #86B81B;
     background: rgba(134, 184, 27, 0.1);
-    border: none;
 }
 
 /* TOC */
@@ -378,7 +423,6 @@ pre {
 
 #toc a:hover {
     padding: 0;
-    border: none;
     color: #86B81B;
 }
 
@@ -531,7 +575,6 @@ pre {
 
 #comment-box a:hover {
     color: #86B81B;
-    border: none;
 }
 
 /* GO TO TOP */
@@ -569,7 +612,6 @@ pre {
 
 #archives-list a:hover {
     color: #86B81B;
-    border: none;
 }
 
 #archives-list .search-item {
