@@ -386,7 +386,11 @@ pre {
     display: block;
     font-size: 0.9em;
     color: rgba(158, 171, 179, 0.6);
-    line-height: 1.4;
+    line-height: 1;
+}
+
+.blog-footer .line-2 {
+    display: inline;
 }
 
 .blog-footer a {

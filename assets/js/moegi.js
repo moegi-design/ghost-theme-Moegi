@@ -82,3 +82,20 @@ if (typeof show_author == 'undefined') {
 if (!show_author) {
     $("#author-card").hide();
 }
+
+/* INDEX-TAG-CLOUD */
+if (typeof show_index_tag == 'undefined') {
+    var show_index_tag = true;
+}
+if (!show_index_tag) {
+    $("#index-tag-cloud").hide();
+}
+
+/* FOOTER-TEXT */
+if (typeof footer_text == 'undefined') {
+    var footer_text = "";
+}
+if (footer_text) {
+    $("#footer-text").text(" | " + footer_text);
+}
+

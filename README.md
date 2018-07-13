@@ -41,6 +41,7 @@ Ghost 0.x版本默认的 Casper 十分好看，可惜1.0版本之后就改成 cm
 * 2018.05.27 v1.5.1 修复在非https站下无法加载库文件的bug
 * 2018.05.28 v1.6.0 添加文章搜索功能；新增多个配置项以控制功能的开启
 * 2018.05.30 v1.7.0 支持显示作者信息，默认隐藏；完善作者页面
+* 2018.07.13 v1.7.1 增加针对首页标签云的配置项([#5](https://github.com/ddiu8081/ghost-theme-Moegi/issues/5))；支持footer第二行的自定义，请在Code injection中配置
 
 ## 下载与使用
 
@@ -62,10 +63,14 @@ Ghost 0.x版本默认的 Casper 十分好看，可惜1.0版本之后就改成 cm
     var show_toc = true; //是否开启文章目录，默认为true
     var show_valine = true; //是否开启评论功能，默认为true
     var show_author = false; //是否开启文章底部作者信息，默认为false
+    var show_index_tag = true; //是否开启首页底部标签云，默认为true
     
     //要开启评论功能需正确填写lc_appId与lc_appKey，并保证show_valine为true
     var lc_appId = '这里填上面获得的appid';
     var lc_appKey = '这里填上面获得的appkey';
+
+    //footer相关
+    var footer_text = ''; //自定义footer第二行文字，默认为空
 </script>
 ```
 

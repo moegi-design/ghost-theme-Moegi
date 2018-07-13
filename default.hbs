@@ -28,8 +28,9 @@
         {{! Everything else gets inserted here }} {{{body}}}
 
         <footer class="blog-footer">
-            <p>Powered by <a href="https://ghost.org" target="_blank">Ghost</a> | Theme <a href="https://github.com/ddiu8081/ghost-theme-Moegi" target="_blank">Moegi</a></p>
-            <p>&copy;<a href="{{@blog.url}}">{{@blog.title}}</a></p>
+            <p class="line-1">Powered by <a href="https://ghost.org" target="_blank">Ghost</a> | Theme <a href="https://github.com/ddiu8081/ghost-theme-Moegi" target="_blank">Moegi</a></p>
+            <p class="line-2">&copy;<a href="{{@blog.url}}">{{@blog.title}}</a></p>
+            <p id="footer-text" class="line-2"></p>
         </footer>
 
     </div>
