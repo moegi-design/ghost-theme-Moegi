@@ -442,10 +442,14 @@ pre {
     display: block;
 }
 
-/* COMMENT */
+/* COMMENT PATCH */
 #comment {
     margin-top: 3.2em;
     position: relative;
+}
+
+#comment .vnick {
+    color: #666;
 }
 
 #comment .comment-header {
@@ -567,6 +571,11 @@ pre {
 
 #comment-box .vlist .vcard .vhead .vsys {
     background: #f6f6f6;
+    padding: .2em .5em;
+}
+
+#comment-box .vlist .vcard .vh .vmeta .vat {
+    color: #999999;
 }
 
 #comment-box .power {
