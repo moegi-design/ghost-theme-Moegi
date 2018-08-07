@@ -1,4 +1,4 @@
-# Moegi「萌黄」 - 一个优雅的Ghost主题
+# Moegi「萌黄」 - 一个优雅有趣的Ghost主题
 
 [博客介绍页](https://blog.ddiu.site/ghost-theme-moegi/)
 
@@ -8,20 +8,24 @@
 Ghost 0.x版本默认的 Casper 十分好看，可惜1.0版本之后就改成 cms 样式了...
 所以抽了点时间自己写了一套，起名为 Moegi 。
 
+## 介绍
+
 ### 特性
 
+* 丰富的自定义配置（详见 主题配置）
 * 标签云
 * 归档页
 * 文章目录
 * 评论功能
 * 按标题搜索
+* 主题色更改
 
 [Features Todo List](https://github.com/ddiu8081/ghost-theme-Moegi/issues/2)
 
 ### Screenshot & Demo
 
-![index](http://ostfcwjy3.bkt.clouddn.com/18-5-24/82860263.jpg)
-![article](http://ostfcwjy3.bkt.clouddn.com/18-5-24/61599666.jpg)
+![index](http://ostfcwjy3.bkt.clouddn.com/18-8-7/69498520.jpg)
+![article](http://ostfcwjy3.bkt.clouddn.com/18-8-7/58083094.jpg)
 
 > 本站准备了一篇主题样式测试的文章，展示了长文排版、文字样式等效果，欢迎访问
 >  
@@ -43,6 +47,7 @@ Ghost 0.x版本默认的 Casper 十分好看，可惜1.0版本之后就改成 cm
 * 2018.05.30 v1.7.0 支持显示作者信息，默认隐藏；完善作者页面
 * 2018.07.13 v1.7.1 增加针对首页标签云的配置项([#5](https://github.com/ddiu8081/ghost-theme-Moegi/issues/5))；支持footer第二行的自定义，请在Code injection中配置
 * 2018.07.27 v1.7.2 修正针对 Valine 的 CSS 样式
+* 2018.08.07 v1.8.0 主色调支持在Code injection中配置；修改了超链接部分的样式
 
 ## 下载与使用
 
@@ -60,6 +65,7 @@ Ghost 0.x版本默认的 Casper 十分好看，可惜1.0版本之后就改成 cm
 
 ```
 <script>
+    var main_color = '#86B81B'; //主色调，默认为#86B81B
     var show_search = true; //是否开启搜索功能，默认为true
     var show_toc = true; //是否开启文章目录，默认为true
     var show_valine = true; //是否开启评论功能，默认为true

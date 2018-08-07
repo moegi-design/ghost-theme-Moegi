@@ -1,3 +1,8 @@
+if (typeof main_color == 'undefined') {
+    var main_color = '#86B81B';
+}
+document.body.style.setProperty('--main-color', main_color);
+
 window.onscroll = function () {
     "use strict";
     var goTop = document.getElementById("go-to-top");
