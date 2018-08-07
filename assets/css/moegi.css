@@ -220,7 +220,7 @@ a:hover {
     opacity: .8;
     position: relative;
     color: var(--main-color,#666666);
-    display: inline-block;
+    padding-bottom: 3px;
 }
 
 .single-post a:hover, .typo a:hover {
