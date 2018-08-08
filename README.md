@@ -48,6 +48,7 @@ Ghost 0.x版本默认的 Casper 十分好看，可惜1.0版本之后就改成 cm
 * 2018.07.13 v1.7.1 增加针对首页标签云的配置项([#5](https://github.com/ddiu8081/ghost-theme-Moegi/issues/5))；支持footer第二行的自定义，请在Code injection中配置
 * 2018.07.27 v1.7.2 修正针对 Valine 的 CSS 样式
 * 2018.08.07 v1.8.0 主色调支持在Code injection中配置；修改了超链接部分的样式
+* 2018.08.08 v1.9.0 增加网页加载进度条；修复文章目录console报错的问题([#3](https://github.com/ddiu8081/ghost-theme-Moegi/issues/3))；修复上一版本带来的bug
 
 ## 下载与使用
 
