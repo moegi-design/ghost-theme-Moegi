@@ -258,6 +258,14 @@ a:hover {
     height: auto;
 }
 
+.single-post .kg-width-wide {
+    width: 110%;
+}
+
+.single-post .kg-width-full {
+    width: 100%;
+}
+
 em {
     font-style: italic;
 }
