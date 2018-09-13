@@ -36,5 +36,3 @@ if (typeof footer_text == 'undefined') {
 if (footer_text) {
     $("#footer-text").text(" | " + footer_text);
 } 
-
-hljs.initHighlightingOnLoad();

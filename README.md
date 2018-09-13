@@ -50,6 +50,7 @@ Ghost 0.x版本默认的 Casper 十分好看，可惜1.0版本之后就改成 cm
 * 2018.08.07 v1.8.0 主色调支持在Code injection中配置；修改了超链接部分的样式
 * 2018.08.08 v1.9.0 增加网页加载进度条；修复文章目录console报错的问题([#3](https://github.com/ddiu8081/ghost-theme-Moegi/issues/3))；修复上一版本带来的bug
 * 2018.08.23 v1.9.1 适配 Ghost 2.0
+* 2018.09.13 v1.9.2 更改 js 加载结构
 
 ## 下载与使用
 
