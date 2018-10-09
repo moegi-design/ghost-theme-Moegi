@@ -380,7 +380,10 @@ pre {
 
 .kg-image-card figcaption,
 .kg-gallery-card figcaption {
-    margin: 0 0 1.5em;
+    margin: 0.8em 0 1.4em;
+    text-align: center;
+    font-size: 0.85em;
+    color: #bbb;
 }
 
 /* POST-FOOTER */
