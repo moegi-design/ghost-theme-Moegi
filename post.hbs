@@ -7,7 +7,12 @@
 {{#post}}
 
 <header>
-    <div class="post-blog-title"><a href="{{@blog.url}}"><i class="iconfont icon-back"></i>&nbsp;{{@blog.title}}</a></div>
+    <div class="post-blog-title">
+        <a href="{{@blog.url}}"><i class="iconfont icon-back"></i>&nbsp;{{@blog.title}}</a>
+        <div class="post-nav">
+            {{navigation}}
+        </div>
+    </div>
 </header>
 
 <main role="main">
