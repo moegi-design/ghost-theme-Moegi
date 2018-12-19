@@ -9,11 +9,22 @@
     if (typeof show_toc == 'undefined') {
         var show_toc = true;
     }
+    // Find out the top-level selector present.
+    var toc_selectors = "h2,h3,h4,h5";
+    if (!$('.single-post').has("h2").length) {
+        var toc_selectors = "h3,h4,h5";
+        if (!$('.single-post').has("h3").length) {
+            var toc_selectors = "h4,h5";
+            if (!$('.single-post').has("h4").length) {
+                var toc_selectors = "h5";
+            }
+        }
+    }
     if (show_toc) {
         $("#toc").tocify({
-            selectors: "h2,h3,h4,h5", // 选择要筛选的标题
-            extendPage: false, // 页面不够长时拉长页面，这里选择关闭因为感觉留出大片空白不好看- -
-            highlightDefault: false // 自动高亮第一条
+            selectors: toc_selectors,
+            extendPage: false,
+            highlightDefault: false
         });
     }
 </script>

@@ -6,7 +6,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-weight: 300;
+    font-weight: 400;
 }
 
 a {
@@ -32,23 +32,53 @@ a:hover {
     color: #999999;
 }
 
+.post-nav {
+    display: none;
+    font-size: 0.84em;
+    color: #cccccc;
+    margin-left: 1em;
+}
+
 .top-nav ul {
     display: inline-block;
     list-style: none;
 }
 
 .top-nav li {
+    margin: 0 6px;
+    float: left;
+}
+
+.post-nav li {
+    float: left;
+}
+
+.post-nav li > a {
     margin: 0 4px;
-    display: inline-block;
 }
 
 .top-nav a {
     border: none;
 }
 
-.nav-current {
+.post-nav a {
+    color: #cccccc;
+    border: none;
+}
+
+.post-nav ul > li:not(:last-child)::after {
+    content: '·';
+}
+
+.top-nav .nav-current {
     border-bottom: 1px solid #3a4145;
 }
+
+/* .post-nav .nav-current a {
+    background: #f6f6f6;
+    border-radius: 8px;
+    padding: 4px 6px;
+} */
 
 .index-tag-cloud {
     margin-top: 1.2rem;
@@ -57,6 +87,9 @@ a:hover {
 }
 
 .top-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin: 1em 0;
 }
 
@@ -105,8 +138,15 @@ a:hover {
 }
 
 .post-blog-title {
+    display: flex;
+    align-items: center;
     font-size: 1.1em;
     margin-top: 2.4em;
+}
+
+.post-blog-title:hover .post-nav {
+    display: inline;
+    animation: left-in .4s ease-out 1;
 }
 
 .post-blog-title a {
@@ -222,10 +262,6 @@ a:hover {
 }
 
 /* CONTENT ADDONS */
-
-.single-post h1, h2, h3, h4, h5, h6 {
-    font-weight: 400;
-}
 
 .single-post a, .typo a {
     opacity: .8;
@@ -454,10 +490,6 @@ pre {
     position: relative;
 }
 
-.pagination a {
-    font-weight: 400;
-}
-
 .pagination .prev {
     width: 30%;
     text-align: left;
@@ -677,7 +709,7 @@ pre {
 }
 
 #comment-box .vlist .vcard .vhead .vsys {
-    background: #f6f6f6;
+    background: #00000005;
     padding: .2em .5em;
 }
 
@@ -902,5 +934,20 @@ pre {
     .container {
         width: 75%;
         max-width: 700px;
+    }
+}
+
+/* KEYFRAMES */
+@keyframes left-in{
+    0% {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+    40% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
     }
 }
