@@ -1,5 +1,13 @@
 # Moegi「萌黄」 - 一个优雅有趣的Ghost主题
 
+## 共同设计 Moegi 2!
+
+一个新的 Moegi 工程正在进行中。点击下方链接查看最新进度&出谋划策
+
+[Let's Begin Moegi 2](https://github.com/ddiu8081/ghost-theme-Moegi/issues/15)
+
+## 介绍
+
 [博客介绍页](https://blog.ddiu.site/ghost-theme-moegi/)
 
 陆陆续续跟风玩过不少的博客= =...从 Wordpress 转到 Typecho 再到现在的 Ghost..
@@ -7,8 +15,6 @@
 
 Ghost 0.x版本默认的 Casper 十分好看，可惜1.0版本之后就改成 cms 样式了...
 所以抽了点时间自己写了一套，起名为 Moegi 。
-
-## 介绍
 
 ### 特性
 
@@ -24,8 +30,8 @@ Ghost 0.x版本默认的 Casper 十分好看，可惜1.0版本之后就改成 cm
 
 ### Screenshot & Demo
 
-![index](http://ostfcwjy3.bkt.clouddn.com/18-8-7/69498520.jpg)
-![article](http://ostfcwjy3.bkt.clouddn.com/18-8-7/58083094.jpg)
+![index](http://cloud.ddiu.site/18-8-7/69498520.jpg)
+![article](https://ws1.sinaimg.cn/large/695ceddbly1fvq6jvjejrj228019mjz8.jpg)
 
 > 本站准备了一篇主题样式测试的文章，展示了长文排版、文字样式等效果，欢迎访问
 >  
