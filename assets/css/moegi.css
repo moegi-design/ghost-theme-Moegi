@@ -16,7 +16,7 @@ a {
 }
 
 a:hover {
-    color: var(--main-color,#666666);
+    color: var(--main-color);
     text-decoration: none;
 }
 
@@ -103,7 +103,7 @@ a:hover {
 }
 
 .search-bar .iconfont:hover {
-    color: var(--main-color,#666666);
+    color: var(--main-color);
 }
 
 #input-div {
@@ -155,7 +155,7 @@ a:hover {
 }
 
 .post-blog-title a:hover {
-    color: var(--main-color,#666666);
+    color: var(--main-color);
 }
 
 .post-header {
@@ -194,7 +194,7 @@ a:hover {
 }
 
 .post-meta a:hover {
-    color: var(--main-color,#666666);
+    color: var(--main-color);
 }
 
 .post-meta .tags {
@@ -219,7 +219,7 @@ a:hover {
 
 .tags a:hover {
     opacity: .7;
-    background: var(--main-color,#666666);
+    background: var(--main-color);
     color: #fff;
 }
 
@@ -258,7 +258,7 @@ a:hover {
 }
 
 .iconfont {
-    color: var(--main-color,#666666);
+    color: var(--main-color);
 }
 
 /* CONTENT ADDONS */
@@ -266,13 +266,13 @@ a:hover {
 .single-post a, .typo a {
     opacity: .8;
     position: relative;
-    color: var(--main-color,#666666);
+    color: var(--main-color);
     padding-bottom: 3px;
 }
 
 .single-post a:hover, .typo a:hover {
     opacity: 1;
-    color: var(--main-color,#666666);
+    color: var(--main-color);
 }
 
 .single-post a::before {
@@ -282,7 +282,7 @@ a:hover {
     right: 0;
     bottom: 0;
     height: 1px;
-    background: var(--main-color,#666666);
+    background: var(--main-color);
     -webkit-transition: width .3s ease;
     transition: width .3s ease;
 }
@@ -354,7 +354,7 @@ a:hover {
 }
 
 .typo h2::before {
-    color: var(--main-color,#666666);
+    color: var(--main-color);
     content: "# ";
     position: absolute;
     left: -1em;
@@ -372,7 +372,7 @@ a:hover {
     font-size: 1em;
 }
 
-.single-post li, .typo li {
+.single-post ul li, .typo ul li {
     list-style: circle;
 }
 
@@ -463,11 +463,11 @@ pre {
 }
 
 .author-card .author-card-bio a {
-    color: var(--main-color,#666666);
+    color: var(--main-color);
 }
 
 .author-card .author-card-bio a:hover {
-    color: var(--main-color,#666666);
+    color: var(--main-color);
 }
 
 /* POST-FOOTER TAGS */
@@ -507,7 +507,7 @@ pre {
 }
 
 .iconfont {
-    color: var(--main-color,#666666);
+    color: var(--main-color);
 }
 
 
@@ -535,7 +535,7 @@ pre {
 }
 
 .blog-footer a:hover {
-    color: var(--main-color,#666666);
+    color: var(--main-color);
 }
 
 /* TOC */
@@ -563,11 +563,11 @@ pre {
 
 #toc a:hover {
     padding: 0;
-    color: var(--main-color,#666666);
+    color: var(--main-color);
 }
 
 #toc .active a {
-    color: var(--main-color,#666666);
+    color: var(--main-color);
 }
 
 #toc ul {
@@ -578,7 +578,7 @@ pre {
     display: block;
 }
 
-/* COMMENT PATCH */
+/* VALINE PATCH */
 #comment {
     margin-top: 3.2em;
     position: relative;
@@ -594,7 +594,7 @@ pre {
 }
 
 #comment .comment-header::before {
-    color: var(--main-color,#666666);
+    color: var(--main-color);
     content: "@ ";
     position: absolute;
     left: -1em;
@@ -607,7 +607,7 @@ pre {
 }
 
 #comment-box .vlist .vcard .vhead .vname:hover {
-    color: var(--main-color,#666666);
+    color: var(--main-color);
 }
 
 #comment-box .veditor {
@@ -621,7 +621,7 @@ pre {
 }
 
 #comment-box .veditor:focus {
-    border: 1px solid var(--main-color,#666666);
+    border: 1px solid var(--main-color);
     height: 7em;
     background: #ffffff;
 }
@@ -651,7 +651,7 @@ pre {
 }
 
 #comment-box .vwrap .vheader .vinput:focus {
-    border: 1px solid var(--main-color,#666666);
+    border: 1px solid var(--main-color);
 }
 
 #comment-box .vwrap .vheader .vinput:focus {
@@ -682,8 +682,8 @@ pre {
 #comment-box .vbtn:active, #comment-box .vbtn:hover {
     color: #fff;
     opacity: .7;
-    border-color: var(--main-color,#666666);
-    background-color: var(--main-color,#666666);
+    border-color: var(--main-color);
+    background-color: var(--main-color);
 }
 
 #comment-box .vlist .vcard section .vfooter .vat {
@@ -691,7 +691,7 @@ pre {
 }
 
 #comment-box .vlist .vcard section .vfooter .vat:hover {
-    color: var(--main-color,#666666);
+    color: var(--main-color);
 }
 
 #comment-box .vlist .vcard .vcontent {
@@ -700,12 +700,12 @@ pre {
 
 #comment-box .vlist .vcard .vcontent a {
     opacity: .7;
-    color: var(--main-color,#666666);
+    color: var(--main-color);
 }
 
 #comment-box .vlist .vcard .vcontent a:hover {
     opacity: 1;
-    color: var(--main-color,#666666);
+    color: var(--main-color);
 }
 
 #comment-box .vlist .vcard .vhead .vsys {
@@ -726,25 +726,30 @@ pre {
 }
 
 #comment-box a:hover {
-    color: var(--main-color,#666666);
+    color: var(--main-color);
 }
 
 #comment-box a::before {
-    background: var(--main-color,#666666);
+    background: var(--main-color);
 }
 
 #comment-box .vlist .vcard .vhead .vnick::before {
-    background: var(--main-color,#666666);
+    background: var(--main-color);
+}
+
+/* GITMENT PATCH */
+#comment-box .gt-container .gt-svg svg {
+    fill: #666666;
 }
 
 /* LOADING BAR */
 /* Make clicks pass-through */
 #nprogress {
     pointer-events: none;
-  }
+}
   
-  #nprogress .bar {
-    background: var(--main-color,#666666);
+#nprogress .bar {
+    background: var(--main-color);
   
     position: fixed;
     z-index: 1031;
@@ -753,64 +758,64 @@ pre {
   
     width: 100%;
     height: 2px;
-  }
+}
   
-  /* Fancy blur effect */
-  #nprogress .peg {
+/* Fancy blur effect */
+#nprogress .peg {
     display: block;
     position: absolute;
     right: 0px;
     width: 100px;
     height: 100%;
-    box-shadow: 0 0 10px var(--main-color,#666666), 0 0 5px var(--main-color,#666666);
+    box-shadow: 0 0 10px var(--main-color), 0 0 5px var(--main-color);
     opacity: 1.0;
   
     -webkit-transform: rotate(3deg) translate(0px, -4px);
-        -ms-transform: rotate(3deg) translate(0px, -4px);
-            transform: rotate(3deg) translate(0px, -4px);
-  }
+    -ms-transform: rotate(3deg) translate(0px, -4px);
+    transform: rotate(3deg) translate(0px, -4px);
+}
   
-  /* Remove these to get rid of the spinner */
-  #nprogress .spinner {
+/* Remove these to get rid of the spinner */
+#nprogress .spinner {
     display: block;
     position: fixed;
     z-index: 1031;
     top: 15px;
     right: 15px;
-  }
+}
   
-  #nprogress .spinner-icon {
+#nprogress .spinner-icon {
     width: 18px;
     height: 18px;
     box-sizing: border-box;
   
     border: solid 2px transparent;
-    border-top-color: var(--main-color,#666666);
-    border-left-color: var(--main-color,#666666);
+    border-top-color: var(--main-color);
+    border-left-color: var(--main-color);
     border-radius: 50%;
   
     -webkit-animation: nprogress-spinner 400ms linear infinite;
-            animation: nprogress-spinner 400ms linear infinite;
-  }
+    animation: nprogress-spinner 400ms linear infinite;
+}
   
-  .nprogress-custom-parent {
+.nprogress-custom-parent {
     overflow: hidden;
     position: relative;
-  }
+}
   
-  .nprogress-custom-parent #nprogress .spinner,
-  .nprogress-custom-parent #nprogress .bar {
+.nprogress-custom-parent #nprogress .spinner,
+.nprogress-custom-parent #nprogress .bar {
     position: absolute;
-  }
+}
   
-  @-webkit-keyframes nprogress-spinner {
+@-webkit-keyframes nprogress-spinner {
     0%   { -webkit-transform: rotate(0deg); }
     100% { -webkit-transform: rotate(360deg); }
-  }
-  @keyframes nprogress-spinner {
+}
+@keyframes nprogress-spinner {
     0%   { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
-  }
+}
 
 /* GO TO TOP */
 
@@ -846,7 +851,7 @@ pre {
 }
 
 #archives-list a:hover {
-    color: var(--main-color,#666666);
+    color: var(--main-color);
 }
 
 #archives-list .search-item {
