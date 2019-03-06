@@ -21,7 +21,7 @@
             </section>
         </header>
 
-        <div id="archives-list" class="typo">
+        {{!-- <div id="archives-list" class="typo">
             {{#get "posts" limit="all" order="published_at desc"}}
                 {{#foreach posts }}
                     <h2>{{date published_at format="YYYY"}}</h2>
@@ -33,7 +33,58 @@
                     </ul>
                 {{/foreach}}
             {{/get}}
+        </div> --}}
+
+        <ul id="archives-list" class="typo">
+            {{#get "posts" limit="all" order="published_at desc"}}
+                {{#foreach posts}}
+                <li class='archives-item' date="{{date format='YYYY'}}">
+                    <time>{{date published_at format="MM-DD"}}</time>
+                    <a href='{{url}}'>{{title}}</a>
+                </li>
+                {{/foreach}}
+            {{/get}}
         </div>
     </article>
 </main>
+
+<script>
+    // 方法1：先输出列表再添加年份，修改自 @xiaoluoboding
+    var yearArray = new Array();
+    $(".archives-item").each(function() {
+        var archivesYear = $(this).attr("date");
+        yearArray.push(archivesYear);
+    });
+    var uniqueYear = $.unique(yearArray);
+    for (var i = 0; i < uniqueYear.length; i++) {
+        var html = "<h2>" + uniqueYear[i] + "</h2>";
+        $("[date='" + uniqueYear[i] + "']:first").before(html);
+    }
+    //方法2：同时输出年份和列表，修改自 @ldsun
+    // $.get(ghost.url.api('posts', {
+    //     limit: 'all',
+    //     order: "published_at desc"
+    // })).done(function(data) {
+    //     var posts = data.posts;
+    //     var count = posts.length;
+    //     for (var i = 0, pre_year = 0; i < count; i++) {
+    //         //调用moment.js对时间戳进行操作
+    //         var time = moment(posts[i].published_at);
+    //         var year = time.year();
+    //         var title = posts[i].title;
+    //         var url = posts[i].url;
+    //         if (year != pre_year) {
+    //             var html = "<h2>"+year+"</h2>"+
+    //             "<ul id='year-"+year+"'></ul>"
+    //             $(html).appendTo("#archives-list");
+    //         }
+    //         var html = "<li><time>"+time.format("MM-DD")+"</time><a href='"+url+"'>"+title+"</a></li>";
+    //         $(html).appendTo("#year-"+year);
+    //         pre_year = year;   
+    //     }
+    // }).fail(function(err) {
+    //     console.log(err);
+    // });
+</script>
+
 {{/post}}
