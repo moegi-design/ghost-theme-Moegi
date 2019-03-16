@@ -215,6 +215,7 @@ a:hover {
     margin-right: 0.4em;
     background: #f6f6f6;
     color: #9EABB3;
+    white-space: nowrap;
 }
 
 .tags a:hover {
