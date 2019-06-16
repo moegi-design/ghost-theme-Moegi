@@ -6,8 +6,6 @@
 
 一个新的 Moegi 工程正在进行中。点击下方链接查看最新进度&出谋划策
 
-> 由于个人最近事务繁杂和一些其他原因，近期 Moegi 及 Moegi 2 的更新 & bugfix 将会放缓。后期 Moegi 2 将会转入 [Moegi.Design](http://moegi.design) 体系继续致力于更优雅的设计~
-
 [Let's Begin Moegi 2](https://github.com/ddiu8081/ghost-theme-Moegi/issues/15)
 
 ## 介绍
