@@ -1,5 +1,7 @@
 # Moegi「萌黄」 - 一个优雅有趣的Ghost主题
 
+> Introducing our new [Moegi.Design](http://moegi.design)
+
 ## 共同设计 Moegi 2!
 
 一个新的 Moegi 工程正在进行中。点击下方链接查看最新进度&出谋划策
