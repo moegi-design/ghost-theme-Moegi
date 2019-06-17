@@ -165,6 +165,18 @@ a:hover {
     padding-bottom: 1em;
 }
 
+.post-header.with-img {
+    display: flex;
+    align-items: center;
+}
+
+.post-header.with-img .image {
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    margin-right: 16px;
+}
+
 .post-title {
     font-size: 1.6em;
     color: #606266;
