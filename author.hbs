@@ -1,0 +1,31 @@
+{{!< default}}
+
+<header>
+    <div class="post-blog-title">
+        <a href="{{@blog.url}}"><i class="iconfont icon-back"></i>&nbsp;{{@blog.title}}</a>
+        <div class="post-nav">
+            {{navigation}}
+        </div>
+    </div>
+</header>
+
+<main role="main">
+    <header class="post-header with-img">
+        {{#if author.profile_image}}
+            <img class="image" src="{{author.profile_image}}" alt="{{author.name}}" />
+        {{/if}}
+        <div class="header-content">
+            <h1 class="post-title">{{author.name}}</h1>
+            <section class="post-meta">
+                {{#if author.bio}}
+                    {{author.bio}}
+                {{else}}
+                    作者共有{{pagination.total}}篇文章
+                {{/if}}
+            </section>
+        </div>
+    </header>
+
+    {{> "loop"}}
+
+</main>

@@ -1,0 +1,22 @@
+{
+    "name": "moegi",
+    "description": "An elegant & interesting Ghost theme.",
+    "keywords": [
+        "ghost-theme"
+    ],
+    "version": "1.10.2",
+    "engines": {
+        "ghost": ">=1.0.0",
+        "ghost-api": "v2"
+    },
+    "license": "MIT",
+    "author": {
+        "name": "ddiu8081",
+        "email": "i@ddiu.site",
+        "url": "https://ddiu.site"
+    },
+    "config": {
+        "posts_per_page": 8
+    },
+    "homepage": "https://github.com/ddiu8081/ghost-theme-Moegi"
+}
