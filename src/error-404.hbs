@@ -1,0 +1,23 @@
+{{!< default}}
+
+{{> "site-header"}}
+
+<main role="main">
+  <h1>
+    {{code}}
+  </h1>
+  <p>
+    {{message}}
+  </p>
+  <a href="{{@blog.url}}">
+    {{t "Go to the front page →"}}
+  </a>
+</main>
+{{#get "posts" limit="3"}}
+  <aside>
+    <h2>
+      {{t "Some other posts"}}
+    </h2>
+    {{> "loop"}}
+  </aside>
+{{/get}}

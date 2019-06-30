@@ -1,0 +1,44 @@
+{{!< default}}
+
+{{> "site-header"}}
+
+{{#post}}
+  <main role="main">
+    <article class="{{post_class}}">
+      <header>
+        <h1>
+          {{{title}}}
+        </h1>
+        <time datetime="{{date format="YYYY-MM-DD"}}">
+          {{date format='DD MMM YYYY'}}
+        </time>
+        {{tags prefix=(t " on ") separator=" | "}}
+        {{#if feature_image}}
+          <figure>
+            <img src="{{feature_image}}">
+          </figure>
+        {{/if}}
+      </header>
+      <section>
+        {{content}}
+      </section>
+      <footer>
+        <section>
+          {{> "authors" }}
+        </section>
+        <section>
+          {{t "Share this post"}}
+          <a href="https://twitter.com/share?text={{encode title}}&amp;url={{url absolute="true"}}"
+            onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+            {{t "Twitter"}}
+          </a>
+          {{t " or "}}
+          <a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
+            onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+            {{t "Facebook"}}
+          </a>
+        </section>
+      </footer>
+    </article>
+  </main>
+{{/post}}

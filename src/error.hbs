@@ -1,0 +1,35 @@
+{{!< default}}
+
+{{> "site-header"}}
+
+<main role="main">
+  <h1>
+    {{code}}
+  </h1>
+  <p>
+    {{message}}
+  </p>
+  <a href="{{@blog.url}}">
+    {{t "Go to the front page →"}}
+  </a>
+  {{#if errorDetails}}
+    <section>
+      <h3>{{t "Theme errors"}}</h3>
+      <ul>
+        {{#each errorDetails}}
+          <li>
+            <em>{{{rule}}}</em>
+            {{#each failures}}
+              <p>
+                {{t "Ref"}}: {{ref}}
+              </p>
+              <p>
+                {{t "Message"}}: {{message}}
+              </p>
+            {{/each}}
+          </li>
+        {{/each}}
+      </ul>
+    </section>
+  {{/if}}
+</main>

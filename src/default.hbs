@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="{{lang}}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{{meta_title}}</title>
+    <link rel="stylesheet" type="text/css" href="{{asset "css/app.css"}}">
+    {{ghost_head}}
+  </head>
+  <body class="{{body_class}}">
+    {{{body}}}
+    <footer>
+      <a href="{{@blog.url}}/rss/">
+        {{t "Subscribe via RSS!"}}
+      </a>
+      {{#if @labs.subscribers}}
+        {{subscribe_form placeholder=(t "youremail@example.com")}}
+      {{/if}}
+      <section>
+        <a href="{{@blog.url}}/">{{@blog.title}}</a>
+        &copy; {{date format="YYYY"}} &bull; {{t "All rights reserved."}}
+      </section>
+    </footer>
+    {{ghost_foot}}
+    <script type="text/javascript" src="{{asset "js/app.js"}}"></script>
+  </body>
+</html>

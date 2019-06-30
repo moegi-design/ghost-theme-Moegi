@@ -1,0 +1,43 @@
+{{!< default}}
+
+{{#author}}
+  <header
+    {{#if cover_image}}
+      style="background-image: url({{cover_image}})"
+    {{else if @blog.cover_image}}
+      style="background-image: url({{@blog.cover_image}}"
+    {{/if}}>
+    {{#if profile_image}}
+      <figure>
+        <img src="{{profile_image}}" alt="{{{t '{name}’s Picture' name=name }}}">
+      </figure>
+    {{/if}}
+    <h1>
+      {{name}}
+    </h1>
+    <p>
+      {{bio}}
+    </p>
+    <ul>
+      <li>
+        {{#if location}}
+          {{location}}
+        {{/if}}
+      </li>
+      <li>
+        {{#if website}}
+          <a href="{{website}}">
+            {{website}}
+          </a>
+        {{/if}}
+      </li>
+      <li>
+        {{plural ../pagination.total empty=(t "No posts") singular=(t "1 post") plural=(t "% posts")}}
+      </li>
+    </ul>
+  </header>
+{{/author}}
+
+<main role="main">
+  {{> "loop"}}
+</main>

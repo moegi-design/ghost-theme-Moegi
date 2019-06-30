@@ -1,0 +1,27 @@
+{
+  "name": "ghost-theme-moegi",
+  "version": "2.0.0",
+  "description": "An elegant & fresh ghost theme.",
+  "keywords": [
+    "ghost-theme",
+    "ghost"
+  ],
+  "author": {
+    "name": "ddiu8081",
+    "email": "ddiu8081@gmail.com",
+    "url": "https://ddiu.site"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/moegi-design/ghost-theme-Moegi",
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "del": "^4.1.1",
+    "gscan": "^2.6.2",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-stylus": "^2.7.0",
+    "gulp-uglify": "^3.0.2",
+    "gulp-zip": "^5.0.0"
+  }
+}

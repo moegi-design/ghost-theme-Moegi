@@ -1,0 +1,16 @@
+{{#if authors}}
+  <ul>
+    {{#foreach authors}}
+      <li>
+        {{#if profile_image}}
+          <figure>
+            <img src="{{profile_image}}"  alt="{{{t '{name}’s Picture' name=name }}}">
+          </figure>
+        {{/if}}
+        <a href="{{url}}" title="{{name}}" class="author author-{{id}} {{slug}}">
+          {{name}}
+        </a>
+      </li>
+    {{/foreach}}
+  </ul>
+{{/if}}
