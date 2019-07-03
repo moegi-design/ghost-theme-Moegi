@@ -20,8 +20,13 @@
     "gscan": "^2.6.2",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
+    "gulp-concat": "^2.6.1",
     "gulp-stylus": "^2.7.0",
     "gulp-uglify": "^3.0.2",
-    "gulp-zip": "^5.0.0"
+    "gulp-zip": "^5.0.0",
+    "stylus-px2rem": "^1.0.14"
+  },
+  "dependencies": {
+    "prismjs": "^1.16.0"
   }
 }

@@ -1,14 +1,17 @@
 const { series, src, dest } = require('gulp')
+const concat = require('gulp-concat')
 const uglify = require('gulp-uglify')
 const stylus = require('gulp-stylus')
+const px2rem = require('stylus-px2rem')
 const babel = require('gulp-babel')
 const zip = require('gulp-zip')
 const del = require('del')
 const gscan = require('gscan')
 
 const paths = {
-  css: './src/assets/css/*.styl',
+  css: './src/assets/css/*',
   js: './src/assets/js/*.js',
+  js_vendor: './src/assets/js/lib/*.js'
 }
 
 function clean() {
@@ -29,20 +32,24 @@ function packTemplate() {
 }
 
 function packJs() {
-  return src(paths.js)
+  src([paths.js_vendor, paths.js])
     .pipe(babel({
       presets: ['@babel/env']
     }))
+    .pipe(concat('moegi.js'))
     .pipe(uglify())
-    .pipe(dest('./dist/assets/js/'))
+    .pipe(dest('./dist/assets/'))
+  return Promise.resolve()
 }
 
 function packCss() {
   return src(paths.css)
     .pipe(stylus({
+      use: [px2rem()],
       compress: true
     }))
-    .pipe(dest('./dist/assets/css/'))
+    .pipe(concat('moegi.css'))
+    .pipe(dest('./dist/assets/'))
 }
 
 function generateZip() {

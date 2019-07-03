@@ -5,12 +5,12 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>{{meta_title}}</title>
-    <link rel="stylesheet" type="text/css" href="{{asset "css/app.css"}}">
+    <link rel="stylesheet" type="text/css" href="{{asset "moegi.css"}}">
     {{ghost_head}}
   </head>
   <body class="{{body_class}}">
     {{{body}}}
-    <footer>
+    <footer class="site-footer">
       <a href="{{@blog.url}}/rss/">
         {{t "Subscribe via RSS!"}}
       </a>
@@ -23,6 +23,6 @@
       </section>
     </footer>
     {{ghost_foot}}
-    <script type="text/javascript" src="{{asset "js/app.js"}}"></script>
+    <script type="text/javascript" src="{{asset "moegi.js"}}"></script>
   </body>
 </html>

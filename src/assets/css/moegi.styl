@@ -1,12 +1,75 @@
-body {
-    font-size: 16px;
+@import 'stylus-px2rem'
+
+body
+  font: 16px/1.85 "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Microsoft Yahei", "Wenquanyi Micro Hei", sans-serif;
+  margin: 0;
+  padding: 0;
+
+.container
+  width: 700px;
+  margin: 0 auto;
+
+h1, h2, h3, h4, h5, h6
+  font-weight: bold;
+
+/* FOOTER */
+
+.site-footer
+  margin: 60px auto 20px;
+  text-align: center;
+  color: #dddddd;
+  font-size: 12px;
+  line-height: 1.4;
+
+/* POST */
+
+h2
+  font-size: 28px;
+  letter-spacing: 2px;
+  margin: 90px 0 36px;
+
+.post-header
+  padding-top: 140px;
+  margin-bottom: 50px;
+  .post-title
+    font-size: 32px;
+    font-weight: normal;
+    margin: 0;
+  .post-meta
+    .post-date
+      font-size: 14px;
+      color: #909399;
+      margin: 0;
+
+img {
+  max-width: 100%;
 }
 
-.a {
-    .aaa {
-        font-size: 12px;
-        &:hover {
-            color: #666;
-        }
-    }
-}
+blockquote
+  margin: 0;
+  background: #f9f9f9;
+  padding: 12px 24px;
+
+.kg-image-card
+  // Post image figure
+
+.kg-width-wide
+  margin: 0 -50px;
+
+.kg-width-full
+  width: 100%;
+
+.kg-image
+  max-width: 100%;
+
+.kg-embed-card
+  // Post embeded iframe content
+
+.kg-gallery-container
+  // Post gallery container
+
+.kg-gallery-row
+  // Post gallery row
+
+.kg-gallery-image
+  // Post gallery image
