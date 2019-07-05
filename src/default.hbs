@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{lang}}">
+<html lang="{{@site.lang}}">
   <head>
     <meta charset="utf-8">
     <meta name="viewport"
@@ -11,14 +11,14 @@
   <body class="{{body_class}}">
     {{{body}}}
     <footer class="site-footer">
-      <a href="{{@blog.url}}/rss/">
+      <a href="{{@site.url}}/rss/">
         {{t "Subscribe via RSS!"}}
       </a>
       {{#if @labs.subscribers}}
         {{subscribe_form placeholder=(t "youremail@example.com")}}
       {{/if}}
       <section>
-        <a href="{{@blog.url}}/">{{@blog.title}}</a>
+        <a href="{{@site.url}}/">{{@site.title}}</a>
         &copy; {{date format="YYYY"}} &bull; {{t "All rights reserved."}}
       </section>
     </footer>

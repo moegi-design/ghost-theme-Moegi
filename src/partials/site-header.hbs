@@ -1,16 +1,16 @@
 <header
-  {{#if @blog.cover_image}}
-    style="background-image: url({{@blog.cover_image}})"
+  {{#if @site.cover_image}}
+    style="background-image: url({{@site.cover_image}})"
   {{/if}}>
-  {{#if @blog.logo}}
-    <a href="{{@blog.url}}">
-      <img src="{{@blog.logo}}" alt="{{t "Logo"}}">
+  {{#if @site.logo}}
+    <a href="{{@site.url}}">
+      <img src="{{@site.logo}}" alt="{{t "Logo"}}">
     </a>
   {{/if}}
   <h1>
-    {{@blog.title}}
+    {{@site.title}}
   </h1>
   <p>
-    {{@blog.description}}
+    {{@site.description}}
   </p>
 </header>

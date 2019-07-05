@@ -9,26 +9,26 @@
   <p>
     {{message}}
   </p>
-  <a href="{{@blog.url}}">
+  <a href="{{@site.url}}">
     {{t "Go to the front page →"}}
   </a>
   {{#if errorDetails}}
     <section>
       <h3>{{t "Theme errors"}}</h3>
       <ul>
-        {{#each errorDetails}}
+        {{#foreach errorDetails}}
           <li>
             <em>{{{rule}}}</em>
-            {{#each failures}}
+            {{#foreach failures}}
               <p>
                 {{t "Ref"}}: {{ref}}
               </p>
               <p>
                 {{t "Message"}}: {{message}}
               </p>
-            {{/each}}
+            {{/foreach}}
           </li>
-        {{/each}}
+        {{/foreach}}
       </ul>
     </section>
   {{/if}}

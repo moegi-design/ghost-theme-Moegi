@@ -11,6 +11,9 @@
     "email": "ddiu8081@gmail.com",
     "url": "https://ddiu.site"
   },
+  "scripts": {
+    "build": "gulp"
+  },
   "license": "MIT",
   "homepage": "https://github.com/moegi-design/ghost-theme-Moegi",
   "devDependencies": {
