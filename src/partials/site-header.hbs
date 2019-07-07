@@ -2,13 +2,14 @@
   {{#if @site.cover_image}}
     style="background-image: url({{@site.cover_image}})"
   {{/if}}>
-  {{#if @site.logo}}
-    <a href="{{@site.url}}">
-      <img src="{{@site.logo}}" alt="{{t "Logo"}}">
-    </a>
-  {{/if}}
-  <h1>
-    {{@site.title}}
+  <h1 class="site-title">
+    {{#if @site.logo}}
+      <a href="{{@site.url}}">
+        <img class="site-logo" src="{{@site.logo}}" alt="{{t "Logo"}}">
+      </a>
+    {{else}}
+      {{@site.title}}
+    {{/if}}
   </h1>
   <p>
     {{@site.description}}

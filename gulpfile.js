@@ -1,4 +1,4 @@
-const { series, src, dest } = require('gulp')
+const { series, src, dest, watch } = require('gulp')
 const concat = require('gulp-concat')
 const uglify = require('gulp-uglify')
 const stylus = require('gulp-stylus')
@@ -68,10 +68,19 @@ function scan() {
     // checkVersion: 'v1',
     name: 'my-theme'
   }).then(function (result) {
-    console.log(result);
+    console.log(result)
   }).catch(function(err) {
-    console.log(err);
-  });
+    console.log(err)
+  })
 }
 
-exports.default = series(clean, packTemplate, packJs, packCss, generateZip);
+function watchFiles() {
+  watch('./src/*', (cb) => {
+    series(clean, packTemplate, packJs, packCss)
+    console.log('hhhhhhhhhh')
+    cb()
+  })
+}
+
+exports.default = series(clean, packTemplate, packJs, packCss, generateZip)
+exports.watch = watchFiles;

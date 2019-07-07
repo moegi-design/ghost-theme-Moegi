@@ -1,7 +1,7 @@
 @import 'stylus-px2rem'
 
 body
-  font: 16px/1.85 "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Microsoft Yahei", "Wenquanyi Micro Hei", sans-serif;
+  font: 16px/1.85 "Open Sans", "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Microsoft Yahei", "Wenquanyi Micro Hei", sans-serif;
   margin: 0;
   padding: 0;
 
@@ -11,6 +11,11 @@ body
 
 h1, h2, h3, h4, h5, h6
   font-weight: bold;
+
+/* HEADER */
+.site-title
+  .site-logo
+    height: 64px;
 
 /* FOOTER */
 
@@ -26,7 +31,7 @@ h1, h2, h3, h4, h5, h6
 h2
   font-size: 28px;
   letter-spacing: 2px;
-  margin: 90px 0 36px;
+  margin: 72px 0 36px;
 
 .post-header
   padding-top: 140px;
@@ -40,6 +45,13 @@ h2
       font-size: 14px;
       color: #909399;
       margin: 0;
+  .post-full-image
+    margin: 0 -50px;
+    padding: 0;
+    width: 800px;
+    height: 360px;
+    border-radius: 10px;
+    overflow: hidden;
 
 img {
   max-width: 100%;

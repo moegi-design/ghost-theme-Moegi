@@ -15,8 +15,18 @@
           </section>
           <h1 class="post-title">{{title}}</h1>
           {{#if feature_image}}
-            <figure>
-              <img src="{{feature_image}}">
+            <figure class="post-full-image">
+              <img
+                srcset="{{img_url feature_image size="s"}} 300w,
+                        {{img_url feature_image size="m"}} 600w,
+                        {{img_url feature_image size="l"}} 1000w,
+                        {{img_url feature_image size="xl"}} 2000w"
+                sizes="(max-width: 800px) 400px,
+                        (max-width: 1170px) 700px,
+                        1400px"
+                src="{{img_url feature_image size="xl"}}"
+                alt="{{title}}"
+              />
             </figure>
           {{/if}}
         </header>
