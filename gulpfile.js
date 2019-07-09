@@ -75,11 +75,7 @@ function scan() {
 }
 
 function watchFiles() {
-  watch('./src/*', (cb) => {
-    series(clean, packTemplate, packJs, packCss)
-    console.log('hhhhhhhhhh')
-    cb()
-  })
+  watch('./src/**/*', series(clean, packTemplate, packJs, packCss))
 }
 
 exports.default = series(clean, packTemplate, packJs, packCss, generateZip)

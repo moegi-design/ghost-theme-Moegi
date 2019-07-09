@@ -4,34 +4,27 @@
 
 {{#post}}
   <main role="main">
-    <div class="container">
       <article class="{{post_class}}">
-        <header class="post-header">
-          <section class="post-meta">
-            <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">
-              {{date format=(t "date-format")}}
-            </time>
-            {{!-- {{tags prefix=(t " on ") separator=" | "}} --}}
-          </section>
-          <h1 class="post-title">{{title}}</h1>
-          {{#if feature_image}}
-            <figure class="post-full-image">
-              <img
-                srcset="{{img_url feature_image size="s"}} 300w,
-                        {{img_url feature_image size="m"}} 600w,
-                        {{img_url feature_image size="l"}} 1000w,
-                        {{img_url feature_image size="xl"}} 2000w"
-                sizes="(max-width: 800px) 400px,
-                        (max-width: 1170px) 700px,
-                        1400px"
-                src="{{img_url feature_image size="xl"}}"
-                alt="{{title}}"
-              />
-            </figure>
-          {{/if}}
+        <header class="post-header" style="background-image: linear-gradient(to bottom,rgba(255,255,255,0.88),#ffffff), url({{img_url feature_image}})">
+          <div class="header-container">
+            <section class="post-meta">
+              <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">
+                {{date format=(t "date-format")}}
+              </time>
+            </section>
+            <h1 class="post-title">{{title}}</h1>
+            <section class="post-tags">
+              {{tags separator=""}}
+            </section>
+            {{#if feature_image}}
+              <figure class="post-full-image" style="background-image: url({{img_url feature_image}})" />
+            {{/if}}
+          </div>
         </header>
         <section>
-          {{content}}
+          <div class="container">
+            {{content}}
+          </div>
         </section>
         {{!-- <footer>
           <section>
@@ -51,6 +44,5 @@
           </section>
         </footer> --}}
       </article>
-    </div>
   </main>
 {{/post}}

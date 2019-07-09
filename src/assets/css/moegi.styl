@@ -12,6 +12,10 @@ body
 h1, h2, h3, h4, h5, h6
   font-weight: bold;
 
+a
+  text-decoration: none;
+  color: #86B81B;
+
 /* HEADER */
 .site-title
   .site-logo
@@ -29,30 +33,53 @@ h1, h2, h3, h4, h5, h6
 /* POST */
 
 h2
-  font-size: 28px;
+  position: relative;
+  font-size: 24px;
   letter-spacing: 2px;
   margin: 72px 0 36px;
+  &::before
+    content: "# ";
+    color: #86B81B;
+    position: absolute;
+    left: -1em;
 
 .post-header
   padding-top: 140px;
   margin-bottom: 50px;
-  .post-title
-    font-size: 32px;
-    font-weight: normal;
-    margin: 0;
-  .post-meta
-    .post-date
-      font-size: 14px;
-      color: #909399;
+  background-size: cover;
+  .header-container
+    width: 700px;
+    margin: 0 auto;
+    .post-title
+      line-height: 1.2;
+      font-size: 32px;
+      font-weight: normal;
       margin: 0;
-  .post-full-image
-    margin: 0 -50px;
-    padding: 0;
-    width: 800px;
-    height: 360px;
-    border-radius: 10px;
-    overflow: hidden;
-
+    .post-meta
+      .post-date
+        font-size: 14px;
+        color: #909399;
+        margin: 0;
+    .post-tags
+      margin-top: 10px;
+      a
+        font-size: 14px;
+        padding: 2px 6px;
+        margin-right: 8px;
+        background: rgba(0, 0, 0, 0.04);
+        color: #999999;
+        white-space: nowrap;
+        transition: all 0.3s ease;
+        &:hover
+          background: #86B81B90;
+          color: #ffffff;
+    .post-full-image
+      margin: 40px -50px;
+      padding: 0;
+      width: 800px;
+      height: 320px;
+      border-radius: 10px;
+      background-size: cover;
 img {
   max-width: 100%;
 }
