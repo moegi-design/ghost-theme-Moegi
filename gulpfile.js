@@ -8,10 +8,10 @@ const zip = require('gulp-zip')
 const del = require('del')
 const gscan = require('gscan')
 
-const paths = {
-  css: './src/assets/css/*',
-  js: './src/assets/js/*.js',
-  js_vendor: './src/assets/js/lib/*.js'
+const PATH = {
+  CSS: './src/assets/css/*',
+  JS: './src/assets/js/*.js',
+  JSLIB: './src/assets/js/lib/*.js'
 }
 
 function clean() {
@@ -32,7 +32,7 @@ function packTemplate() {
 }
 
 function packJs() {
-  src([paths.js_vendor, paths.js])
+  src([PATH.JSLIB, PATH.JS])
     .pipe(babel({
       presets: ['@babel/env']
     }))
@@ -43,7 +43,7 @@ function packJs() {
 }
 
 function packCss() {
-  return src(paths.css)
+  return src(PATH.CSS)
     .pipe(stylus({
       use: [px2rem()],
       compress: true

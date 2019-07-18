@@ -1,24 +1,28 @@
-<ul>
-  {{#foreach posts}}
-    <li class="{{post_class}}">
-      <h2>
-        <a href="{{url}}">{{{title}}}</a>
-      </h2>
-      <section>
-        <p>
-          {{excerpt words="26"}}
-          <a href="{{url}}">&raquo;</a>
-        </p>
-      </section>
-      <footer>
-        {{> "authors" }}
-        {{tags prefix=(t " on ")}}
-        <time datetime="{{date format='YYYY-MM-DD'}}">
-          {{date format="DD MMMM YYYY"}}
-        </time>
-      </footer>
-    </li>
-  {{/foreach}}
-</ul>
+{{#foreach posts}}
+  <div class="index-post {{post_class}}">
+    <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">
+      {{date format='MM.DD'}}
+    </time>
+    <a href="{{url}}" class="post-title">
+      <h2>{{title}}</h2>
+    </a>
+    <section class="post-tags">
+      {{tags separator=""}}
+    </section>
+    {{!-- <section>
+      <p>
+        {{excerpt words="26"}}
+        <a href="{{url}}">&raquo;</a>
+      </p>
+    </section> --}}
+    {{!-- <footer>
+      {{> "authors" }}
+      {{tags prefix=(t " on ")}}
+      <time datetime="{{date format='YYYY-MM-DD'}}">
+        {{date format="DD MMMM YYYY"}}
+      </time>
+    </footer> --}}
+  </div>
+{{/foreach}}
 
-{{pagination}}
+{{!-- {{pagination}} --}}
