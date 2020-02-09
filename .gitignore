@@ -1,3 +1,6 @@
-node_modules/
-dist/
-moegi.zip
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.pnp.*
+
+dist

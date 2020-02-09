@@ -1,59 +1,78 @@
 {
-  "name": "ghost-theme-moegi",
-  "version": "2.0.0",
-  "description": "An elegant & fresh ghost theme.",
-  "keywords": [
-    "ghost-theme",
-    "ghost"
-  ],
-  "author": {
-    "name": "ddiu8081",
-    "email": "ddiu8081@gmail.com",
-    "url": "https://ddiu.site"
-  },
-  "scripts": {
-    "dev": "gulp watch",
-    "build": "gulp"
-  },
-  "license": "MIT",
-  "homepage": "https://github.com/moegi-design/ghost-theme-Moegi",
-  "devDependencies": {
-    "@babel/core": "^7.4.5",
-    "@babel/preset-env": "^7.4.5",
-    "del": "^4.1.1",
-    "gscan": "^2.6.2",
-    "gulp": "^4.0.2",
-    "gulp-babel": "^8.0.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-stylus": "^2.7.0",
-    "gulp-uglify": "^3.0.2",
-    "gulp-zip": "^5.0.0",
-    "stylus-px2rem": "^1.0.14"
-  },
-  "dependencies": {
-    "prismjs": "^1.16.0"
-  },
-  "config": {
-    "posts_per_page": 25,
-    "image_sizes": {
-      "xxs": {
-        "width": 30
-      },
-      "xs": {
-        "width": 100
-      },
-      "s": {
-        "width": 300
-      },
-      "m": {
-        "width": 600
-      },
-      "l": {
-        "width": 1000
-      },
-      "xl": {
-        "width": 2000
-      }
-    }
-  }
+    "name": "ghost-theme-moegi",
+    "version": "2.0.0",
+    "description": "An elegant & fresh ghost theme.",
+    "demo": "https://notes.ddiu.site",
+    "engines": {
+        "ghost": ">=3.0.0",
+        "ghost-api": "v3"
+    },
+    "license": "MIT",
+    "screenshots": {
+        "desktop": "assets/screenshot-desktop.jpg",
+        "mobile": "assets/screenshot-mobile.jpg"
+    },
+    "scripts": {
+        "dev": "gulp",
+        "zip": "gulp zip",
+        "test": "gscan ."
+    },
+    "author": "ddiu8081 <ddiu8081@gmail.com> (https://ddiu.site)",
+    "gpm": {
+        "type": "theme",
+        "categories": [
+            "Minimal",
+            "Magazine"
+        ]
+    },
+    "keywords": [
+        "ghost-theme",
+        "theme",
+        "ghost"
+    ],
+    "repository": "https://github.com/moegi-design/ghost-theme-Moegi.git",
+    "devDependencies": {
+        "@babel/core": "^7.8.4",
+        "@babel/preset-env": "^7.8.4",
+        "gscan": "^2.10.0",
+        "gulp": "^4.0.2",
+        "gulp-babel": "^8.0.0",
+        "gulp-clean": "^0.4.0",
+        "gulp-concat": "^2.6.1",
+        "gulp-stylus": "^2.7.0",
+        "gulp-uglify": "^3.0.2",
+        "gulp-zip": "^5.0.1",
+        "pump": "^3.0.0",
+        "stylus": "^0.54.7"
+    },
+    "dependencies": {
+        "prismjs": "^1.19.0"
+    },
+    "browserslist": [
+        "defaults"
+    ],
+    "config": {
+        "posts_per_page": 15,
+        "image_sizes": {
+            "xxs": {
+                "width": 30
+            },
+            "xs": {
+                "width": 100
+            },
+            "s": {
+                "width": 300
+            },
+            "m": {
+                "width": 600
+            },
+            "l": {
+                "width": 1200
+            },
+            "xl": {
+                "width": 2000
+            }
+        }
+    },
+    "main": "index.js"
 }
