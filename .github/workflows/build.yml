@@ -1,23 +1,33 @@
-name: Build & Test
-
+name: Build & Test & Push to Github
 on:
   push:
     branches:
       - next
       - bugfix/github-actions
-
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v2
-    - name: Build on Node.js
-      uses: actions/setup-node@v1
-      with:
-        node-version: '10.x'
-    - run: yarn install
-    - run: yarn run build
-    - run: yarn run test
-      env:
-        CI: true
+      - uses: actions/checkout@v2
+      - name: Build on Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '10.x'
+      - run: yarn install
+      - run: yarn run build
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: GScan Theme
+      - run: yarn run test
+  push:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy on dist branch
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          publish_dir: ./dist
+          publish_branch: dist
