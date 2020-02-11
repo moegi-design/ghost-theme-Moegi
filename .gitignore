@@ -4,3 +4,4 @@
 .pnp.*
 
 dist
+node_modules

@@ -18,7 +18,11 @@
         "zip": "gulp zip",
         "test": "gscan ./dist"
     },
-    "author": "ddiu8081 <ddiu8081@gmail.com> (https://ddiu.site)",
+    "author": {
+        "name": "ddiu8081",
+        "email": "i@ddiu.site",
+        "url": "https://ddiu.site"
+    },
     "gpm": {
         "type": "theme",
         "categories": [
