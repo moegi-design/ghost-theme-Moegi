@@ -3,9 +3,8 @@ on:
   push:
     branches:
       - next
-      - bugfix/github-actions
 jobs:
-  build:
+  workflow:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
