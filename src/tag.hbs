@@ -1,23 +1,35 @@
 {{!< default}}
 
-{{> "site-header"}}
+<div class="gh-page">
+    <div class="gh-container">
 
-<main role="main">
-  <header>
-    <h1>{{tag.name}}</h1>
-    {{#if tag.description}}
-      <p>
-        {{tag.description}}
-      </p>
-    {{/if}}
-    <p>
-      {{plural pagination.total empty=(t "A collection of posts") singular=(t "A collection of 1 post") plural=(t "A collection of % posts")}}
-    </p>
-    {{#if tag.feature_image}}
-      <figure>
-        <img src="{{tag.feature_image}}" alt="{{name}}">
-      </figure>
-    {{/if}}
-  </header>
-  {{> "loop"}}
-</main>
+        {{#tag}}
+        <header class="gh-page-head">
+
+            <h1>{{name}}</h1>
+
+            <p>
+                {{#if description}}
+                    {{description}}
+                {{else}}
+                    A collection of {{plural ../pagination.total empty='posts' singular='% post' plural='% posts'}}
+                {{/if}}
+            </p>
+
+            {{#if feature_image}}
+                <img class="gh-page-image" src="{{feature_image}}" alt="{{name}}" />
+            {{/if}}
+
+        </header>
+        {{/tag}}
+
+        <div class="gh-postfeed">
+        {{#foreach posts}}
+
+            {{> "card"}} {{!-- partials/card.hbs --}}
+
+        {{/foreach}}
+        </div>
+
+    </div>
+</div>

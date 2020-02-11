@@ -1,0 +1,148 @@
+.container
+  max-width: 700px;
+  margin: 0 auto;
+
+h1, h2, h3, h4, h5, h6
+  font-weight: bold;
+
+a
+  text-decoration: none;
+  color: #86B81B;
+
+/* HEADER */
+
+.site-title
+  text-align: center;
+  .site-logo
+    height: 64px;
+
+/* FOOTER */
+
+.site-footer
+  margin: 60px auto 20px;
+  text-align: center;
+  color: #dddddd;
+  font-size: 12px;
+  line-height: 1.4;
+
+/* INDEX */
+.notice
+  background: #86B81B10;
+  padding: 20px 16px;
+  margin: 10px 20px;
+
+.index-post
+  display: flex;
+  margin: 4px 20px;
+  padding: 10px;
+  transition: background 0.3s ease;
+  align-items: center;
+  .post-date
+    color: #999999;
+    margin-right: 1em;
+  .post-title
+    color: #515151;
+    flex: 1;
+    h2
+      font-weight: 400;
+      font-size: 16px;
+  .post-tags
+    a
+      font-size: 14px;
+      padding: 2px 6px;
+      margin-right: 8px;
+      background: rgba(0, 0, 0, 0.04);
+      color: #999999;
+      white-space: nowrap;
+      transition: all 0.3s ease;
+      &:hover
+        background: #86B81B90;
+        color: #ffffff;
+  &:hover
+    background: #86B81B10;
+
+/* POST */
+.single-post
+  h2
+    position: relative;
+    font-size: 24px;
+    letter-spacing: 2px;
+    margin: 72px 0 36px;
+    &::before
+      content: "# ";
+      color: #86B81B;
+      position: absolute;
+      left: -1em;
+  .post-header
+    padding-top: 140px;
+    margin-bottom: 50px;
+    background-size: cover;
+    .header-container
+      width: 700px;
+      margin: 0 auto;
+      .post-title
+        line-height: 1.2;
+        font-size: 32px;
+        font-weight: normal;
+        margin: 0;
+      .post-meta
+        .post-date
+          font-size: 14px;
+          color: #909399;
+          margin: 0;
+      .post-tags
+        margin-top: 10px;
+        a
+          font-size: 14px;
+          padding: 2px 6px;
+          margin-right: 8px;
+          background: rgba(0, 0, 0, 0.04);
+          color: #999999;
+          white-space: nowrap;
+          transition: all 0.3s ease;
+          &:hover
+            background: #86B81B90;
+            color: #ffffff;
+      .post-full-image
+        margin: 40px -50px;
+        padding: 0;
+        width: 800px;
+        height: 320px;
+        border-radius: 10px;
+        background-size: cover;
+  .post-container
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+  img
+    max-width: 100%;
+
+  blockquote
+    margin: 0;
+    background: #f9f9f9;
+    padding: 12px 24px;
+
+  .kg-image-card
+    // Post image figure
+
+  .kg-width-wide
+    margin: 0 -50px;
+
+  .kg-width-full
+    width: 100%;
+
+  .kg-image
+    max-width: 100%;
+
+  .kg-embed-card
+    // Post embeded iframe content
+
+  .kg-gallery-container
+    // Post gallery container
+
+  .kg-gallery-row
+    // Post gallery row
+
+  .kg-gallery-image
+    // Post gallery image

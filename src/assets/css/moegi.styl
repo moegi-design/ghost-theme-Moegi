@@ -1,153 +1,185 @@
-body
-  font: 300 17px/1.85 "Open Sans", "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Microsoft Yahei", "Wenquanyi Micro Hei", sans-serif;
-  margin: 0;
-  padding: 0;
+@import "vars"
+@import "components/global"
 
-.container
-  max-width: 700px;
-  margin: 0 auto;
+/* Ghost components */
+@import "ghost/header"
+@import "ghost/content"
+@import "ghost/readmore"
+@import "ghost/members"
+@import "ghost/errors"
+@import "ghost/footer"
 
-h1, h2, h3, h4, h5, h6
-  font-weight: bold;
+// @media screen and (min-width: 1600px)
+// .main {
+//   width: 1000px;
+// }
 
-a
-  text-decoration: none;
-  color: #86B81B;
+html
+    background: var(--color-bg);
 
-/* HEADER */
-
-.site-title
-  text-align: center;
-  .site-logo
-    height: 64px;
-
-/* FOOTER */
-
-.site-footer
-  margin: 60px auto 20px;
-  text-align: center;
-  color: #dddddd;
-  font-size: 12px;
-  line-height: 1.4;
-
-/* INDEX */
-.notice
-  background: #86B81B10;
-  padding: 20px 16px;
-  margin: 10px 20px;
-
-.index-post
-  display: flex;
-  margin: 4px 20px;
-  padding: 10px;
-  transition: background 0.3s ease;
-  align-items: center;
-  .post-date
-    color: #999999;
-    margin-right: 1em;
-  .post-title
-    color: #515151;
-    flex: 1;
-    h2
-      font-weight: 400;
-      font-size: 16px;
-  .post-tags
-    a
-      font-size: 14px;
-      padding: 2px 6px;
-      margin-right: 8px;
-      background: rgba(0, 0, 0, 0.04);
-      color: #999999;
-      white-space: nowrap;
-      transition: all 0.3s ease;
-      &:hover
-        background: #86B81B90;
-        color: #ffffff;
-  &:hover
-    background: #86B81B10;
-
-/* POST */
-.single-post
-  h2
-    position: relative;
-    font-size: 24px;
-    letter-spacing: 2px;
-    margin: 72px 0 36px;
-    &::before
-      content: "# ";
-      color: #86B81B;
-      position: absolute;
-      left: -1em;
-  .post-header
-    padding-top: 140px;
-    margin-bottom: 50px;
-    background-size: cover;
-    .header-container
-      width: 700px;
-      margin: 0 auto;
-      .post-title
-        line-height: 1.2;
-        font-size: 32px;
-        font-weight: normal;
-        margin: 0;
-      .post-meta
-        .post-date
-          font-size: 14px;
-          color: #909399;
-          margin: 0;
-      .post-tags
-        margin-top: 10px;
-        a
-          font-size: 14px;
-          padding: 2px 6px;
-          margin-right: 8px;
-          background: rgba(0, 0, 0, 0.04);
-          color: #999999;
-          white-space: nowrap;
-          transition: all 0.3s ease;
-          &:hover
-            background: #86B81B90;
-            color: #ffffff;
-      .post-full-image
-        margin: 40px -50px;
-        padding: 0;
-        width: 800px;
-        height: 320px;
-        border-radius: 10px;
-        background-size: cover;
-  .post-container
-    max-width: 700px;
+.gh-viewport
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 1000px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 100px 100px;
+    background: #ffffff;
     box-sizing: border-box;
-  img
-    max-width: 100%;
 
-  blockquote
-    margin: 0;
-    background: #f9f9f9;
-    padding: 12px 24px;
+/* Index
+/* ---------------------------------------------------------- */
 
-  .kg-image-card
-    // Post image figure
+.gh-card:not(:first-child) {
+    margin: 8vmin auto 0;
+}
 
-  .kg-width-wide
-    margin: 0 -50px;
+.gh-card-link {
+    display: flex;
+    flex-direction: column;
+}
 
-  .kg-width-full
+.gh-card-image {
     width: 100%;
+    max-height: 700px;
+    object-fit: cover;
+    margin-bottom: 4vmin;
+}
 
-  .kg-image
-    max-width: 100%;
+.gh-card-meta {
+    display: block;
+    margin: 0 0 1rem;
+    font-size: 1.4rem;
+    line-height: 1.2em;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
 
-  .kg-embed-card
-    // Post embeded iframe content
+.gh-card-content {
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.6rem;
+}
 
-  .kg-gallery-container
-    // Post gallery container
+.gh-card-content p {
+    margin: 1.2rem 0;
+    padding: 0 6vmin;
+}
 
-  .kg-gallery-row
-    // Post gallery row
+.gh-card-content > strong {
+    display: inline-block;
+    padding: 1px 0;
+    font-weight: 500;
+    box-shadow: 0 -1px 0 0 inset currentColor;
+    opacity: 0.5;
+}
 
-  .kg-gallery-image
-    // Post gallery image
+
+/* Page
+/* ---------------------------------------------------------- */
+
+.gh-page-head {
+    margin: 0 auto;
+    padding: 8vmin 0 4vmin;
+    text-align: center;
+}
+
+.gh-page-image {
+    margin: 4vmin 0 0 0;
+}
+
+.gh-page-head > p {
+    max-width: 720px;
+    margin: 0.3em auto 0;
+    padding: 0 6vmin;
+    font-size: 1.3em;
+    line-height: 1.4em;
+    opacity: 0.5;
+}
+
+@media (max-width: 700px) {
+    .gh-page-head > p {
+        font-size: 1.6rem;
+    }
+}
+
+
+/* Post
+/* ---------------------------------------------------------- */
+
+.gh-header {
+    padding: 0 0 8vmin 0;
+    text-align: center;
+}
+
+.gh-post-meta {
+    display: block;
+    margin: 0 0 1rem;
+    font-size: 1.4rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
+.gh-excerpt {
+    margin: 1rem 0 0 0;
+}
+
+.gh-feature-image {
+    grid-column: wide-start / wide-end;
+    width: 100%;
+    margin: 8vmin 0 0;
+}
+
+.gh-post-footer {
+    margin: 2rem 0;
+}
+
+
+/* Author Archive
+/* ---------------------------------------------------------- */
+
+.gh-author-image {
+    height: 12vmin;
+    width: 12vmin;
+    margin: 0 auto 1.5em;
+    border-radius: 100%;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+.gh-author-meta {
+    margin: 2vmin 0 0 0;
+    font-size: 1.2em;
+}
+
+.gh-author-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gh-author-links a {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    margin: 0 0.75vmin;
+}
+
+.gh-author-links a + a:before {
+    display: block;
+    content: "";
+    margin: 0 1.25vmin 0 0;
+    height: 1em;
+    width: 1px;
+    background: rgba(0,0,0,0.3);
+    transform: rotate(20deg);
+}
+
+@media (max-width: 700px) {
+    .gh-author-meta {
+        font-size: 1.6rem;
+    }
+}

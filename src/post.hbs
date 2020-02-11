@@ -1,48 +1,53 @@
 {{!< default}}
 
-{{!-- {{> "site-header"}} --}}
-
 {{#post}}
-  <main role="main">
-      <article class="single-post {{post_class}}">
-        <header class="post-header" style="background-image: linear-gradient(to bottom,rgba(255,255,255,0.88),#ffffff), url({{img_url feature_image}})">
-          <div class="header-container">
-            <section class="post-meta">
-              <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">
-                {{date format=(t "date-format")}}
-              </time>
-            </section>
-            <h1 class="post-title">{{title}}</h1>
-            <section class="post-tags">
-              {{tags separator=""}}
-            </section>
-            {{#if feature_image}}
-              <figure class="post-full-image" style="background-image: url({{img_url feature_image}})" />
-            {{/if}}
-          </div>
-        </header>
-        <section>
-          <div class="post-container">
-            {{content}}
-          </div>
+
+<article class="gh-article {{post_class}}">
+
+    <header class="gh-header gh-canvas">
+        <span class="gh-post-meta"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time> <span class="bull">&bull;</span> {{reading_time}}</span>
+        <h1 class="gh-title">{{title}}</h1>
+
+        {{#if custom_excerpt}}
+        <p class="gh-excerpt">{{custom_excerpt}}</p>
+        {{/if}}
+
+        {{#if feature_image}}
+            <img class="gh-feature-image" src="{{feature_image}}" alt="{{title}}" />
+        {{/if}}
+    </header>
+
+    <div class="gh-content gh-canvas">
+        {{content}}
+    </div>
+
+    <footer class="gh-footer gh-canvas">
+
+        <div class="gh-post-authors">
+            Written by {{#foreach authors}}<a href="{{url}}">{{name}}</a>{{/foreach}}
+        </div>
+
+        {{!--
+        <section class="gh-post-comments">
+            If you want to embed comments, this is a good place to do it!
         </section>
-        {{!-- <footer>
-          <section>
-            {{> "authors" }}
-          </section>
-          <section>
-            {{t "Share this post"}}
-            <a href="https://twitter.com/share?text={{encode title}}&amp;url={{url absolute="true"}}"
-              onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
-              {{t "Twitter"}}
-            </a>
-            {{t " or "}}
-            <a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
-              onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
-              {{t "Facebook"}}
-            </a>
-          </section>
-        </footer> --}}
-      </article>
-  </main>
+        --}}
+
+    </footer>
+
+</article>
+
+<aside class="gh-readmore">
+    <div class="gh-readmore-inner gh-container">
+        <div class="gh-readmore-next">
+            {{#next_post}}<a href="{{url}}">{{> "icons/arrow-left"}} <h4>{{title}}</h4></a>{{/next_post}}
+        </div>
+        <div class="gh-readmore-prev">
+            {{#prev_post}}<a href="{{url}}">
+                <h4>{{title}}</h4> {{> "icons/arrow-right"}}
+            </a>{{/prev_post}}
+        </div>
+    </div>
+</aside>
+
 {{/post}}

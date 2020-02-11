@@ -6,7 +6,7 @@ const zip = require('gulp-zip')
 const uglify = require('gulp-uglify')
 const babel = require('gulp-babel')
 const concat = require('gulp-concat')
-const clean = require('gulp-clean')
+const del = require('del')
 const stylus = require('gulp-stylus')
 
 const PATH = {
@@ -18,10 +18,8 @@ const PATH = {
 }
 
 function cleanDir(done) {
-    pump([
-        src(PATH.output),
-        clean()
-    ], handleError(done))
+    del.sync(PATH.output)
+    done()
 }
 
 function handleError(done) {
@@ -42,21 +40,23 @@ function template(done) {
 
 function css(done) {
     pump([
-        src(PATH.css, {sourcemaps: true}),
-        stylus(),
-        dest(`${PATH.output}/assets`, {sourcemaps: '.'})
+        src(PATH.css),
+        stylus({
+            compress: true
+        }),
+        dest(`${PATH.output}/assets`)
     ], handleError(done))
 }
 
 function js(done) {
     pump([
-        src(PATH.js, {sourcemaps: true}),
+        src(PATH.js),
         babel({
             presets: ['@babel/env']
         }),
         concat('screen.js'),
         uglify(),
-        dest(`${PATH.output}/assets`, {sourcemaps: '.'})
+        dest(`${PATH.output}/assets`)
     ], handleError(done))
 }
 
@@ -76,6 +76,6 @@ const build = series(cleanDir, template, css, js)
 const watcher = () => watch(PATH.src, build)
 const dev = series(build, watcher)
 
-exports.build = build;
+exports.build = build
 exports.zip = series(build, zipper)
 exports.default = dev
