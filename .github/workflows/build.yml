@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Build on Node.js
+      - name: init Node env
         uses: actions/setup-node@v1
         with:
           node-version: '10.x'
@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: GScan Theme
-      - run: yarn run test
+        run: yarn run test
   push:
     needs: test
     runs-on: ubuntu-latest
