@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - next
+      - bugfix/github-actions
 
 jobs:
   build:
@@ -15,8 +16,6 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: '10.x'
-    - run: npm install -g yarn
-    - run: yarn set version berry
     - run: yarn install
     - run: yarn run build
     - run: yarn run test
