@@ -1,4 +1,4 @@
-name: Build & Test & Push to Github
+name: Build & Push to Branch
 on:
   push:
     branches:
@@ -15,17 +15,9 @@ jobs:
           node-version: '10.x'
       - run: yarn install
       - run: yarn run build
-  test:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
       - name: GScan Theme
         run: yarn run test
-  push:
-    needs: test
-    runs-on: ubuntu-latest
-    steps:
-      - name: Deploy on dist branch
+      - name: push to dist branch
         uses: peaceiris/actions-gh-pages@v3
         with:
           deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
