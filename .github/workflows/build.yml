@@ -1,24 +1,24 @@
-name: Build & Test
-
+name: Build & Push to Branch
 on:
   push:
     branches:
       - next
-
 jobs:
-  build:
+  workflow:
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v2
-    - name: Build on Node.js
-      uses: actions/setup-node@v1
-      with:
-        node-version: '10.x'
-    - run: npm install -g yarn
-    - run: yarn set version berry
-    - run: yarn install
-    - run: yarn run build
-    - run: yarn run test
-      env:
-        CI: true
+      - uses: actions/checkout@v2
+      - name: init Node env
+        uses: actions/setup-node@v1
+        with:
+          node-version: '10.x'
+      - run: yarn install
+      - run: yarn run build
+      - name: GScan Theme
+        run: yarn run test
+      - name: push to dist branch
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          publish_dir: ./dist
+          publish_branch: dist
