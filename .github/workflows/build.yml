@@ -1,10 +1,10 @@
-name: Build & Push to Branch
+name: Build & Push & Deploy
 on:
   push:
     branches:
       - next
 jobs:
-  workflow:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -22,3 +22,14 @@ jobs:
           deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           publish_dir: ./dist
           publish_branch: dist
+  deploy: 
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: dist
+      - name: Deploy Ghost Theme
+        uses: TryGhost/action-deploy-theme@v1.2.1
+        with:
+          api-url: ${{ secrets.GHOST_ADMIN_API_URL }}
+          api-key: ${{ secrets.GHOST_ADMIN_API_KEY }}
