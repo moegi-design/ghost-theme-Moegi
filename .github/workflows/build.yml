@@ -23,6 +23,7 @@ jobs:
           publish_dir: ./dist
           publish_branch: dist
   deploy: 
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
