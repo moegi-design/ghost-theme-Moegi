@@ -1,15 +1,9 @@
 {{!< default}}
 
-<div class="gh-page">
-    <div class="gh-container">
-
-        <div class="gh-postfeed">
+<div class="gh-container">
+    <div class="feed-list simple">
         {{#foreach posts}}
-
-            {{> "card"}} {{!-- partials/card.hbs --}}
-
+        {{> "feed-item/simple"}}
         {{/foreach}}
-        </div>
-
     </div>
 </div>
