@@ -1,8 +1,14 @@
 <article class="feed-item {{post_class}}">
-    <a href="{{url}}">
-        <div class="feed-item-content">
-            <span class="meta"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time></span>
+    <div class="feed-item-content">
+        <span class="date"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time></span>
+        <a class="title-wrap" href="{{url}}">
             <h2 class="title">{{title}}</h2>
+        </a>
+        <div class="tag-list">
+            {{#foreach tags}}
+            <a class="tag-item" href="{{url}}">{{name}}</a>
+            {{/foreach}}
         </div>
-    </a>
+        <span class="no">#{{@number}}</span>
+    </div>
 </article>
