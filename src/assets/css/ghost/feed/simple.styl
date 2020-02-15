@@ -3,11 +3,31 @@
         display: flex;
         height: 60px;
         align-items: center;
-        font-size: 18px;
-        padding: 0 20px;
-        .meta
-            width: 140px;
+        border-bottom: 1px solid #f0f0f0;
+        .date
+            font-size: 16px;
+            width: 120px;
             color: #999999;
-        h2.title
+        .title-wrap
             flex: 1;
-            color: #303030;
+            h2.title
+                font-size: 18px;
+                color: #303030;
+                &:hover
+                    color: var(--color-primary);
+                    transition: color 0.3s ease;
+        .no
+            margin-left: 4px;
+            color: #999999;
+        .tag-list
+            .tag-item
+                font-size: 14px;
+                color: #999999;
+                border: 1px solid #e6e6e6;
+                border-radius: 4px;
+                padding: 2px 6px;
+                margin-right: 4px;
+                &:hover
+                    border-color: var(--color-primary);
+                    color: var(--color-primary);
+                    transition: color,border-color 0.3s ease;
