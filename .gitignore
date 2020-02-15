@@ -1,7 +1,3 @@
-.yarn/cache
-.yarn/unplugged
-.yarn/build-state.yml
-.pnp.*
-
 dist
+public/build
 node_modules
