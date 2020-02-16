@@ -1,1 +1,0 @@
-"use strict";console.log("123456");var hahahaAgent=function(h){return console.log(h+"11111"),h+"11111"};hahahaAgent("hhhhh");
