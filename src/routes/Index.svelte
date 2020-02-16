@@ -5,20 +5,26 @@
   let postList = [];
 
   const getPostsList = async () => {
-    postList = await api.posts.browse({ limit: 5, include: 'tags' });
+    postList = await api.posts.browse({ limit: 10, page: 1, include: 'tags' });
     console.log(postList);
+    console.log(postList.meta)
     postList.forEach(post => {
       console.log(post.title);
     });
   };
   getPostsList();
+
+  const getPostIndex = (index) => {
+    var pagination = postList.meta.pagination
+    return pagination.total - (pagination.page - 1) * pagination.limit - index
+  }
 </script>
 
 <template>
   <div class="gh-container">
     <div class="feed-list simple">
       {#each postList as postItem, i}
-        <FeedItem data={postItem} index={i} />
+        <FeedItem data={postItem} index={getPostIndex(i)} />
       {/each}
     </div>
   </div>

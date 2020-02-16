@@ -1,0 +1,10 @@
+:root {
+  --color-primary: #ee5253;
+}
+
+$breakpoints: (
+  'xs': 'only screen and (min-width: 480px)',
+  'sm': 'only screen and (min-width: 768px)',
+  'md': 'only screen and (min-width: 992px)',
+  'lg': 'only screen and (min-width: 1200px)',
+) !default;

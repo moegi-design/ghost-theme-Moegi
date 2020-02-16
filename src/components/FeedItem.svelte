@@ -2,12 +2,12 @@
   import dayjs from 'dayjs'
 
   export let data, index;
-
-  console.log(data);
-  console.log(index);
 </script>
 
 <style lang="scss">
+  @import "../css/variables";
+  @import "../css/mixins";
+
   .feed-item-content {
     display: flex;
     height: 60px;
@@ -30,6 +30,7 @@
       }
     }
     .tag-list {
+      display: none;
       .tag-item {
         font-size: 14px;
         color: #999999;
@@ -42,6 +43,9 @@
           color: var(--color-primary);
           transition: color, border-color 0.3s ease;
         }
+      }
+      @include respond-to(sm) {
+        display: block;
       }
     }
     .no {
@@ -65,7 +69,7 @@
           <a class="tag-item" href={tag.url}>{tag.name}</a>
         {/each}
       </div>
-      <span class="no">#3</span>
+      <span class="no">#{index}</span>
     </div>
   </article>
 </template>

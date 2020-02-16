@@ -1,9 +1,10 @@
 <script>
   import { siteInfo } from './stores.js'
-  import { Router, Link, Route } from 'svelte-routing'
+  import { Router, Route, links } from 'svelte-routing'
   import Index from './routes/Index.svelte'
   import About from './routes/About.svelte'
   import Header from './components/Header.svelte'
+  import Footer from './components/Footer.svelte'
 
   const api = window.ghostAPI
 
@@ -18,10 +19,8 @@
 </script>
 
 <style lang="scss" global>
-
-  :root {
-    --color-primary: #ee5253;
-  }
+  @import "css/variables";
+  @import "css/mixins";
 
   body {
     font: 300 16px/1.8 PingFang SC, Lantinghei SC, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans-serif;
@@ -45,16 +44,15 @@
   .gh-viewport {
     display: flex;
     flex-direction: column;
-    width: 1000px;
-    margin: 50px auto;
-    padding: 40px 100px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px 32px;
     background: #ffffff;
     box-sizing: border-box;
-  }
 
-  @media (min-width: 640px) {
-    main {
-      max-width: none;
+    @include respond-to(sm) {
+      padding: 40px 100px;
+      margin: 50px auto;
     }
   }
 
@@ -77,7 +75,7 @@
 </style>
 
 <template>
-  <div class="gh-viewport">
+  <div class="gh-viewport" use:links>
     <Header />
     <main>
       <Router {url}>
