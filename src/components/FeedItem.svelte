@@ -1,5 +1,5 @@
 <script>
-  import dayjs from 'dayjs'
+  import dayjs from "dayjs";
 
   export let data, index;
 </script>
@@ -10,9 +10,11 @@
 
   .feed-item-content {
     display: flex;
-    height: 60px;
+    min-height: 60px;
     align-items: center;
     border-bottom: 1px solid #f0f0f0;
+    padding: 10px 0;
+    box-sizing: border-box;
     .date {
       font-size: 16px;
       width: 120px;
@@ -23,6 +25,7 @@
       h2.title {
         font-size: 18px;
         color: #303030;
+        line-height: 24px;
         &:hover {
           color: var(--color-primary);
           transition: color 0.3s ease;

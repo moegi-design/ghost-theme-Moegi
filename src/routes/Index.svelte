@@ -5,19 +5,14 @@
   let postList = [];
 
   const getPostsList = async () => {
-    postList = await api.posts.browse({ limit: 10, page: 1, include: 'tags' });
-    console.log(postList);
-    console.log(postList.meta)
-    postList.forEach(post => {
-      console.log(post.title);
-    });
+    postList = await api.posts.browse({ limit: 10, page: 1, include: "tags" });
   };
   getPostsList();
 
-  const getPostIndex = (index) => {
-    var pagination = postList.meta.pagination
-    return pagination.total - (pagination.page - 1) * pagination.limit - index
-  }
+  const getPostIndex = index => {
+    var pagination = postList.meta.pagination;
+    return pagination.total - (pagination.page - 1) * pagination.limit - index;
+  };
 </script>
 
 <template>

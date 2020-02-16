@@ -1,5 +1,12 @@
 <script>
   import { siteInfo } from "../stores.js";
+  import { getContext } from "svelte";
+  import { ROUTER } from "svelte-routing/src/contexts";
+  var { activeRoute } = getContext(ROUTER);
+
+  $: {
+    console.log($activeRoute);
+  }
 </script>
 
 <style lang="scss">
@@ -32,14 +39,16 @@
   }
 </style>
 
-<header id="gh-head" class="gh-head">
-  <div class="gh-head-brand">
-    <a class="logo" href={$siteInfo.url}>
-      {#if $siteInfo.logo}
-        <img src={$siteInfo.logo} alt={$siteInfo.title} />
-      {:else}
-        <span>{$siteInfo.title}</span>
-      {/if}
-    </a>
-  </div>
-</header>
+{#if $activeRoute && $activeRoute.route.path == '/'}
+  <header id="gh-head" class="gh-head">
+    <div class="gh-head-brand">
+      <a class="logo" href={$siteInfo.url}>
+        {#if $siteInfo.logo}
+          <img src={$siteInfo.logo} alt={$siteInfo.title} />
+        {:else}
+          <span>{$siteInfo.title}</span>
+        {/if}
+      </a>
+    </div>
+  </header>
+{/if}
