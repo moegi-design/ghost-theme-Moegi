@@ -1,9 +1,13 @@
-import App from './App.svelte';
-import answer from 'the-answer';
+import App from './App.svelte'
+import GhostContentAPI from '@tryghost/content-api'
 
+window.ghostAPI = new GhostContentAPI({
+  url: `${location.protocol}//${location.host}`,
+  key: contentKey,
+  version: 'v3'
+})
 const app = new App({
-	target: document.body
-});
+  target: document.body
+})
 
-console.log('the answer ' + answer)
-export default app;
+export default app
