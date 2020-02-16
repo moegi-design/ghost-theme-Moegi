@@ -85,13 +85,6 @@
         <Route path="/" component={Index} />
       </Router>
     </main>
-    <footer class="gh-foot">
-      <div class="gh-container">
-        <div class="gh-foot-meta">
-          Published with
-          <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
-        </div>
-      </div>
-    </footer>
+    <Footer />
   </div>
 </template>
