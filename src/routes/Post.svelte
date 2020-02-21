@@ -15,6 +15,7 @@
 
 <style lang="scss">
   header {
+    margin-bottom: 16px;
     .gh-post-meta time {
       font-size: 16px;
       color: #999999;
