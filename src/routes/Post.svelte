@@ -1,5 +1,6 @@
 <script>
   import dayjs from "dayjs";
+  import PostContent from "../components/PostContent.svelte";
 
   export let slug;
 
@@ -17,12 +18,20 @@
   @import "../css/variables";
   @import "../css/mixins";
 
+  :global(.gh-content) {
+    margin-top: -40px;
+    padding-top: 60px;
+    h2 {
+      color: red;
+    }
+  }
+
   header {
     .gh-feature-image-bg {
       position: absolute;
       top: 0;
       width: 100vw;
-      height: 400px;
+      height: 600px;
     }
     .gh-container.header-container {
       position: relative;
@@ -30,19 +39,20 @@
       padding-bottom: 0;
     }
     .gh-post-meta time {
-      font-size: 16px;
-      color: #999999;
+      font-size: 14px;
+      color: rgba(0, 0, 0, 0.4);
     }
     h1 {
       font-size: 28px;
+      margin-top: 8px;
       color: #000000;
     }
     .gh-excerpt {
       font-size: 15px;
-      color: #999999;
-      margin: 16px 0 24px;
-      padding: 0 12px;
-      border-left: 4px solid #dddddd;
+      color: rgba(0, 0, 0, 0.4);
+      margin: 16px 0 32px;
+      padding: 4px 12px;
+      border-left: 4px solid rgba(0, 0, 0, 0.16);
     }
     img.gh-feature-image {
       width: 100%;
@@ -51,24 +61,23 @@
       object-fit: cover;
       @include respond-to(sm) {
         width: calc(100% + 200px);
-        margin: 24px -100px 0;
-        border-radius: 4px 4px 0 0;
+        margin: 0 -100px;
+        border-radius: 6px;
       }
     }
-  }
-
-  .gh-content {
-    margin-top: -40px;
-    padding-top: 60px;
   }
 </style>
 
 <article class="gh-article">
   <header class="gh-header gh-canvas">
     {#if data.feature_image}
-      <div class="gh-feature-image-bg" style="background-image: linear-gradient(to bottom,rgba(255,255,255,0.84),var(--color-background)), url({data.feature_image})"></div>
+      <div
+        class="gh-feature-image-bg"
+        style="background-image: linear-gradient(to
+        bottom,rgba(255,255,255,0.88) 40%,var(--color-background)), url({data.feature_image})" />
     {/if}
-    <div class="gh-container header-container {data.feature_image ? '' : 'bg-white'}">
+    <div
+      class="gh-container header-container {data.feature_image ? '' : 'bg-white'}">
       <span class="gh-post-meta">
         <time>{dayjs(data.published_at).format('YYYY-MM-DD')}</time>
       </span>
@@ -79,13 +88,18 @@
       {/if}
 
       {#if data.feature_image}
-        <img class="gh-feature-image" src={data.feature_image} alt={data.title} />
+        <img
+          class="gh-feature-image"
+          src={data.feature_image}
+          alt={data.title} />
       {/if}
     </div>
   </header>
 
   <div class="gh-content gh-container bg-white">
-    {@html data.html}
+    <PostContent>
+      {@html data.html}
+    </PostContent>
   </div>
 
   <footer class="gh-footer gh-canvas" />

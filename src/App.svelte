@@ -22,6 +22,12 @@
   @import "css/variables";
   @import "css/mixins";
 
+  html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-rendering: optimizelegibility;
+  }
+
   body {
     font: 400 16px/1.8 PingFang SC, Lantinghei SC, Microsoft Yahei,
       Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans-serif;
@@ -32,22 +38,19 @@
     border: 1px solid transparent;
   }
 
-  a {
+  ins, a {
     text-decoration: none;
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  p {
+  body, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, hr, button, article, aside, details, figcaption, figure, footer, header, menu, nav, section {
     margin: 0;
     padding: 0;
-    font-size: 100%;
     font-weight: normal;
     vertical-align: baseline;
+  }
+
+  ul, ol {
+    list-style: none;
   }
 
   .bg-white {
