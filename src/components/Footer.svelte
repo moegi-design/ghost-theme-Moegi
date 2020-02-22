@@ -5,13 +5,12 @@
 <style lang="scss">
   .gh-foot {
     display: flex;
-    height: 100px;
+    height: 120px;
     width: 100%;
     align-items: center;
     justify-content: center;
     color: #cccccc;
     font-size: 14px;
-    margin-top: 40px;
     a {
       color: inherit;
       text-decoration: none;

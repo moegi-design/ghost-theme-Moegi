@@ -50,18 +50,22 @@
     vertical-align: baseline;
   }
 
+  .bg-white {
+    background: #ffffff;
+  }
+
   .gh-viewport {
     display: flex;
     flex-direction: column;
+    box-sizing: border-box;
+  }
+
+  .gh-container {
     max-width: 1000px;
     margin: 0 auto;
     padding: 20px 32px;
-    background: #ffffff;
-    box-sizing: border-box;
-
     @include respond-to(sm) {
-      padding: 40px 100px 20px;
-      margin: 50px auto 30px;
+      padding: 40px 100px;
     }
   }
 

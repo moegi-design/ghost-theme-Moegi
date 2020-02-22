@@ -16,7 +16,7 @@
 </script>
 
 <template>
-  <div class="gh-container">
+  <div class="gh-container bg-white">
     <div class="feed-list simple">
       {#each postList as postItem, i}
         <FeedItem data={postItem} index={getPostIndex(i)} />

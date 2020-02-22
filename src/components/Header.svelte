@@ -11,11 +11,15 @@
 
 <style lang="scss">
   .gh-head {
+    position: relative;
     display: flex;
-    height: 200px;
+    padding-top: 60px;
+    margin-top: 40px;
+    height: 140px;
     width: 100%;
     font-size: 1.6rem;
     align-items: center;
+    z-index: 1;
     a {
       color: inherit;
       text-decoration: none;
@@ -40,7 +44,7 @@
 </style>
 
 {#if $activeRoute && $activeRoute.route.path == '/'}
-  <header id="gh-head" class="gh-head">
+  <header id="gh-head" class="gh-head gh-container bg-white">
     <div class="gh-head-brand">
       <a class="logo" href={$siteInfo.url}>
         {#if $siteInfo.logo}
