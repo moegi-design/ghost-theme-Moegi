@@ -31,12 +31,18 @@
       position: absolute;
       top: 0;
       width: 100vw;
-      height: 600px;
+      height: 200px;
+      @include respond-to(sm) {
+        height: 600px;
+      }
     }
     .gh-container.header-container {
       position: relative;
-      margin-top: 30px;
       padding-bottom: 0;
+      padding-top: 40px;
+      @include respond-to(sm) {
+        margin-top: 30px;
+      }
     }
     .gh-post-meta time {
       font-size: 14px;
@@ -56,11 +62,11 @@
     }
     img.gh-feature-image {
       width: 100%;
-      min-height: 400px;
       border-radius: 4px;
       object-fit: cover;
       @include respond-to(sm) {
         width: calc(100% + 200px);
+        min-height: 400px;
         margin: 0 -100px;
         border-radius: 6px;
       }

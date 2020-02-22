@@ -10,20 +10,24 @@
 </script>
 
 <style lang="scss">
+  @import "../css/variables";
+  @import "../css/mixins";
+
   .gh-head {
     position: relative;
     display: flex;
     padding-top: 60px;
-    padding-bottom: 10px;
-    margin-top: 40px;
-    height: 140px;
     width: 100%;
     font-size: 1.6rem;
     align-items: center;
     z-index: 1;
+    box-sizing: border-box;
     a {
       color: inherit;
       text-decoration: none;
+    }
+    @include respond-to(sm) {
+      margin-top: 40px;
     }
   }
   .gh-head-brand {
