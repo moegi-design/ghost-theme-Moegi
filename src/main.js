@@ -1,11 +1,7 @@
 import App from './App.svelte'
-import GhostContentAPI from '@tryghost/content-api'
+import api from './api'
 
-window.ghostAPI = new GhostContentAPI({
-  url: `${location.protocol}//${location.host}`,
-  key: contentKey,
-  version: 'v3'
-})
+window.ghostAPI = api
 const app = new App({
   target: document.body
 })

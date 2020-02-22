@@ -2,6 +2,7 @@ import svelte from 'rollup-plugin-svelte'
 import autoPreprocess from 'svelte-preprocess'
 import resolve from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
+import livereload from 'rollup-plugin-livereload'
 import { terser } from 'rollup-plugin-terser'
 
 const production = !process.env.ROLLUP_WATCH
@@ -34,8 +35,9 @@ export default {
     commonjs(),
     resolve({
       browser: true,
-      dedupe: ['svelte']
+      dedupe: importee => importee === 'svelte' || importee.startsWith('svelte/')
     }),
+    !production && livereload('dist'),
     production && terser()
   ],
   watch: {
