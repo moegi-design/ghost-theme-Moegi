@@ -14,6 +14,9 @@
 </script>
 
 <style lang="scss">
+  @import "../css/variables";
+  @import "../css/mixins";
+
   header {
     .gh-feature-image-bg {
       position: absolute;
@@ -25,9 +28,6 @@
       position: relative;
       margin-top: 30px;
       padding-bottom: 0;
-      &.with-feature {
-        background-image: linear-gradient(to bottom, transparent 70%, #ffffff 70%);
-      }
     }
     .gh-post-meta time {
       font-size: 16px;
@@ -47,7 +47,17 @@
     img.gh-feature-image {
       width: 100%;
       border-radius: 4px;
+      @include respond-to(sm) {
+        width: calc(100% + 200px);
+        margin: 24px -100px 0;
+        border-radius: 4px 4px 0 0;
+      }
     }
+  }
+
+  .gh-content {
+    margin-top: -40px;
+    padding-top: 60px;
   }
 </style>
 
@@ -56,7 +66,7 @@
     {#if data.feature_image}
       <div class="gh-feature-image-bg" style="background-image: linear-gradient(to bottom,rgba(255,255,255,0.84),var(--color-background)), url({data.feature_image})"></div>
     {/if}
-    <div class="gh-container header-container {data.feature_image ? 'with-feature' : 'bg-white'}">
+    <div class="gh-container header-container {data.feature_image ? '' : 'bg-white'}">
       <span class="gh-post-meta">
         <time>{dayjs(data.published_at).format('YYYY-MM-DD')}</time>
       </span>

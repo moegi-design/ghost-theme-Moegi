@@ -14,6 +14,7 @@
     position: relative;
     display: flex;
     padding-top: 60px;
+    padding-bottom: 10px;
     margin-top: 40px;
     height: 140px;
     width: 100%;
