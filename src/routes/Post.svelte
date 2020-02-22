@@ -46,7 +46,9 @@
     }
     img.gh-feature-image {
       width: 100%;
+      min-height: 400px;
       border-radius: 4px;
+      object-fit: cover;
       @include respond-to(sm) {
         width: calc(100% + 200px);
         margin: 24px -100px 0;

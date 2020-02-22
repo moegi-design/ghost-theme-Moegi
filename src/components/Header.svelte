@@ -45,7 +45,7 @@
 </style>
 
 {#if $activeRoute && $activeRoute.route.path == '/'}
-  <header id="gh-head" class="gh-head gh-container bg-white">
+  <header id="gh-head" class="gh-head gh-container">
     <div class="gh-head-brand">
       <a class="logo" href={$siteInfo.url}>
         {#if $siteInfo.logo}

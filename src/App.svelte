@@ -61,7 +61,7 @@
   }
 
   .gh-container {
-    max-width: 900px;
+    max-width: 800px;
     margin: 0 auto;
     padding: 20px 32px;
     @include respond-to(sm) {
