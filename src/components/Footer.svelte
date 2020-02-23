@@ -9,7 +9,7 @@
     width: 100%;
     align-items: center;
     justify-content: center;
-    color: #cccccc;
+    color: rgba(0, 0, 0, 0.16);
     font-size: 14px;
     a {
       color: inherit;
@@ -29,5 +29,7 @@
     <div class="gh-foot-meta">
       Published with
       <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
+      &
+      <a href="https://github.com/moegi-design/ghost-theme-Moegi" target="_blank" rel="noopener">Moegi</a>
     </div>
 </footer>
