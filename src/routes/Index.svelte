@@ -1,13 +1,13 @@
 <script>
+  import { onMount } from 'svelte';
   import FeedItem from "../components/FeedItem.svelte";
 
   const api = window.ghostAPI;
   let postList = [];
 
-  const getPostsList = async () => {
-    postList = await api.posts.browse({ limit: 10, page: 1, include: "tags" });
-  };
-  getPostsList();
+  onMount(async () => {
+		postList = await api.posts.browse({ limit: 10, page: 1, include: "tags" });
+	});
 
   const getPostIndex = index => {
     var pagination = postList.meta.pagination;

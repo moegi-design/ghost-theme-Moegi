@@ -1,4 +1,5 @@
 <script>
+  import { onMount } from 'svelte';
   import { siteInfo } from "./stores.js";
   import { Router, Route, links } from "svelte-routing";
   import Index from "./routes/Index.svelte";
@@ -8,12 +9,11 @@
 
   const api = window.ghostAPI;
 
-  const getSiteInfo = async () => {
-    const info = await api.settings.browse();
+  onMount(async () => {
+		const info = await api.settings.browse();
     siteInfo.set(info);
     console.log($siteInfo);
-  };
-  getSiteInfo();
+	});
 
   export let url = "";
 </script>
@@ -64,40 +64,12 @@
   }
 
   .gh-container {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
     padding: 20px 32px;
+    box-sizing: border-box;
     @include respond-to(sm) {
       padding: 40px 100px;
-    }
-  }
-
-  // TODO
-  .kg-width {
-    &-wide,
-    &-full {
-      display: none;
-    }
-  }
-  .kg-gallery {
-    &-container,
-    &-row,
-    &-image {
-      display: none;
-    }
-  }
-  .kg-bookmark {
-    &-card,
-    &-container,
-    &-content,
-    &-title,
-    &-description,
-    &-metadata,
-    &-icon,
-    &-author,
-    &-publisher,
-    &-thumbnail {
-      display: none;
     }
   }
 </style>

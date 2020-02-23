@@ -1,4 +1,5 @@
 <script>
+  import { onMount } from 'svelte';
   import dayjs from "dayjs";
   import PostContent from "../components/PostContent.svelte";
 
@@ -6,25 +7,15 @@
 
   const api = window.ghostAPI;
   let data = {};
-
-  const getPostsData = async () => {
-    data = await api.posts.read({ slug });
-    console.log(data);
-  };
-  getPostsData();
+  
+  onMount(async () => {
+		data = await api.posts.read({ slug });
+	});
 </script>
 
 <style lang="scss">
   @import "../css/variables";
   @import "../css/mixins";
-
-  :global(.gh-content) {
-    margin-top: -40px;
-    padding-top: 60px;
-    h2 {
-      color: red;
-    }
-  }
 
   header {
     .gh-feature-image-bg {
@@ -51,6 +42,7 @@
     h1 {
       font-size: 28px;
       margin-top: 8px;
+      line-height: 1.3;
       color: #000000;
     }
     .gh-excerpt {
@@ -70,6 +62,19 @@
         margin: 0 -100px;
         border-radius: 6px;
       }
+    }
+    hr {
+      border: none;
+      border-bottom: 1px solid #eeeeee;
+      padding-bottom: 0.8em;
+      height: 10px;
+    }
+  }
+  .gh-content.gh-container {
+    padding-top: 20px;
+    &.with-feature {
+      margin-top: -40px;
+      padding-top: 60px;
     }
   }
 </style>
@@ -98,11 +103,13 @@
           class="gh-feature-image"
           src={data.feature_image}
           alt={data.title} />
+      {:else}
+        <hr>
       {/if}
     </div>
   </header>
 
-  <div class="gh-content gh-container bg-white">
+  <div class="gh-content gh-container bg-white {data.feature_image ? 'with-feature' : ''}">
     <PostContent>
       {@html data.html}
     </PostContent>

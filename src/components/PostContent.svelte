@@ -15,20 +15,33 @@
       line-height: 1.35;
     }
     h1 {
-      font-size: 2em;
-    }
-    h2 {
       font-size: 1.8em;
     }
-    h3 {
+    h2 {
+      position: relative;
       font-size: 1.6em;
+      margin-top: 2em;
+      &:first-child {
+        margin-top: 1em;
+      }
+      &:before {
+        color: var(--color-primary);
+        content: "# ";
+        left: -1em;
+        @include respond-to(sm) {
+          position: absolute;
+        }
+      }
+    }
+    h3 {
+      font-size: 1.4em;
     }
     h4 {
-      font-size: 1.4em;
+      font-size: 1.2em;
     }
     h5,
     h6 {
-      font-size: 1.2em;
+      font-size: 1em;
     }
 
     p,
@@ -169,12 +182,23 @@
       font-family: Courier, "Courier New", monospace;
     }
 
+    code {
+      background: #f8f8f8;
+      padding: 0.2em 0.4em;
+      border: 1px solid #f0f0f0;
+    }
+
     pre {
       background: #f8f8f8;
       border: 1px solid #ddd;
       padding: 1em 1.5em;
       display: block;
       -webkit-overflow-scrolling: touch;
+      code {
+        background: transparent;
+        padding: 0;
+        border: 0;
+      }
     }
 
     hr {
@@ -227,6 +251,174 @@
 
     img {
       max-width: 100%;
+    }
+    figcaption {
+      text-align: center;
+      margin: -0.4em 1em 1.2em;
+    }
+
+    .kg-width {
+      &-wide {
+        width: calc(100% + 64px);
+        margin: 0 -32px;
+        @include respond-to(sm) {
+          width: calc(100% + 200px);
+          margin: 0 -100px;
+        }
+      }
+      &-full {
+        width: calc(100% + 64px);
+        margin: 0 -32px;
+        @include respond-to(sm) {
+          width: calc(100% + 300px);
+          margin: 0 -150px;
+        }
+      }
+    }
+
+    .kg-gallery {
+      &-container {
+        display: flex;
+        flex-direction: column;
+        max-width: calc(100% + 64px);
+        margin-bottom: 1.4em;
+        @include respond-to(sm) {
+          max-width: calc(100% + 200px);
+        }
+      }
+      &-row {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        &:not(:first-of-type) {
+          margin: 4px 0 0 0;
+        }
+      }
+      &-image {
+        img {
+          display: block;
+          margin: 0;
+          width: 100%;
+          height: 100%;
+        }
+        &:not(:first-of-type) {
+          margin: 0 0 0 4px;
+        }
+      }
+    }
+
+    .kg-bookmark {
+      &-card {
+        width: 100%;
+      }
+      &-container {
+        display: flex;
+        flex-direction: column;
+        min-height: 148px;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        text-decoration: none;
+        border: 0;
+        border-radius: 3px;
+        color: #333333;
+        box-shadow: 0 2px 5px -1px rgba(0, 0, 0, 0.15),
+          0 0 1px rgba(0, 0, 0, 0.09);
+        &:hover {
+          text-decoration: none;
+          box-shadow: 0 2px 5px -1px rgba(0, 0, 0, 0.15),
+            0 0 1px rgba(0, 0, 0, 0.09);
+        }
+      }
+      &-content {
+        order: 2;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 20px;
+      }
+      &-title {
+        font-size: 1rem;
+        line-height: 1.5em;
+        font-weight: 400;
+        transition: color 0.2s ease-in-out;
+      }
+      &-description {
+        display: -webkit-box;
+        overflow-y: hidden;
+        margin-top: 12px;
+        max-height: 3em;
+        color: #999999;
+        font-size: 0.8em;
+        line-height: 1.5em;
+        font-weight: 300;
+
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+      }
+      &-metadata {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        margin-top: 16px;
+        font-size: 0.8rem;
+        font-weight: 400;
+      }
+      &-icon {
+        margin-right: 8px;
+        margin-bottom: 0;
+        width: 18px;
+        height: 18px;
+      }
+      &-author {
+        line-height: 1.5em;
+        &:after {
+          content: "•";
+          margin: 0 6px;
+        }
+      }
+      &-publisher {
+        overflow: hidden;
+        max-width: 240px;
+        line-height: 1.5em;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      &-thumbnail {
+        order: 1;
+        min-height: 160px;
+        width: 100%;
+        position: relative;
+        min-width: 33%;
+        max-height: 100%;
+        img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border-radius: 3px 3px 0 0;
+          object-fit: cover;
+        }
+      }
+
+      @include respond-to(sm) {
+        &-container {
+          flex-direction: row;
+        }
+        &-content {
+          order: 0;
+        }
+        &-thumbnail {
+          order: 0;
+          min-height: 160px;
+          width: auto;
+          img {
+            border-radius: 0 3px 3px 0;
+          }
+        }
+      }
     }
   }
 </style>
