@@ -1,6 +1,18 @@
+<script>
+  import Prism from "prismjs";
+  import { beforeUpdate, afterUpdate } from 'svelte';
+
+  export let html;
+
+  afterUpdate(() => {
+		Prism.highlightAll();
+	});
+</script>
+
 <style lang="scss" global>
   @import "../css/variables";
   @import "../css/mixins";
+  @import "../css/prism-theme";
 
   .post-content {
     color: #333333;
@@ -270,8 +282,9 @@
         width: calc(100% + 64px);
         margin: 0 -32px;
         @include respond-to(sm) {
-          width: calc(100% + 300px);
-          margin: 0 -150px;
+          width: calc(100% + 400px);
+          margin: 0 -200px;
+          padding: 10px;
         }
       }
     }
