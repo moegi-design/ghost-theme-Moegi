@@ -21,15 +21,15 @@
     h4,
     h5,
     h6 {
-      margin: 1.2em 0 0.6em;
+      margin: 2.4em 0 0.6em;
       line-height: 1.35;
     }
     h1 {
-      font-size: 1.8em;
+      font-size: 2em;
     }
     h2 {
       position: relative;
-      font-size: 1.6em;
+      font-size: 1.8em;
       margin-top: 2em;
       &:first-child {
         margin-top: 1em;
@@ -171,10 +171,6 @@
       margin-left: 2em;
     }
 
-    li ul {
-      list-style: circle;
-    }
-
     u {
       text-decoration: underline;
     }
@@ -268,6 +264,10 @@
       margin: -0.4em 1em 1.2em;
     }
 
+    .kg-card.kg-image-card {
+      text-align: center;
+    }
+
     .kg-width {
       &-wide {
         width: calc(100% + 64px);
@@ -283,7 +283,6 @@
         @include respond-to(sm) {
           width: calc(100% + 400px);
           margin: 0 -200px;
-          padding: 10px;
         }
       }
     }
@@ -312,6 +311,7 @@
           margin: 0;
           width: 100%;
           height: 100%;
+          object-fit: cover;
         }
         &:not(:first-of-type) {
           margin: 0 0 0 4px;
@@ -327,6 +327,7 @@
         display: flex;
         flex-direction: column;
         min-height: 148px;
+        margin-bottom: 1.2em;
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
           Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
         text-decoration: none;
