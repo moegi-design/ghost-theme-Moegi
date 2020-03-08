@@ -1,12 +1,6 @@
 <script>
   import { siteInfo } from "../stores.js";
   import { getContext } from "svelte";
-  import { ROUTER } from "svelte-routing/src/contexts";
-  var { activeRoute } = getContext(ROUTER);
-
-  $: {
-    console.log($activeRoute);
-  }
 </script>
 
 <style lang="scss">
@@ -16,48 +10,81 @@
   .gh-head {
     position: relative;
     display: flex;
-    padding-top: 60px;
+    height: 80px;
     width: 100%;
-    font-size: 1.6rem;
     align-items: center;
     z-index: 1;
+    margin: 0 auto;
+    padding: 0 32px;
     box-sizing: border-box;
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
     @include respond-to(sm) {
-      margin-top: 40px;
+      height: 80px;
+      padding: 0 40px;
+      margin: 16px auto 0;
     }
   }
   .gh-head-brand {
+    flex: 1;
     display: inline-block;
-    margin: 0 auto;
-    max-width: 300px;
-    text-align: center;
     word-break: break-all;
     .logo {
       display: block;
-      font-weight: 600;
-      font-size: 2.2rem;
-      line-height: 1.2em;
+      font-weight: 400;
+      color: #212121;
+      font-size: 1.2rem;
       img {
-        max-height: 84px;
+        max-height: 36px;
+        @include respond-to(sm) {
+          max-height: 48px;
+        }
+      }
+      span {
+        &::after {
+          content: ' ';
+          display: inline-block;
+          width: 4px;
+          height: 4px;
+          margin-left: 2px;
+          background: var(--color-primary);
+        }
+      }
+    }
+  }
+  .gh-navigation {
+    display: none;
+    @include respond-to(sm) {
+      display: block;
+    }
+    a {
+      margin-left: 8px;
+      color: #212121;
+      padding: 4px 8px;
+      border-radius: 4px;
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.06);
+        transition: background-color 0.3s ease;
       }
     }
   }
 </style>
 
-{#if $activeRoute && $activeRoute.route.path == '/'}
-  <header id="gh-head" class="gh-head gh-container">
-    <div class="gh-head-brand">
-      <a class="logo" href={$siteInfo.url}>
-        {#if $siteInfo.logo}
-          <img src={$siteInfo.logo} alt={$siteInfo.title} />
-        {:else}
-          <span>{$siteInfo.title}</span>
-        {/if}
-      </a>
-    </div>
-  </header>
-{/if}
+<header id="gh-head" class="gh-head">
+  <div class="gh-head-brand">
+    <a class="logo" href={$siteInfo.url}>
+      {#if $siteInfo.logo}
+        <img src={$siteInfo.logo} alt={$siteInfo.title} />
+      {:else}
+        <span>{$siteInfo.title}</span>
+      {/if}
+    </a>
+  </div>
+  <div class="gh-navigation">
+    {#if $siteInfo.navigation}
+      <nav>
+        {#each $siteInfo.navigation as navItem, i}
+          <a href={navItem.url}>{navItem.label}</a>
+        {/each}
+      </nav>
+    {/if}
+  </div>
+</header>

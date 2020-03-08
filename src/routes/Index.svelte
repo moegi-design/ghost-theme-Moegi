@@ -1,5 +1,6 @@
 <script>
   import { onMount } from 'svelte';
+  import Hero from "../components/Hero.svelte";
   import FeedItem from "../components/FeedItem.svelte";
 
   const api = window.ghostAPI;
@@ -16,6 +17,7 @@
 </script>
 
 <template>
+  <Hero/>
   <div class="gh-container bg-white">
     <div class="feed-list simple">
       {#each postList as postItem, i}

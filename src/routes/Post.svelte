@@ -31,16 +31,13 @@
       position: relative;
       padding-bottom: 0;
       padding-top: 40px;
-      @include respond-to(sm) {
-        margin-top: 30px;
-      }
     }
     .gh-post-meta time {
       font-size: 14px;
       color: rgba(0, 0, 0, 0.4);
     }
     h1 {
-      font-size: 28px;
+      font-size: 36px;
       margin-top: 8px;
       line-height: 1.3;
       color: #000000;
@@ -48,7 +45,7 @@
     .gh-excerpt {
       font-size: 15px;
       color: rgba(0, 0, 0, 0.4);
-      margin: 16px 0 32px;
+      margin: 16px 0;
       padding: 4px 12px;
       border-left: 4px solid rgba(0, 0, 0, 0.16);
     }
@@ -59,7 +56,7 @@
       @include respond-to(sm) {
         width: calc(100% + 200px);
         min-height: 400px;
-        margin: 0 -100px;
+        margin: 16px -100px 0;
         border-radius: 6px;
       }
     }

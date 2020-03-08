@@ -2,8 +2,6 @@
   import Prism from "prismjs";
   import { beforeUpdate, afterUpdate } from 'svelte';
 
-  export let html;
-
   afterUpdate(() => {
 		Prism.highlightAll();
 	});
@@ -206,6 +204,7 @@
       padding: 1em 1.5em;
       display: block;
       -webkit-overflow-scrolling: touch;
+      overflow-x: scroll;
       code {
         background: transparent;
         padding: 0;
