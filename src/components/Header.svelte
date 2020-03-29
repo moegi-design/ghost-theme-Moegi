@@ -13,7 +13,7 @@
     height: 80px;
     width: 100%;
     align-items: center;
-    z-index: 1;
+    z-index: 15;
     margin: 0 auto;
     padding: 0 32px;
     box-sizing: border-box;
@@ -24,9 +24,11 @@
     }
   }
   .gh-head-brand {
+    position: relative;
     flex: 1;
     display: inline-block;
     word-break: break-all;
+    z-index: 20;
     .logo {
       display: block;
       font-weight: 400;
@@ -40,7 +42,7 @@
       }
       span {
         &::after {
-          content: ' ';
+          content: " ";
           display: inline-block;
           width: 4px;
           height: 4px;

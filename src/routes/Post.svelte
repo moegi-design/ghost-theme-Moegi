@@ -22,10 +22,8 @@
       position: absolute;
       top: 0;
       width: 100vw;
-      height: 200px;
-      @include respond-to(sm) {
-        height: 600px;
-      }
+      height: 50vh;
+      z-index: 0;
     }
     .gh-container.header-container {
       position: relative;
