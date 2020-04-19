@@ -29,7 +29,7 @@ jobs:
           deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           publish_dir: ./dist
           publish_branch: dist
-          commit_message: 'Deployment ${{ steps.prepare_tag.outputs.tag_name }}'
+          commit_message: 'deploy-tag ${{ steps.prepare_tag.outputs.tag_name }}:'
           tag_name: ${{ steps.prepare_tag.outputs.deploy_tag_name }}
           tag_message: 'Deployment ${{ steps.prepare_tag.outputs.tag_name }}'
   release:
