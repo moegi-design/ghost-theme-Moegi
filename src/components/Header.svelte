@@ -17,6 +17,8 @@
     z-index: 15;
     margin: 0 auto;
     padding: 0 32px;
+    box-sizing: border-box;
+    line-height: initial;
     border-bottom: 1px solid rgba(0, 0, 0, 0.04);
     background: rgba(255, 255, 255, 0.92);
     backdrop-filter: blur(10px);
