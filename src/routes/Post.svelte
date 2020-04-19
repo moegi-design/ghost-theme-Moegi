@@ -11,7 +11,13 @@
   let data = {};
   
   onMount(async () => {
-    data = await api.posts.read({ slug: params.slug });
+    let tempData = await api.posts.read({ slug: params.slug }).catch(() => {});
+    if (!tempData) {
+      tempData = await api.pages.read({ slug: params.slug }).catch(() => {});
+    }
+    if (tempData) {
+      data = tempData
+    }
     console.log(data)
     if (data && data.title) {
       postTitle.set(data.title)
