@@ -52,8 +52,12 @@
       }
     }
     .no {
+      display: none;
       margin-left: 4px;
       color: #999999;
+      @include respond-to(sm) {
+        display: block;
+      }
     }
   }
 </style>

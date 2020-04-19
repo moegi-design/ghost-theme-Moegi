@@ -14,10 +14,6 @@
 
   .post-content {
     color: #333333;
-    font-size: 90%;
-    @include respond-to(sm) {
-      font-size: 100%;
-    }
 
     h1,
     h2,

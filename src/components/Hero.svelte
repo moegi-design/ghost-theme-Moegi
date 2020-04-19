@@ -10,13 +10,16 @@
   .moegi-hero {
     position: relative;
     display: flex;
-    height: 180px;
+    height: 120px;
     width: 100%;
     align-items: center;
     font-size: 1.6rem;
     align-items: center;
     z-index: 1;
     box-sizing: border-box;
+    @include respond-to(sm) {
+      height: 180px;
+    }
     a {
       color: inherit;
       text-decoration: none;

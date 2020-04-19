@@ -1,5 +1,5 @@
 <script>
-  import { siteInfo } from "../stores.js";
+  import { siteInfo, postTitle } from "../stores.js";
   import { getContext } from "svelte";
 </script>
 
@@ -17,7 +17,6 @@
     z-index: 15;
     margin: 0 auto;
     padding: 0 32px;
-    box-sizing: border-box;
     border-bottom: 1px solid rgba(0, 0, 0, 0.04);
     background: rgba(255, 255, 255, 0.88);
     backdrop-filter: blur(10px);
@@ -43,6 +42,16 @@
           max-height: 48px;
         }
       }
+    }
+  }
+  .gh-title {
+    color: #686868;
+    margin-left: 12px;
+    font-size: 0.9rem;
+    &:before {
+      content: '/';
+      color: #cccccc;
+      margin-right: 8px;
     }
   }
   .gh-blank {
@@ -78,6 +87,9 @@
       {/if}
     </a>
   </div>
+  {#if $postTitle}
+  <div class="gh-title">{$postTitle}</div>
+  {/if}
   <div class="gh-blank"></div>
   <div class="gh-navigation">
     {#if $siteInfo.navigation}

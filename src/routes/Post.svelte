@@ -1,6 +1,7 @@
 <script>
   import { onMount, createEventDispatcher } from 'svelte';
   import dayjs from "dayjs";
+  import { postTitle } from "../stores.js";
   import PostContent from "../components/PostContent.svelte";
 
   export let params;
@@ -12,6 +13,9 @@
   onMount(async () => {
     data = await api.posts.read({ slug: params.slug });
     console.log(data)
+    if (data && data.title) {
+      postTitle.set(data.title)
+    }
     if (data && data.feature_image) {
       dispatch('message', {
         func: 'setBackground',
@@ -89,8 +93,12 @@
       padding-top: 60px;
     }
   }
+  .placeholder {
+    height: 80vh;
+  }
 </style>
 
+{#if data.title}
 <article class="gh-article">
   <header class="gh-header gh-canvas">
     <!-- {#if data.feature_image}
@@ -129,3 +137,6 @@
 
   <footer class="gh-footer gh-canvas" />
 </article>
+{:else}
+<div class="placeholder"></div>
+{/if}
