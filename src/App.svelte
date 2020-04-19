@@ -1,21 +1,33 @@
 <script>
   import { onMount } from 'svelte';
   import { siteInfo } from "./stores.js";
-  import { Router, Route, links } from "svelte-routing";
-  import Index from "./routes/Index.svelte";
-  import Post from "./routes/Post.svelte";
+  import router from "./router.js";
+  // import { Router, Route, links } from "svelte-routing";
+  // import Index from "./routes/Index.svelte";
+  // import Post from "./routes/Post.svelte";
   import Header from "./components/Header.svelte";
   import Footer from "./components/Footer.svelte";
 
   const api = window.ghostAPI;
+  let bgUrl = '';
 
   onMount(async () => {
 		const info = await api.settings.browse();
     siteInfo.set(info);
     console.log($siteInfo);
-	});
-
-  export let url = "";
+  });
+  
+  function handleMessage(event) {
+    const eventDetail = event.detail
+    console.log(eventDetail)
+    switch (eventDetail.func) {
+      case 'setBackground':
+        bgUrl = eventDetail.data.url
+        break;
+      default:
+        break;
+    }
+	}
 </script>
 
 <style lang="scss" global>
@@ -61,6 +73,7 @@
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
+    padding-top: 48px;
   }
 
   .gh-container {
@@ -68,21 +81,35 @@
     margin: 0 auto;
     padding: 20px 32px;
     box-sizing: border-box;
+    border-radius: 8px;
     @include respond-to(sm) {
       padding: 40px 100px;
     }
   }
+
+  .gh-feature-image-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 80vh;
+    z-index: -1;
+    background-image: linear-gradient(to bottom,rgba(255,255,255,0.88) 40%, var(--color-background)), var(--bg-url);
+  }
+
 </style>
 
 <template>
-  <Router {url}>
-    <div class="gh-viewport" use:links>
+  <!-- <Router {url}> -->
+    <div class="gh-viewport">
+      <div class="gh-feature-image-bg" style="--bg-url: url({bgUrl});" />
       <Header />
       <main>
-        <Route path="/:slug" component={Post} />
-        <Route path="/" component={Index} />
+        <!-- <Route path="/:slug"><Post/></Route>
+        <Route path="/" component={Index} /> -->
+        <svelte:component this={router.page} params={router.params} on:message={handleMessage} />
       </main>
       <Footer />
     </div>
-  </Router>
+  <!-- </Router> -->
 </template>

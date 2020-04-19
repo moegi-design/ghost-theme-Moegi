@@ -8,24 +8,27 @@
   @import "../css/mixins";
 
   .gh-head {
-    position: relative;
+    position: fixed;
+    top: 0;
     display: flex;
-    height: 80px;
+    height: 48px;
     width: 100%;
     align-items: center;
     z-index: 15;
     margin: 0 auto;
     padding: 0 32px;
     box-sizing: border-box;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(10px);
     @include respond-to(sm) {
-      height: 80px;
+      // height: 80px;
       padding: 0 40px;
-      margin: 16px auto 0;
+      // margin: 16px auto 0;
     }
   }
   .gh-head-brand {
     position: relative;
-    flex: 1;
     display: inline-block;
     word-break: break-all;
     z-index: 20;
@@ -33,24 +36,17 @@
       display: block;
       font-weight: 400;
       color: #212121;
-      font-size: 1.2rem;
+      font-size: 1rem;
       img {
         max-height: 36px;
         @include respond-to(sm) {
           max-height: 48px;
         }
       }
-      span {
-        &::after {
-          content: " ";
-          display: inline-block;
-          width: 4px;
-          height: 4px;
-          margin-left: 2px;
-          background: var(--color-primary);
-        }
-      }
     }
+  }
+  .gh-blank {
+    flex: 1;
   }
   .gh-navigation {
     display: none;
@@ -59,6 +55,7 @@
     }
     a {
       margin-left: 8px;
+      font-size: 0.9rem;
       color: #212121;
       padding: 4px 8px;
       border-radius: 4px;
@@ -80,6 +77,7 @@
       {/if}
     </a>
   </div>
+  <div class="gh-blank"></div>
   <div class="gh-navigation">
     {#if $siteInfo.navigation}
       <nav>

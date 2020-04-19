@@ -1,16 +1,27 @@
 <script>
-  import { onMount } from 'svelte';
+  import { onMount, createEventDispatcher } from 'svelte';
   import dayjs from "dayjs";
   import PostContent from "../components/PostContent.svelte";
 
-  export let slug;
+  export let params;
 
   const api = window.ghostAPI;
+  const dispatch = createEventDispatcher();
   let data = {};
   
   onMount(async () => {
-		data = await api.posts.read({ slug });
-	});
+    console.log(params)
+    data = await api.posts.read({ slug: params.slug });
+    console.log(data)
+    if (data && data.feature_image) {
+      dispatch('message', {
+        func: 'setBackground',
+        data: {
+          url: data.feature_image
+        }
+      });
+    }
+  });
 </script>
 
 <style lang="scss">
@@ -18,13 +29,6 @@
   @import "../css/mixins";
 
   header {
-    .gh-feature-image-bg {
-      position: absolute;
-      top: 0;
-      width: 100vw;
-      height: 50vh;
-      z-index: 0;
-    }
     .gh-container.header-container {
       position: relative;
       padding-bottom: 0;
@@ -76,12 +80,12 @@
 
 <article class="gh-article">
   <header class="gh-header gh-canvas">
-    {#if data.feature_image}
+    <!-- {#if data.feature_image}
       <div
         class="gh-feature-image-bg"
         style="background-image: linear-gradient(to
         bottom,rgba(255,255,255,0.88) 40%,var(--color-background)), url({data.feature_image})" />
-    {/if}
+    {/if} -->
     <div
       class="gh-container header-container {data.feature_image ? '' : 'bg-white'}">
       <span class="gh-post-meta">
