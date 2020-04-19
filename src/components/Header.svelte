@@ -18,7 +18,7 @@
     margin: 0 auto;
     padding: 0 32px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.04);
-    background: rgba(255, 255, 255, 0.88);
+    background: rgba(255, 255, 255, 0.92);
     backdrop-filter: blur(10px);
     @include respond-to(sm) {
       // height: 80px;
@@ -30,6 +30,7 @@
     position: relative;
     display: inline-block;
     word-break: break-all;
+    white-space: nowrap;
     z-index: 20;
     .logo {
       display: block;
@@ -48,6 +49,7 @@
     color: #686868;
     margin-left: 12px;
     font-size: 0.9rem;
+    white-space: nowrap;
     &:before {
       content: '/';
       color: #cccccc;
