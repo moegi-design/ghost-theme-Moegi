@@ -14,6 +14,10 @@
 
   .post-content {
     color: #333333;
+    font-size: 90%;
+    @include respond-to(sm) {
+      font-size: 100%;
+    }
 
     h1,
     h2,
@@ -29,8 +33,11 @@
     }
     h2 {
       position: relative;
-      font-size: 1.8em;
       margin-top: 2em;
+      font-size: 1.6em;
+      @include respond-to(sm) {
+        font-size: 1.8em;
+      }
       &:first-child {
         margin-top: 1em;
       }

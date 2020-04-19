@@ -10,13 +10,13 @@
   let data = {};
   
   onMount(async () => {
-    console.log(params)
     data = await api.posts.read({ slug: params.slug });
     console.log(data)
     if (data && data.feature_image) {
       dispatch('message', {
         func: 'setBackground',
         data: {
+          title: data.title,
           url: data.feature_image
         }
       });
@@ -33,23 +33,36 @@
       position: relative;
       padding-bottom: 0;
       padding-top: 40px;
+      @include respond-to(sm) {
+        padding-top: 80px;
+      }
     }
     .gh-post-meta time {
-      font-size: 14px;
+      font-size: 12px;
       color: rgba(0, 0, 0, 0.4);
+      @include respond-to(sm) {
+        font-size: 14px;
+      }
     }
     h1 {
-      font-size: 36px;
+      font-size: 24px;
       margin-top: 8px;
-      line-height: 1.3;
+      line-height: 1.2;
       color: #000000;
+      @include respond-to(sm) {
+        font-size: 36px;
+        line-height: 1.3;
+      }
     }
     .gh-excerpt {
-      font-size: 15px;
+      font-size: 14px;
       color: rgba(0, 0, 0, 0.4);
-      margin: 16px 0;
-      padding: 4px 12px;
-      border-left: 4px solid rgba(0, 0, 0, 0.16);
+      margin: 16px 0 20px;
+      @include respond-to(sm) {
+        font-size: 15px;
+        padding: 4px 12px;
+        border-left: 4px solid rgba(0, 0, 0, 0.16);
+      }
     }
     img.gh-feature-image {
       width: 100%;

@@ -102,7 +102,7 @@
 <template>
   <!-- <Router {url}> -->
     <div class="gh-viewport">
-      <div class="gh-feature-image-bg" style="--bg-url: url({bgUrl});" />
+      <!-- <div class="gh-feature-image-bg" style="--bg-url: url({bgUrl});" /> -->
       <Header />
       <main>
         <!-- <Route path="/:slug"><Post/></Route>

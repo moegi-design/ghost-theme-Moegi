@@ -7,10 +7,12 @@
   @import "../css/variables";
   @import "../css/mixins";
 
-  .gh-head {
+  .moegi-hero {
     position: relative;
     display: flex;
+    height: 180px;
     width: 100%;
+    align-items: center;
     font-size: 1.6rem;
     align-items: center;
     z-index: 1;
@@ -38,7 +40,7 @@
   }
 </style>
 
-<header id="gh-head" class="gh-head gh-container">
+<header class="moegi-hero">
   <div class="gh-head-brand">
     <a class="logo" href={$siteInfo.url}>
       {#if $siteInfo.logo}

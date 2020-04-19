@@ -67,6 +67,7 @@
   }
 </style>
 
+{#if $siteInfo.title}
 <header id="gh-head" class="gh-head">
   <div class="gh-head-brand">
     <a class="logo" href={$siteInfo.url}>
@@ -88,3 +89,4 @@
     {/if}
   </div>
 </header>
+{/if}
