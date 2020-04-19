@@ -10,6 +10,7 @@
 
   const api = window.ghostAPI;
   let bgUrl = '';
+  let customHeaderClass = '';
 
   onMount(async () => {
 		const info = await api.settings.browse();
@@ -19,10 +20,12 @@
   
   function handleMessage(event) {
     const eventDetail = event.detail
-    console.log(eventDetail)
     switch (eventDetail.func) {
       case 'setBackground':
-        bgUrl = eventDetail.data.url
+        bgUrl = eventDetail.data.url || ''
+        break;
+      case 'setHeaderClass':
+        customHeaderClass = eventDetail.data.class || ''
         break;
       default:
         break;
@@ -33,6 +36,7 @@
 <style lang="scss" global>
   @import "css/variables";
   @import "css/mixins";
+  @import "css/iconfont";
 
   html {
     -webkit-text-size-adjust: 100%;
@@ -103,7 +107,7 @@
   <!-- <Router {url}> -->
     <div class="gh-viewport">
       <!-- <div class="gh-feature-image-bg" style="--bg-url: url({bgUrl});" /> -->
-      <Header />
+      <Header {customHeaderClass} />
       <main>
         <!-- <Route path="/:slug"><Post/></Route>
         <Route path="/" component={Index} /> -->

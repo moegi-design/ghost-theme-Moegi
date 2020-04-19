@@ -1,6 +1,7 @@
 <script>
-  import { onMount, createEventDispatcher } from 'svelte';
+  import { onMount, createEventDispatcher } from "svelte";
   import dayjs from "dayjs";
+  import inView from "in-view";
   import { postTitle } from "../stores.js";
   import PostContent from "../components/PostContent.svelte";
 
@@ -9,28 +10,44 @@
   const api = window.ghostAPI;
   const dispatch = createEventDispatcher();
   let data = {};
-  
+
   onMount(async () => {
     let tempData = await api.posts.read({ slug: params.slug }).catch(() => {});
     if (!tempData) {
       tempData = await api.pages.read({ slug: params.slug }).catch(() => {});
     }
     if (tempData) {
-      data = tempData
+      data = tempData;
     }
-    console.log(data)
+    console.log(data);
     if (data && data.title) {
-      postTitle.set(data.title)
+      postTitle.set(data.title);
     }
-    if (data && data.feature_image) {
-      dispatch('message', {
-        func: 'setBackground',
-        data: {
-          title: data.title,
-          url: data.feature_image
-        }
+    // if (data && data.feature_image) {
+    //   dispatch("message", {
+    //     func: "setBackground",
+    //     data: {
+    //       url: data.feature_image
+    //     }
+    //   });
+    // }
+    inView("#post-header-inview")
+      .on("enter", () => {
+        dispatch("message", {
+          func: "setHeaderClass",
+          data: {
+            class: ""
+          }
+        });
+      })
+      .on("exit", () => {
+        dispatch("message", {
+          func: "setHeaderClass",
+          data: {
+            class: "fold"
+          }
+        });
       });
-    }
   });
 </script>
 
@@ -104,25 +121,20 @@
   }
 </style>
 
-{#if data.title}
 <article class="gh-article">
   <header class="gh-header gh-canvas">
-    <!-- {#if data.feature_image}
-      <div
-        class="gh-feature-image-bg"
-        style="background-image: linear-gradient(to
-        bottom,rgba(255,255,255,0.88) 40%,var(--color-background)), url({data.feature_image})" />
-    {/if} -->
     <div
       class="gh-container header-container {data.feature_image ? '' : 'bg-white'}">
-      <span class="gh-post-meta">
-        <time>{dayjs(data.published_at).format('YYYY-MM-DD')}</time>
-      </span>
-      <h1 class="gh-title">{data.title}</h1>
+      <div id="post-header-inview">
+        <span class="gh-post-meta">
+          <time>{dayjs(data.published_at).format('YYYY-MM-DD')}</time>
+        </span>
+        <h1 class="gh-title">{data.title}</h1>
 
-      {#if data.custom_excerpt}
-        <p class="gh-excerpt">{data.custom_excerpt}</p>
-      {/if}
+        {#if data.custom_excerpt}
+          <p class="gh-excerpt">{data.custom_excerpt}</p>
+        {/if}
+      </div>
 
       {#if data.feature_image}
         <img
@@ -130,12 +142,13 @@
           src={data.feature_image}
           alt={data.title} />
       {:else}
-        <hr>
+        <hr />
       {/if}
     </div>
   </header>
 
-  <div class="gh-content gh-container bg-white {data.feature_image ? 'with-feature' : ''}">
+  <div
+    class="gh-content gh-container bg-white {data.feature_image ? 'with-feature' : ''}">
     <PostContent>
       {@html data.html}
     </PostContent>
@@ -143,6 +156,3 @@
 
   <footer class="gh-footer gh-canvas" />
 </article>
-{:else}
-<div class="placeholder"></div>
-{/if}
