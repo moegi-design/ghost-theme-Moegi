@@ -10,10 +10,16 @@
   const api = window.ghostAPI;
   const dispatch = createEventDispatcher();
   let data = {};
+  let isPost = true;
+  let siblingPostData = {
+    prev: {},
+    next: {}
+  }
 
   onMount(async () => {
     let tempData = await api.posts.read({ slug: params.slug }).catch(() => {});
     if (!tempData) {
+      isPost = false;
       tempData = await api.pages.read({ slug: params.slug }).catch(() => {});
     }
     if (tempData) {
@@ -22,6 +28,9 @@
     console.log(data);
     if (data && data.title) {
       postTitle.set(data.title);
+      if (isPost) {
+        getSublingPosts()
+      }
     }
     // if (data && data.feature_image) {
     //   dispatch("message", {
@@ -49,6 +58,31 @@
         });
       });
   });
+
+  const getSublingPosts = async() => {
+    const commonSearchParams = {
+      limit: 1,
+      fields: 'title,url'
+    }
+    const prevSearchParams = {
+      ...commonSearchParams,
+      filter: `published_at:<=${encodeURIComponent(data.published_at)}+slug:-${encodeURIComponent(data.slug)}`,
+      order: 'published_at desc'
+    }
+    const nextSearchParams = {
+      ...commonSearchParams,
+      filter: `published_at:>=${encodeURIComponent(data.published_at)}+slug:-${encodeURIComponent(data.slug)}`,
+      order: 'published_at asc'
+    }
+    const prevPost = await api.posts.browse(prevSearchParams).catch(() => {});
+    if (prevPost && prevPost.length) {
+      siblingPostData.prev = prevPost[0]
+    }
+    const nextPost = await api.posts.browse(nextSearchParams).catch(() => {});
+    if (nextPost && nextPost.length) {
+      siblingPostData.next = nextPost[0]
+    }
+  }
 </script>
 
 <style lang="scss">
@@ -122,6 +156,42 @@
   .placeholder {
     height: 80vh;
   }
+  .sibling-posts {
+    hr {
+      border: none;
+      border-bottom: 1px solid #eeeeee;
+      padding-bottom: 0.8em;
+      height: 10px;
+    }
+    .sibling-container {
+      display: flex;
+      justify-content: space-between;
+      padding: 18px 0;
+      margin: 0 -8px;
+      .sibling-item {
+        a {
+          display: block;
+          color: #999999;
+          font-size: 0.9rem;
+          padding: 4px 8px;
+          border-radius: 4px;
+          &:hover {
+            color: #515151;
+            background-color: rgba(0, 0, 0, 0.06);
+            transition: color,background-color 0.3s ease;
+          }
+        }
+        &.prev {
+          text-align: left;
+          margin-right: 10px;
+        }
+        &.next {
+          text-align: right;
+          margin-left: 10px;
+        }
+      }
+    }
+  }
 </style>
 
 <article class="gh-article">
@@ -157,5 +227,21 @@
     </PostContent>
   </div>
 
-  <footer class="gh-footer gh-canvas" />
+  <footer class="gh-footer" />
 </article>
+
+<section class="sibling-posts gh-container">
+  <hr />
+  <div class="sibling-container">
+    <div class="sibling-item prev">
+      {#if siblingPostData.prev && siblingPostData.prev.url}
+        <a href={siblingPostData.prev.url}>{siblingPostData.prev.title}</a>
+      {/if}
+    </div>
+    <div class="sibling-item next">
+      {#if siblingPostData.next && siblingPostData.next.url}
+        <a href={siblingPostData.next.url}>{siblingPostData.next.title}</a>
+      {/if}
+    </div>
+  </div>
+</section>
