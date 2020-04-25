@@ -33,7 +33,7 @@
       }
     }
     .tag-list {
-      display: none;
+      display: block;
       .tag-item {
         font-size: 14px;
         color: #999999;
@@ -48,15 +48,15 @@
         }
       }
       @include respond-to(sm) {
-        display: block;
+        display: none;
       }
     }
     .no {
-      display: none;
+      display: block;
       margin-left: 4px;
       color: #999999;
       @include respond-to(sm) {
-        display: block;
+        display: none;
       }
     }
   }

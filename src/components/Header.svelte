@@ -18,7 +18,7 @@
     align-items: center;
     z-index: 15;
     margin: 0 auto;
-    padding: 0 32px;
+    padding: 0 40px;
     box-sizing: border-box;
     line-height: initial;
     border-bottom: 1px solid rgba(0, 0, 0, 0.04);
@@ -26,22 +26,20 @@
     backdrop-filter: blur(10px);
     transition: background-color 0.3s ease;
     @include respond-to(sm) {
-      // height: 80px;
-      padding: 0 40px;
-      // margin: 16px auto 0;
+      padding: 0 32px;
     }
     &.fold {
       .gh-head-brand {
         .logo {
-          display: none;
-          @include respond-to(sm) {
-            display: inline-block;
-          }
-        }
-        .home-icon {
           display: inline-block;
           @include respond-to(sm) {
             display: none;
+          }
+        }
+        .home-icon {
+          display: none;
+          @include respond-to(sm) {
+            display: inline-block;
           }
         }
       }
@@ -62,9 +60,9 @@
       color: #212121;
       font-size: 1rem;
       img {
-        max-height: 36px;
+        max-height: 48px;
         @include respond-to(sm) {
-          max-height: 48px;
+          max-height: 36px;
         }
       }
     }
@@ -94,11 +92,11 @@
     transition: all .3s ease;
     opacity: 0;
     &:before {
-      content: '|';
+      content: '/';
       color: #cccccc;
       margin-right: 8px;
       @include respond-to(sm) {
-        content: '/';
+        content: '|';
       }
     }
   }
@@ -106,9 +104,9 @@
     flex: 1;
   }
   .gh-navigation {
-    display: none;
+    display: block;
     @include respond-to(sm) {
-      display: block;
+      display: none;
     }
     a {
       margin-left: 8px;

@@ -83,11 +83,11 @@
   .gh-container {
     max-width: 900px;
     margin: 0 auto;
-    padding: 20px 32px;
+    padding: 40px 100px;
     box-sizing: border-box;
     border-radius: 8px;
     @include respond-to(sm) {
-      padding: 40px 100px;
+      padding: 20px 32px;
     }
   }
 

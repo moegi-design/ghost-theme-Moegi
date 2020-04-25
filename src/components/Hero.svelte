@@ -10,7 +10,7 @@
   .moegi-hero {
     position: relative;
     display: flex;
-    height: 120px;
+    height: 180px;
     width: 100%;
     align-items: center;
     font-size: 1.6rem;
@@ -18,7 +18,7 @@
     z-index: 1;
     box-sizing: border-box;
     @include respond-to(sm) {
-      height: 180px;
+      height: 120px;
     }
     a {
       color: inherit;

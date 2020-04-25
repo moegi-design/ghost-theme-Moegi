@@ -30,19 +30,20 @@
     h2 {
       position: relative;
       margin-top: 2em;
-      font-size: 1.6em;
+      font-size: 1.8em;
       @include respond-to(sm) {
-        font-size: 1.8em;
+        font-size: 1.6em;
       }
       &:first-child {
         margin-top: 1em;
       }
       &:before {
+        position: absolute;
         color: var(--color-primary);
         content: "# ";
         left: -1em;
         @include respond-to(sm) {
-          position: absolute;
+          position: initial;
         }
       }
     }
@@ -81,9 +82,9 @@
       font-weight: 400;
       border-left: 4px solid var(--color-primary);
       padding-left: 1em;
-      margin: 1em 0;
+      margin: 1em 3em 1em 2em;
       @include respond-to(sm) {
-        margin: 1em 3em 1em 2em;
+        margin: 1em 0;
       }
     }
 
@@ -273,19 +274,19 @@
 
     .kg-width {
       &-wide {
-        width: calc(100% + 64px);
-        margin: 0 -32px;
+        width: calc(100% + 200px);
+        margin: 0 -100px;
         @include respond-to(sm) {
-          width: calc(100% + 200px);
-          margin: 0 -100px;
+          width: calc(100% + 64px);
+          margin: 0 -32px;
         }
       }
       &-full {
-        width: calc(100% + 64px);
-        margin: 0 -32px;
+        width: calc(100% + 400px);
+        margin: 0 -200px;
         @include respond-to(sm) {
-          width: calc(100% + 400px);
-          margin: 0 -200px;
+          width: calc(100% + 64px);
+          margin: 0 -32px;
         }
       }
     }
@@ -294,10 +295,10 @@
       &-container {
         display: flex;
         flex-direction: column;
-        max-width: calc(100% + 64px);
+        max-width: calc(100% + 200px);
         margin-bottom: 1.4em;
         @include respond-to(sm) {
-          max-width: calc(100% + 200px);
+          max-width: calc(100% + 64px);
         }
       }
       &-row {
@@ -328,7 +329,7 @@
       }
       &-container {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         min-height: 148px;
         margin-bottom: 1.2em;
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
@@ -346,7 +347,7 @@
         }
       }
       &-content {
-        order: 2;
+        order: 0;
         flex-grow: 1;
         display: flex;
         flex-direction: column;
@@ -402,36 +403,36 @@
         white-space: nowrap;
       }
       &-thumbnail {
-        order: 1;
+        order: 0;
         min-height: 160px;
-        width: 100%;
+        width: auto;
         position: relative;
         min-width: 33%;
-        max-height: 100%;
+        min-height: 160px;
         img {
           position: absolute;
           top: 0;
           left: 0;
           width: 100%;
           height: 100%;
-          border-radius: 3px 3px 0 0;
+          border-radius: 0 3px 3px 0;
           object-fit: cover;
         }
       }
 
       @include respond-to(sm) {
         &-container {
-          flex-direction: row;
+          flex-direction: column;
         }
         &-content {
-          order: 0;
+          order: 2;
         }
         &-thumbnail {
-          order: 0;
-          min-height: 160px;
-          width: auto;
+          order: 1;
+          max-height: 100%;
+          width: 100%;
           img {
-            border-radius: 0 3px 3px 0;
+            border-radius: 3px 3px 0 0;
           }
         }
       }

@@ -59,47 +59,50 @@
     .gh-container.header-container {
       position: relative;
       padding-bottom: 0;
-      padding-top: 40px;
+      padding-top: 80px;
       @include respond-to(sm) {
-        padding-top: 80px;
+        padding-top: 40px;
       }
     }
     .gh-post-meta time {
-      font-size: 12px;
+      font-size: 14px;
       color: rgba(0, 0, 0, 0.4);
       @include respond-to(sm) {
-        font-size: 14px;
+        font-size: 12px;
       }
     }
     h1 {
-      font-size: 24px;
-      margin-top: 8px;
-      line-height: 1.2;
+      font-size: 36px;
+      margin: 8px 0 20px;
+      line-height: 1.3;
       color: #000000;
       @include respond-to(sm) {
-        font-size: 36px;
-        line-height: 1.3;
+        font-size: 24px;
+        line-height: 1.2;
       }
     }
     .gh-excerpt {
-      font-size: 14px;
+      font-size: 15px;
       color: rgba(0, 0, 0, 0.4);
       margin: 16px 0 20px;
+      padding: 4px 12px;
+      border-left: 4px solid rgba(0, 0, 0, 0.16);
       @include respond-to(sm) {
-        font-size: 15px;
-        padding: 4px 12px;
-        border-left: 4px solid rgba(0, 0, 0, 0.16);
+        font-size: 14px;
+        padding: 0;
+        border: none;
       }
     }
     img.gh-feature-image {
-      width: 100%;
-      border-radius: 4px;
+      width: calc(100% + 200px);
+      min-height: 400px;
+      margin: 16px -100px 0;
+      border-radius: 8px;
       object-fit: cover;
       @include respond-to(sm) {
-        width: calc(100% + 200px);
-        min-height: 400px;
-        margin: 16px -100px 0;
-        border-radius: 6px;
+        width: 100%;
+        margin: 0;
+        min-height: unset;
       }
     }
     hr {
