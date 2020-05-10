@@ -28,6 +28,7 @@
     display: inline-block;
     margin: 0 auto;
     max-width: 300px;
+    color: var(--color-text-emphasize);
     text-align: center;
     word-break: break-all;
     .logo {

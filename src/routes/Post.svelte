@@ -105,7 +105,7 @@
     }
     .gh-post-meta time {
       font-size: 14px;
-      color: rgba(0, 0, 0, 0.4);
+      color: var(--color-text-lighter);
       @include respond-to(sm) {
         font-size: 12px;
       }
@@ -114,7 +114,7 @@
       font-size: 36px;
       margin: 8px 0 20px;
       line-height: 1.3;
-      color: #000000;
+      color: var(--color-text-emphasize);
       @include respond-to(sm) {
         font-size: 24px;
         line-height: 1.2;
@@ -122,10 +122,10 @@
     }
     .gh-excerpt {
       font-size: 15px;
-      color: rgba(0, 0, 0, 0.4);
+      color: var(--color-text-lighter);
       margin: 16px 0 20px;
       padding: 4px 12px;
-      border-left: 4px solid rgba(0, 0, 0, 0.16);
+      border-left: 4px solid var(--color-decoration-darker);
       @include respond-to(sm) {
         font-size: 14px;
         padding: 0;
@@ -146,7 +146,7 @@
     }
     hr {
       border: none;
-      border-bottom: 1px solid #eeeeee;
+      border-bottom: 1px solid var(--color-decoration-darker);
       padding-bottom: 0.8em;
       height: 10px;
     }
@@ -164,7 +164,7 @@
   .sibling-posts {
     hr {
       border: none;
-      border-bottom: 1px solid #eeeeee;
+      border-bottom: 1px solid var(--color-decoration-darker);
       padding-bottom: 0.8em;
       height: 10px;
     }
@@ -176,13 +176,13 @@
       .sibling-item {
         a {
           display: block;
-          color: #999999;
+          color: var(--color-text-lighter);
           font-size: 0.9rem;
           padding: 4px 8px;
           border-radius: 4px;
           &:hover {
-            color: #515151;
-            background-color: rgba(0, 0, 0, 0.06);
+            color: var(--color-text);
+            background-color: var(--color-decoration-darker);
             transition: color,background-color 0.3s ease;
           }
         }
@@ -199,7 +199,6 @@
   }
 </style>
 
-{#if data.title}
 <article class="gh-article">
   <header class="gh-header gh-canvas">
     <div
@@ -257,4 +256,3 @@
     </div>
   </div>
 </section>
-{/if}

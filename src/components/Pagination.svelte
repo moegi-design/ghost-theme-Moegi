@@ -21,13 +21,13 @@
     display: inline-flex;
     height: 36px;
     line-height: 36px;
-    color: #999999;
+    color: var(--color-text-lighter);
     font-size: 0.9rem;
     padding: 0 12px;
     border-radius: 4px;
     &:hover {
-      color: #515151;
-      background-color: rgba(0, 0, 0, 0.06);
+      color: var(--color-text);
+      background-color: var(--color-decoration-darker);
       transition: color,background-color 0.3s ease;
     }
   }

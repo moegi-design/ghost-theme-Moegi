@@ -12,7 +12,7 @@
   @import "../css/prism-theme";
 
   .post-content {
-    color: #333333;
+    color: var(--color-text);
 
     h1,
     h2,
@@ -192,14 +192,14 @@
     }
 
     code {
-      background: #f8f8f8;
+      background: var(--color-decoration);
       padding: 0.2em 0.4em;
-      border: 1px solid #f0f0f0;
+      border: 1px solid var(--color-decoration-darker);
     }
 
     pre {
-      background: #f8f8f8;
-      border: 1px solid #ddd;
+      background: var(--color-decoration);
+      border: 1px solid var(--color-decoration-darker);
       padding: 1em 1.5em;
       display: block;
       -webkit-overflow-scrolling: touch;
@@ -213,7 +213,7 @@
 
     hr {
       border: none;
-      border-bottom: 1px solid #cfcfcf;
+      border-bottom: 1px solid var(--color-text-lighter);
       margin-bottom: 0.8em;
       height: 10px;
     }
@@ -221,13 +221,13 @@
     small,
     figcaption {
       font-size: 0.9em;
-      color: #888;
+      color: var(--color-text-lighter);
     }
 
     strong,
     b {
       font-weight: bold;
-      color: #000;
+      color: var(--color-text-emphasize);
     }
 
     [draggable] {
@@ -238,15 +238,15 @@
       th,
       td,
       caption {
-        border: 1px solid #ddd;
+        border: 1px solid var(--color-decoration-darker);
         padding: 0.5em 1em;
         color: #666;
       }
       th {
-        background: #fbfbfb;
+        background: var(--color-decoration-darker);
       }
       thead th {
-        background: #f1f1f1;
+        background: var(--color-decoration);
       }
       caption {
         border-bottom: none;
@@ -336,7 +336,8 @@
         text-decoration: none;
         border: 0;
         border-radius: 3px;
-        color: #333333;
+        color: var(--color-text);
+        background: var(--color-decoration);
         box-shadow: 0 2px 5px -1px rgba(0, 0, 0, 0.15),
           0 0 1px rgba(0, 0, 0, 0.09);
         &:hover {

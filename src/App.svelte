@@ -89,7 +89,7 @@
   }
 
   .bg-white {
-    background: #ffffff;
+    background: var(--color-background-inner);
   }
 
   .gh-viewport {
@@ -97,6 +97,10 @@
     flex-direction: column;
     box-sizing: border-box;
     padding-top: 48px;
+    opacity: 0;
+    &[loaded="true"] {
+      opacity: 1;
+    }
   }
 
   .gh-container {
@@ -123,7 +127,7 @@
 </style>
 
 <template>
-  <div class="gh-viewport">
+  <div class="gh-viewport" {loaded}>
     <!-- <div class="gh-feature-image-bg" style="--bg-url: url({bgUrl});" /> -->
     <Header {customHeaderClass} />
     <main>

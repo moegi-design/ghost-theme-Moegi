@@ -9,7 +9,7 @@
     width: 100%;
     align-items: center;
     justify-content: center;
-    color: rgba(0, 0, 0, 0.16);
+    color: var(--color-text-solight);
     font-size: 14px;
     a {
       color: inherit;

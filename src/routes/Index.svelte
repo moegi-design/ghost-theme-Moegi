@@ -44,7 +44,8 @@
     align-items: center;
     font-size: 0.9em;
     padding: 8px 12px;
-    background-color: rgba(var(--color-primary-rgb), 0.06);
+    color: var(--color-text);
+    background-color: var(--color-decoration);
     border-radius: 4px;
     .iconfont {
       font-size: 1.1em;

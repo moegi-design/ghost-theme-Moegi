@@ -20,8 +20,8 @@
     padding: 0 40px;
     box-sizing: border-box;
     line-height: initial;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.04);
-    background-color: rgba(255, 255, 255, 0.92);
+    border-bottom: 1px solid var(--color-decoration);
+    background-color: var(--color-background-inner);
     backdrop-filter: blur(10px);
     transition: background-color 0.3s ease;
     @include respond-to(sm) {
@@ -56,7 +56,7 @@
     z-index: 20;
     .logo {
       font-weight: 400;
-      color: #212121;
+      color: var(--color-text);
       font-size: 1rem;
       img {
         max-height: 48px;
@@ -66,7 +66,7 @@
       }
     }
     .home-icon {
-      color: #212121;
+      color: var(--color-text);
       display: none;
       position: relative;
       span {
@@ -83,7 +83,7 @@
     }
   }
   .gh-title {
-    color: #686868;
+    color: var(--color-text-lighter);
     margin-left: 8px;
     font-size: 0.9rem;
     white-space: nowrap;
@@ -92,7 +92,7 @@
     opacity: 0;
     &:before {
       content: '/';
-      color: #cccccc;
+      color: var(--color-text-lighter);
       margin-right: 8px;
       @include respond-to(sm) {
         content: '|';
@@ -110,12 +110,12 @@
     a {
       margin-left: 8px;
       font-size: 0.9rem;
-      color: #212121;
+      color: var(--color-text);
       padding: 4px 8px;
       border-radius: 4px;
       &:hover {
-        background-color: rgba(0, 0, 0, 0.06);
-        transition: background-color 0.3s ease;
+        background-color: var(--color-decoration-darker);
+        transition: color,background-color 0.3s ease;
       }
     }
   }

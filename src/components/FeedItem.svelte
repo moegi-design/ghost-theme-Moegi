@@ -11,7 +11,7 @@
     display: flex;
     min-height: 60px;
     align-items: center;
-    border-bottom: 1px solid #f0f0f0;
+    border-bottom: 1px solid var(--color-decoration-darker);
     padding: 10px 0;
     box-sizing: border-box;
     .date {
@@ -23,7 +23,7 @@
       flex: 1;
       h2.title {
         font-size: 18px;
-        color: #303030;
+        color: var(--color-text);
         line-height: 24px;
         &:hover {
           color: var(--color-primary);
@@ -35,8 +35,8 @@
       display: block;
       .tag-item {
         font-size: 14px;
-        color: #999999;
-        border: 1px solid #e6e6e6;
+        color: var(--color-text-lighter);
+        border: 1px solid var(--color-text-solight);
         border-radius: 4px;
         padding: 2px 6px;
         margin-right: 4px;
