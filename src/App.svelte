@@ -10,6 +10,7 @@
 
   const api = window.ghostAPI;
   let bgUrl = '';
+  let loaded = false;
   let customHeaderClass = '';
 
   onMount(async () => {
@@ -21,6 +22,9 @@
   function handleMessage(event) {
     const eventDetail = event.detail
     switch (eventDetail.func) {
+      case 'setLoadStatus':
+        loaded = eventDetail.data.loaded || false
+        break;
       case 'setBackground':
         bgUrl = eventDetail.data.url || ''
         break;
@@ -104,16 +108,14 @@
 </style>
 
 <template>
-  <!-- <Router {url}> -->
-    <div class="gh-viewport">
-      <!-- <div class="gh-feature-image-bg" style="--bg-url: url({bgUrl});" /> -->
-      <Header {customHeaderClass} />
-      <main>
-        <!-- <Route path="/:slug"><Post/></Route>
-        <Route path="/" component={Index} /> -->
-        <svelte:component this={router.page} params={router.params} on:message={handleMessage} />
-      </main>
+  <div class="gh-viewport">
+    <!-- <div class="gh-feature-image-bg" style="--bg-url: url({bgUrl});" /> -->
+    <Header {customHeaderClass} />
+    <main>
+      <svelte:component this={router.page} params={router.params} on:message={handleMessage} />
+    </main>
+    {#if loaded}
       <Footer />
-    </div>
-  <!-- </Router> -->
+    {/if}
+  </div>  
 </template>

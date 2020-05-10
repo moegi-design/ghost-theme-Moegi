@@ -44,13 +44,15 @@
 </style>
 
 <header class="moegi-hero">
-  <div class="gh-head-brand">
-    <a class="logo" href={$siteInfo.url}>
-      {#if $siteInfo.logo}
-        <img src={$siteInfo.logo} alt={$siteInfo.title} />
-      {:else}
-        <span>{$siteInfo.title}</span>
-      {/if}
-    </a>
-  </div>
+  {#if $siteInfo.url}
+    <div class="gh-head-brand">
+      <a class="logo" href={$siteInfo.url}>
+        {#if $siteInfo.logo}
+          <img src={$siteInfo.logo} alt={$siteInfo.title} />
+        {:else}
+          <span>{$siteInfo.title}</span>
+        {/if}
+      </a>
+    </div>
+  {/if}
 </header>

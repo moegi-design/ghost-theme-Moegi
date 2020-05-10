@@ -31,6 +31,12 @@
       if (isPost) {
         getSublingPosts()
       }
+      dispatch("message", {
+        func: "setLoadStatus",
+        data: {
+          loaded: true
+        }
+      });
     }
     // if (data && data.feature_image) {
     //   dispatch("message", {
@@ -194,6 +200,7 @@
   }
 </style>
 
+{#if data.title}
 <article class="gh-article">
   <header class="gh-header gh-canvas">
     <div
@@ -251,3 +258,4 @@
     </div>
   </div>
 </section>
+{/if}
