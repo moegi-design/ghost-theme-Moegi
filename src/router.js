@@ -6,6 +6,10 @@ let page
 let params
 
 router('/', () => page = Index)
+router('/page/:page', (ctx, next) => {
+  params = ctx.params
+  next()
+}, () => page = Index)
 router('/:slug', (ctx, next) => {
   params = ctx.params
   next()

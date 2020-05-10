@@ -2,12 +2,18 @@
   import { onMount } from 'svelte';
   import Hero from "../components/Hero.svelte";
   import FeedItem from "../components/FeedItem.svelte";
+  import Pagination from "../components/Pagination.svelte";
+
+  export let params = {};
 
   const api = window.ghostAPI;
   let postList = [];
+  let paginationData = {};
+  let page = params.page || 1
 
   onMount(async () => {
-		postList = await api.posts.browse({ limit: 10, page: 1, include: "tags" });
+    postList = await api.posts.browse({ limit: 8, page, include: "tags" });
+    paginationData = postList.meta;
 	});
 
   const getPostIndex = index => {
@@ -24,5 +30,8 @@
         <FeedItem data={postItem} index={getPostIndex(i)} />
       {/each}
     </div>
+    {#if paginationData.pagination}
+      <Pagination paginationData={paginationData.pagination} />
+    {/if}
   </div>
 </template>

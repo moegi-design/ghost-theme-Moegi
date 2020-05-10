@@ -235,12 +235,18 @@
   <div class="sibling-container">
     <div class="sibling-item prev">
       {#if siblingPostData.prev && siblingPostData.prev.url}
-        <a href={siblingPostData.prev.url}>{siblingPostData.prev.title}</a>
+        <a href={siblingPostData.prev.url}>
+          <span class="iconfont icon-left"></span>
+          {siblingPostData.prev.title}
+        </a>
       {/if}
     </div>
     <div class="sibling-item next">
       {#if siblingPostData.next && siblingPostData.next.url}
-        <a href={siblingPostData.next.url}>{siblingPostData.next.title}</a>
+        <a href={siblingPostData.next.url}>
+          {siblingPostData.next.title}
+          <span class="iconfont icon-right"></span>
+        </a>
       {/if}
     </div>
   </div>

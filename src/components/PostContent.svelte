@@ -204,7 +204,7 @@
       padding: 1em 1.5em;
       display: block;
       -webkit-overflow-scrolling: touch;
-      overflow-x: scroll;
+      overflow: auto;
       code {
         background: transparent;
         padding: 0;
