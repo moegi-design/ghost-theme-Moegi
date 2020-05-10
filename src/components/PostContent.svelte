@@ -8,7 +8,6 @@
 </script>
 
 <style lang="scss" global>
-  @import "../css/variables";
   @import "../css/mixins";
   @import "../css/prism-theme";
 

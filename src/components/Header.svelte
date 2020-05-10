@@ -6,7 +6,6 @@
 </script>
 
 <style lang="scss">
-  @import "../css/variables";
   @import "../css/mixins";
 
   .gh-head {

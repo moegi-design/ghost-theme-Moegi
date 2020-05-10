@@ -30,4 +30,25 @@ Every commit in this branch will be built and tested automatically by Github Act
   }
   </script>
   ```
+  The above is required content, if you need more custom configuration, please skip to [Configuration](#Configuration).
 * Activate the theme.
+
+### Configuration
+
+The Moegi theme is configured by declaring a `config` object in `Site Header`, for example:
+```js
+<script>
+const config = {
+  api: {
+    url: 'Your API URL',
+    contentKey: 'Your Content API Key',
+  },
+  primaryColor: '#86B81B'
+}
+</script>
+```
+
+| Name | Description |
+| ------ | ------ |
+| `api` | required |
+| `primaryColor` | Optional. Custom theme color, default is '#86B81B' (* Only HEX format supported) |

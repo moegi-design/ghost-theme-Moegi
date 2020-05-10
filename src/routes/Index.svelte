@@ -44,7 +44,7 @@
     align-items: center;
     font-size: 0.9em;
     padding: 8px 12px;
-    background-color: rgba(0, 0, 0, 0.04);
+    background-color: rgba(var(--color-primary-rgb), 0.06);
     border-radius: 4px;
     .iconfont {
       font-size: 1.1em;
@@ -81,7 +81,7 @@
         <FeedItem data={postItem} index={getPostIndex(i)} showIndex={!tagSlug && !authorSlug} />
       {/each}
     </div>
-    {#if paginationData.pagination}
+    {#if paginationData}
       <Pagination {paginationData} />
     {/if}
   </div>

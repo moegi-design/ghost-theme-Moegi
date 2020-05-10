@@ -92,7 +92,6 @@
 </script>
 
 <style lang="scss">
-  @import "../css/variables";
   @import "../css/mixins";
 
   header {

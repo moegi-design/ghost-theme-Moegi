@@ -2,6 +2,13 @@
 /// @access public
 /// @param {String} $breakpoint - Breakpoint
 /// @requires $breakpoints
+
+$breakpoints: (
+  'sm': 'only screen and (max-width: 768px)',
+  'md': 'only screen and (min-width: 769px)',
+  'lg': 'only screen and (min-width: 1200px)',
+) !default;
+
 @mixin respond-to($breakpoint) {
   $raw-query: map-get($breakpoints, $breakpoint);
 

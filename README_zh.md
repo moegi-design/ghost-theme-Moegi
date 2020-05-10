@@ -28,4 +28,25 @@
   }
   </script>
   ```
+  以上为必填内容，如需更多自定义配置请跳转[配置项](#配置项)。
 * 设置完成，启用主题
+
+### 配置项
+
+Moegi 主题的配置方式为在 `Site Header`中声明`config`对象，例如：
+```js
+<script>
+const config = {
+  api: {
+    url: 'Your API URL',
+    contentKey: 'Your Content API Key',
+  },
+  primaryColor: '#86B81B'
+}
+</script>
+```
+
+| 配置项名称 | 说明 |
+| ------ | ------ |
+| `api` | 必填 |
+| `primaryColor` | 可选。自定义主题颜色，默认为 '#86B81B'（* 仅支持HEX格式） |

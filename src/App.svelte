@@ -13,13 +13,28 @@
   let loaded = false;
   let customHeaderClass = '';
 
+  loadCustomConfig();
+
   onMount(async () => {
 		const info = await api.settings.browse();
     siteInfo.set(info);
     console.log($siteInfo);
   });
+
+  function loadCustomConfig () {
+    if (config.primaryColor) {
+      const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(config.primaryColor);
+      const rgbColor = result ? {
+        r: parseInt(result[1], 16),
+        g: parseInt(result[2], 16),
+        b: parseInt(result[3], 16)
+      } : {};
+      document.documentElement.style.setProperty('--color-primary', config.primaryColor);
+      document.documentElement.style.setProperty('--color-primary-rgb', `${rgbColor.r}, ${rgbColor.g}, ${rgbColor.b}`);
+    }
+  }
   
-  function handleMessage(event) {
+  function handleMessage (event) {
     const eventDetail = event.detail
     switch (eventDetail.func) {
       case 'setLoadStatus':

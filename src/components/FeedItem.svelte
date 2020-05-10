@@ -5,7 +5,6 @@
 </script>
 
 <style lang="scss">
-  @import "../css/variables";
   @import "../css/mixins";
 
   .feed-item-content {
