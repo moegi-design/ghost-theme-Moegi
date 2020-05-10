@@ -10,6 +10,14 @@ router('/page/:page', (ctx, next) => {
   params = ctx.params
   next()
 }, () => page = Index)
+router('/tag/:tag_slug', (ctx, next) => {
+  params = ctx.params
+  next()
+}, () => page = Index)
+router('/author/:author_slug', (ctx, next) => {
+  params = ctx.params
+  next()
+}, () => page = Index)
 router('/:slug', (ctx, next) => {
   params = ctx.params
   next()

@@ -1,7 +1,7 @@
 <script>
   import dayjs from "dayjs";
 
-  export let data, index;
+  export let data, index, showIndex;
 </script>
 
 <style lang="scss">
@@ -76,7 +76,9 @@
           <a class="tag-item" href={tag.url}>{tag.name}</a>
         {/each}
       </div>
-      <span class="no">#{index}</span>
+      {#if showIndex}
+        <span class="no">#{index}</span>
+      {/if}
     </div>
   </article>
 </template>
