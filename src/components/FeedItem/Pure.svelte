@@ -5,7 +5,7 @@
 </script>
 
 <style lang="scss">
-  @import "../css/mixins";
+  @import "../../css/mixins";
 
   .feed-item-content {
     display: flex;
@@ -17,7 +17,7 @@
     .date {
       font-size: 16px;
       width: 120px;
-      color: #999999;
+      color: var(--color-text-lighter);
     }
     .title-wrap {
       flex: 1;

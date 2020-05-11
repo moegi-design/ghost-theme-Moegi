@@ -1,8 +1,10 @@
 <script>
   import { onMount, createEventDispatcher } from 'svelte';
   import Hero from "../components/Hero.svelte";
-  import FeedItem from "../components/FeedItem.svelte";
   import Pagination from "../components/Pagination.svelte";
+  //Feed Item
+  import Note from "../components/FeedItem/Note.svelte";
+  import Pure from "../components/FeedItem/Pure.svelte";
 
   export let params = {};
 
@@ -13,6 +15,7 @@
   let page = params.page || 1;
   let tagSlug = params.tag_slug || '';
   let authorSlug = params.author_slug || '';
+  let feedType = config.feed ? config.feed.toLowerCase() : 'pure';
 
   onMount(async () => {
     let filter = ''
@@ -79,7 +82,13 @@
     {/if}
     <div class="feed-list simple">
       {#each postList as postItem, i}
-        <FeedItem data={postItem} index={getPostIndex(i)} showIndex={!tagSlug && !authorSlug} />
+        {#if feedType === 'note'}
+          <Note data={postItem} />
+        {:else if feedType === 'pure'}
+          <Pure data={postItem} index={getPostIndex(i)} showIndex={!tagSlug && !authorSlug} />
+        {:else}
+          <Pure data={postItem} index={getPostIndex(i)} showIndex={!tagSlug && !authorSlug} />
+        {/if}
       {/each}
     </div>
     {#if paginationData}
