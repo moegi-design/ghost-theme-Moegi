@@ -41,7 +41,8 @@ const config = {
     url: 'Your API URL',
     contentKey: 'Your Content API Key',
   },
-  primaryColor: '#86B81B'
+  primaryColor: '#86B81B',
+  feed: 'Pure'
 }
 </script>
 ```
@@ -50,3 +51,4 @@ const config = {
 | ------ | ------ |
 | `api` | 必填 |
 | `primaryColor` | 可选。自定义主题颜色，默认为 '#86B81B'（* 仅支持HEX格式） |
+| `feed` | 可选。自定义首页文章列表的样式，可选值为 'Pure', 'Note'，默认值为 'Pure' |

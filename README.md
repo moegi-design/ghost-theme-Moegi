@@ -43,7 +43,8 @@ const config = {
     url: 'Your API URL',
     contentKey: 'Your Content API Key',
   },
-  primaryColor: '#86B81B'
+  primaryColor: '#86B81B',
+  feed: 'Pure'
 }
 </script>
 ```
@@ -52,3 +53,4 @@ const config = {
 | ------ | ------ |
 | `api` | required |
 | `primaryColor` | Optional. Custom theme color, default is '#86B81B' (* Only HEX format supported) |
+| `feed` | Optional. Customize the style of the home page article list with optional values of 'Pure', 'Note'. default is 'Pure' |
