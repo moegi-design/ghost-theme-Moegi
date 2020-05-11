@@ -77,7 +77,7 @@
 
     blockquote {
       position: relative;
-      color: #999;
+      color: var(--color-text-lighter);
       font-weight: 400;
       border-left: 4px solid var(--color-primary);
       padding-left: 1em;
@@ -240,10 +240,10 @@
       caption {
         border: 1px solid var(--color-decoration-darker);
         padding: 0.5em 1em;
-        color: #666;
+        color: var(--color-text);
       }
       th {
-        background: var(--color-decoration-darker);
+        background: var(--color-text-emphasize);
       }
       thead th {
         background: var(--color-decoration);
@@ -255,7 +255,7 @@
 
     legend,
     caption {
-      color: #000;
+      color: var(--color-text-emphasize);
       font-weight: inherit;
     }
 
