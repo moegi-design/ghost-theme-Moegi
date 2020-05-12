@@ -227,9 +227,11 @@
 
   <div
     class="gh-content gh-container bg-white {data.feature_image ? 'with-feature' : ''}">
-    <PostContent>
-      {@html data.html}
-    </PostContent>
+    {#if data.html}
+      <PostContent>
+        {@html data.html}
+      </PostContent>
+    {/if}
   </div>
 
   <footer class="gh-footer" />

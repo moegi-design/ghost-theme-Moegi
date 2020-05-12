@@ -1,8 +1,13 @@
 <script>
   import Prism from "prismjs";
+  import katex from 'katex';
+  import renderMathInElement from 'katex/dist/contrib/auto-render.min.js';
   import { beforeUpdate, afterUpdate } from 'svelte';
 
+  let postContentDom;
+
   afterUpdate(() => {
+    renderMathInElement(postContentDom);
 		Prism.highlightAll();
 	});
 </script>
@@ -10,6 +15,7 @@
 <style lang="scss" global>
   @import "../css/mixins";
   @import "../css/prism-theme";
+  @import "katex/dist/katex";
 
   .post-content {
     color: var(--color-text);
@@ -440,6 +446,6 @@
   }
 </style>
 
-<div class="post-content">
+<div class="post-content" bind:this={postContentDom}>
   <slot />
 </div>

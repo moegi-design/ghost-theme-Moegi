@@ -4,6 +4,7 @@ import resolve from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
 import livereload from 'rollup-plugin-livereload'
 import { terser } from 'rollup-plugin-terser'
+import copy from 'rollup-plugin-copy'
 
 const production = !process.env.ROLLUP_WATCH
 
@@ -16,6 +17,16 @@ export default {
     file: 'dist/assets/moegi.js'
   },
   plugins: [
+    copy({
+      targets: [
+        { src: './package.json', dest: './dist' },
+        { src: './src/ghost/default.hbs', dest: './dist', rename: 'default.hbs' },
+        { src: './src/ghost/default.hbs', dest: './dist', rename: 'index.hbs' },
+        { src: './src/ghost/default.hbs', dest: './dist', rename: 'post.hbs' },
+        { src: './src/css/fonts/*', dest: './dist/assets' },
+        { src: './node_modules/katex/dist/fonts', dest: './dist/assets' },
+      ]
+    }),
     svelte({
       // enable run-time checks when not in production
       dev: !production,
