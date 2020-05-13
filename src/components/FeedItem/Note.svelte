@@ -55,9 +55,6 @@
           transition: color, border-color 0.3s ease;
         }
       }
-      @include respond-to(sm) {
-        display: none;
-      }
     }
   }
 </style>

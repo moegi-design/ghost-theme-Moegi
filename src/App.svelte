@@ -57,6 +57,10 @@
   @import "css/mixins";
   @import "css/iconfont";
 
+  [ssr-render] {
+    display: none;
+  }
+
   html {
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
