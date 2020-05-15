@@ -10,7 +10,7 @@
   --color-text-lighter: rgba(0, 0, 0, 0.4);
   --color-text-solight: rgba(0, 0, 0, 0.16);
   --color-background: #ffffff;
-  --color-background-inner: rgba(255, 255, 255, 0.92);
+  --color-background-inner: rgba(255, 255, 255, 0.8);
   --color-decoration: rgba(0, 0, 0, 0.04);
   --color-decoration-darker: rgba(0, 0, 0, 0.08);
 }
@@ -24,7 +24,7 @@
     --color-text-lighter: rgba(255, 255, 255, 0.4);
     --color-text-solight: rgba(255, 255, 255, 0.16);
     --color-background: #222222;
-    --color-background-inner: rgba(#{hexToRGB(#222222)}, 0.92);
+    --color-background-inner: rgba(#{hexToRGB(#222222)}, 0.8);
     --color-decoration: rgba(255, 255, 255, 0.04);
     --color-decoration-darker: rgba(255, 255, 255, 0.08);
   }

@@ -22,7 +22,7 @@
     line-height: initial;
     border-bottom: 1px solid var(--color-decoration);
     background-color: var(--color-background-inner);
-    backdrop-filter: blur(10px);
+    backdrop-filter: saturate(180%) blur(20px);
     transition: background-color 0.3s ease;
     @include respond-to(sm) {
       padding: 0 32px;
@@ -86,6 +86,7 @@
     color: var(--color-text-lighter);
     margin-left: 8px;
     font-size: 0.9rem;
+    font-weight: bold;
     white-space: nowrap;
     transform: translateX(-1rem);
     transition: all .3s ease;
