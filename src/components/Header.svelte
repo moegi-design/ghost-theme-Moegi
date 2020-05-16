@@ -3,6 +3,8 @@
   import { getContext } from "svelte";
 
   export let customHeaderClass;
+
+  let isMobileMenuOpen = false;
 </script>
 
 <style lang="scss">
@@ -120,6 +122,93 @@
       }
     }
   }
+  .gh-navigation-m {
+    display: none;
+    @include respond-to(sm) {
+      display: block;
+    }
+    .home-icon {
+      color: var(--color-text);
+      position: relative;
+      span {
+        font-size: 20px;
+      }
+      &:before{
+        content: '';
+        position: absolute;
+        top: -8px;
+        right: -8px;
+        bottom: -8px;
+        left: -8px;
+      }
+    }
+  }
+  .gh-navigation-mpanel {
+    display: none;
+    @include respond-to(sm) {
+      display: block;
+    }
+    position: fixed;
+    left: 0;
+    right: 0;
+    height: 0;
+    overflow: hidden;
+    top: 48px;
+    bottom: 0;
+    z-index: 15;
+    user-select: none;
+    &.show {
+      height: auto;
+      .container {
+        transform: none;
+      }
+      .mask {
+        background-color: var(--color-decoration-darker);
+      }
+    }
+    &.hide {
+      height: 0;
+      overflow: hidden;
+      .container {
+        transform: translateY(-100%);
+      }
+      .mask {
+        background-color: transparent;
+      }
+    }
+    .container {
+      position: relative;
+      padding: 10px 32px;
+      border-bottom: 1px solid var(--color-decoration);
+      background-color: var(--color-background-inner);
+      backdrop-filter: saturate(180%) blur(20px);
+      z-index: 20;
+      transition: transform 0.3s ease;
+      a {
+        display: block;
+        font-size: 0.9rem;
+        color: var(--color-text);
+        height: 48px;
+        line-height: 48px;
+        border-bottom: 1px solid var(--color-decoration);
+        &:last-child {
+          border-bottom: none;
+        }
+        &:active {
+          color: var(--color-primary);
+          transition: color 0.3s ease;
+        }
+      }
+    }
+    .mask {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      transition: background-color 0.3s ease;
+    }
+  }
 </style>
 
 {#if $siteInfo.title}
@@ -140,7 +229,23 @@
   <div class="gh-title">{$postTitle}</div>
   {/if}
   <div class="gh-blank"></div>
+  {#if $siteInfo.navigation}
+  <div class="gh-navigation-m" on:click={() => {isMobileMenuOpen = !isMobileMenuOpen}}>
+    <div class="home-icon" href={$siteInfo.url}>
+      <span class="iconfont {isMobileMenuOpen ? 'icon-close' : 'icon-menu'}"></span>
+    </div>
+  </div>
   <div class="gh-navigation">
+    <nav>
+      {#each $siteInfo.navigation as navItem, i}
+        <a href={navItem.url}>{navItem.label}</a>
+      {/each}
+    </nav>
+  </div>
+  {/if}
+</header>
+<div class="gh-navigation-mpanel {isMobileMenuOpen ? 'show' : 'hide'}">
+  <div class="container">
     {#if $siteInfo.navigation}
       <nav>
         {#each $siteInfo.navigation as navItem, i}
@@ -149,5 +254,6 @@
       </nav>
     {/if}
   </div>
-</header>
+  <div class="mask" on:click={() => {isMobileMenuOpen = !isMobileMenuOpen}}></div>
+</div>
 {/if}

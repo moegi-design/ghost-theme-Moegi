@@ -18,7 +18,6 @@
     box-sizing: border-box;
     .title-wrap {
       h2.title {
-        height: 36px;
         line-height: 36px;
         font-size: 22px;
         color: var(--color-text);
