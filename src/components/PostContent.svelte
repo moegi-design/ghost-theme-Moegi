@@ -26,19 +26,18 @@
     h4,
     h5,
     h6 {
-      margin: 2.4em 0 0.6em;
+      margin: 1.8em 0 1em;
       line-height: 1.35;
+      font-weight: bold;
     }
     h1 {
-      font-size: 2em;
+      font-size: 1.8em;
     }
     h2 {
       position: relative;
       margin-top: 2em;
-      font-size: 1.8em;
-      @include respond-to(sm) {
-        font-size: 1.6em;
-      }
+      font-size: 1.5em;
+      font-weight: 600;
       &:first-child {
         margin-top: 1em;
       }
@@ -53,11 +52,9 @@
       }
     }
     h3 {
-      font-size: 1.4em;
-    }
-    h4 {
       font-size: 1.2em;
     }
+    h4,
     h5,
     h6 {
       font-size: 1em;

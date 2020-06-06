@@ -111,7 +111,7 @@
       }
     }
     h1 {
-      font-size: 36px;
+      font-size: 32px;
       margin: 8px 0 20px;
       line-height: 1.3;
       color: var(--color-text-emphasize);
