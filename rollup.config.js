@@ -11,7 +11,7 @@ const production = !process.env.ROLLUP_WATCH
 export default {
   input: 'src/main.js',
   output: {
-    sourcemap: true,
+    sourcemap: !production,
     format: 'iife',
     name: 'app',
     file: 'dist/assets/moegi.js'
@@ -40,7 +40,7 @@ export default {
         }),
       ],
       css: css => {
-        css.write('dist/assets/moegi.css');
+        css.write('dist/assets/moegi.css', !production);
       }
     }),
     commonjs(),
