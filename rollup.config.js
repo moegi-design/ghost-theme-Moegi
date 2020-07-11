@@ -25,6 +25,7 @@ export default {
         { src: './src/ghost/default.hbs', dest: './dist', rename: 'post.hbs' },
         { src: './src/css/fonts/*', dest: './dist/assets' },
         { src: './node_modules/katex/dist/fonts', dest: './dist/assets' },
+        { src: './node_modules/prismjs/components/*.min.js', dest: './dist/assets/prism' },
       ]
     }),
     svelte({

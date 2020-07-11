@@ -1,15 +1,17 @@
 <script>
-  import Prism from "prismjs";
-  import katex from 'katex';
-  import renderMathInElement from 'katex/dist/contrib/auto-render.min.js';
-  import { beforeUpdate, afterUpdate } from 'svelte';
+  import Prism from 'prismjs'
+  import katex from 'katex'
+  import renderMathInElement from 'katex/dist/contrib/auto-render.min.js'
+  import 'prismjs/plugins/autoloader/prism-autoloader.js'
+  import { beforeUpdate, afterUpdate } from 'svelte'
 
   let postContentDom;
 
   afterUpdate(() => {
-    renderMathInElement(postContentDom);
-		Prism.highlightAll();
-	});
+    renderMathInElement(postContentDom)
+    Prism.plugins.autoloader.languages_path = `../assets/prism/`
+    Prism.highlightAll()
+  })
 </script>
 
 <style lang="scss" global>
