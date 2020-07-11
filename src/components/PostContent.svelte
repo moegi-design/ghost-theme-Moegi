@@ -9,7 +9,6 @@
 
   afterUpdate(() => {
     renderMathInElement(postContentDom)
-    Prism.plugins.autoloader.languages_path = `../assets/prism/`
     Prism.highlightAll()
   })
 </script>
