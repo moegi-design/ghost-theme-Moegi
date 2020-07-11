@@ -1,4 +1,5 @@
 <script>
+  import { siteConfig } from '../api';
   import { onMount, createEventDispatcher } from 'svelte';
   import Hero from "../components/Hero.svelte";
   import Pagination from "../components/Pagination.svelte";
@@ -15,7 +16,7 @@
   let page = params.page || 1;
   let tagSlug = params.tag_slug || '';
   let authorSlug = params.author_slug || '';
-  let feedType = config.feed ? config.feed.toLowerCase() : 'pure';
+  let feedType = siteConfig.feed.toLowerCase();
 
   onMount(async () => {
     let filter = ''

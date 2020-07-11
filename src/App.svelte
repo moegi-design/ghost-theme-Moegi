@@ -1,4 +1,5 @@
 <script>
+  import { siteConfig } from './api';
   import { onMount } from 'svelte';
   import { siteInfo } from "./stores.js";
   import router from "./router.js";
@@ -22,14 +23,14 @@
   });
 
   function loadCustomConfig () {
-    if (config.primaryColor) {
-      const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(config.primaryColor);
+    if (siteConfig.primaryColor) {
+      const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(siteConfig.primaryColor);
       const rgbColor = result ? {
         r: parseInt(result[1], 16),
         g: parseInt(result[2], 16),
         b: parseInt(result[3], 16)
       } : {};
-      document.documentElement.style.setProperty('--color-primary', config.primaryColor);
+      document.documentElement.style.setProperty('--color-primary', siteConfig.primaryColor);
       document.documentElement.style.setProperty('--color-primary-rgb', `${rgbColor.r}, ${rgbColor.g}, ${rgbColor.b}`);
     }
   }
