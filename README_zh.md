@@ -44,7 +44,8 @@ const config = {
     contentKey: 'Your Content API Key',
   },
   primaryColor: '#86B81B',
-  feed: 'Pure'
+  feed: 'Pure',
+  darkMode: 'auto',
 }
 </script>
 ```
@@ -54,3 +55,4 @@ const config = {
 | `api` | 必填 |
 | `primaryColor` | 可选。自定义主题颜色，默认为 '#86B81B'（* 仅支持HEX格式） |
 | `feed` | 可选。自定义首页文章列表的样式，可选值为 'Pure', 'Note'，默认值为 'Pure' |
+| `darkMode` | 可选。自定义暗色模式是否跟随系统，对所有浏览者生效。可选值为 'light', 'dark'，默认值为 'auto' |

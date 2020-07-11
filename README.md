@@ -5,7 +5,7 @@
 
 ![Moegi Theme](screenshot.png)
 
-[中文🇨🇳](README_zh.md)
+[中文文档](README_zh.md)
 
 ## Download
 
@@ -46,7 +46,8 @@ const config = {
     contentKey: 'Your Content API Key',
   },
   primaryColor: '#86B81B',
-  feed: 'Pure'
+  feed: 'Pure',
+  darkMode: 'auto',
 }
 </script>
 ```
@@ -56,3 +57,4 @@ const config = {
 | `api` | required |
 | `primaryColor` | Optional. Custom theme color, default is '#86B81B' (* Only HEX format supported) |
 | `feed` | Optional. Customize the style of the home page article list with optional values of 'Pure', 'Note'. default is 'Pure' |
+| `darkMode` | Optional. Customize whether the dark mode follows the system or not, effective for all viewers. Optional values are 'light', 'dark', default value is 'auto' |

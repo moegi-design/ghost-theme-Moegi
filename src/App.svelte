@@ -23,6 +23,10 @@
   });
 
   function loadCustomConfig () {
+    const rootElement = document.documentElement;
+    if (siteConfig.darkMode) {
+      rootElement.setAttribute('class', `mode-${siteConfig.darkMode}`);
+    }
     if (siteConfig.primaryColor) {
       const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(siteConfig.primaryColor);
       const rgbColor = result ? {
@@ -30,8 +34,8 @@
         g: parseInt(result[2], 16),
         b: parseInt(result[3], 16)
       } : {};
-      document.documentElement.style.setProperty('--color-primary', siteConfig.primaryColor);
-      document.documentElement.style.setProperty('--color-primary-rgb', `${rgbColor.r}, ${rgbColor.g}, ${rgbColor.b}`);
+      rootElement.style.setProperty('--color-primary', siteConfig.primaryColor);
+      rootElement.style.setProperty('--color-primary-rgb', `${rgbColor.r}, ${rgbColor.g}, ${rgbColor.b}`);
     }
   }
   

@@ -2,7 +2,7 @@
   @return red($hex), green($hex), blue($hex);
 }
 
-:root {
+:root, :root.mode-light {
   --color-primary: #86B81B;
   --color-primary-rgb: #{hexToRGB(#86B81B)};
   --color-text: #444444;
@@ -13,6 +13,25 @@
   --color-background-inner: rgba(255, 255, 255, 0.8);
   --color-decoration: rgba(0, 0, 0, 0.04);
   --color-decoration-darker: rgba(0, 0, 0, 0.08);
+  img {
+    opacity: 1;
+  }
+}
+
+:root.mode-dark {
+  --color-primary: #86B81B;
+  --color-primary-rgb: #{hexToRGB(#86B81B)};
+  --color-text: #BBBBBB;
+  --color-text-emphasize: #EEEEEE;
+  --color-text-lighter: rgba(255, 255, 255, 0.4);
+  --color-text-solight: rgba(255, 255, 255, 0.16);
+  --color-background: #222222;
+  --color-background-inner: rgba(#{hexToRGB(#222222)}, 0.8);
+  --color-decoration: rgba(255, 255, 255, 0.04);
+  --color-decoration-darker: rgba(255, 255, 255, 0.08);
+  img {
+    opacity: 0.7;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -27,8 +46,8 @@
     --color-background-inner: rgba(#{hexToRGB(#222222)}, 0.8);
     --color-decoration: rgba(255, 255, 255, 0.04);
     --color-decoration-darker: rgba(255, 255, 255, 0.08);
-  }
-  img {
-    opacity: 0.7;
+    img {
+      opacity: 0.7;
+    }
   }
 }

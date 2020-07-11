@@ -9,7 +9,8 @@ export const siteConfig = {
     contentKey: key,
   },
   primaryColor: config.primaryColor || '#86B81B',
-  feed: config.feed || 'Pure'
+  feed: config.feed || 'Pure',
+  darkMode: config.darkMode || 'auto',
 }
 
 export default new GhostContentAPI({
