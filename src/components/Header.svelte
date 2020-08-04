@@ -61,10 +61,7 @@
       color: var(--color-text);
       font-size: 1rem;
       img {
-        max-height: 48px;
-        @include respond-to(sm) {
-          max-height: 36px;
-        }
+        max-height: 20px;
       }
     }
     .home-icon {

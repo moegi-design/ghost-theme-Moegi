@@ -37,7 +37,7 @@
       font-size: 2.2rem;
       line-height: 1.2em;
       img {
-        max-height: 84px;
+        max-height: 42px;
       }
     }
   }
