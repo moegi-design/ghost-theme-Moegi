@@ -93,14 +93,20 @@
     &:before {
       content: '/';
       color: var(--color-text-lighter);
-      margin-right: 8px;
+      margin: 0 8px;
+      overflow-x: hidden;
+      text-overflow: ellipsis;
       @include respond-to(sm) {
+        flex: 1;
         content: '|';
       }
     }
   }
   .gh-blank {
     flex: 1;
+    @include respond-to(sm) {
+      display: none;
+    }
   }
   .gh-navigation {
     display: block;
