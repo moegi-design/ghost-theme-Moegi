@@ -83,21 +83,23 @@
   }
   .gh-title {
     color: var(--color-text-lighter);
-    margin-left: 8px;
+    margin: 0 8px;
     font-size: 0.9rem;
     font-weight: bold;
     white-space: nowrap;
     transform: translateX(-1rem);
     transition: all .3s ease;
     opacity: 0;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    @include respond-to(sm) {
+      flex: 1;
+    }
     &:before {
       content: '/';
       color: var(--color-text-lighter);
-      margin: 0 8px;
-      overflow-x: hidden;
-      text-overflow: ellipsis;
+      margin-right: 8px;
       @include respond-to(sm) {
-        flex: 1;
         content: '|';
       }
     }
