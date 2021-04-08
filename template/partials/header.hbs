@@ -1,0 +1,47 @@
+<header id="gh-head" class="fixed top-0 h-12 w-screen flex items-center px-8 border-b border-gray-100 bg-white bg-opacity-80 backdrop-filter backdrop-blur-lg backdrop-saturate-150">
+  <div class="gh-head-brand">
+    <a class="home-icon" href="{{@site.url}}">
+      <span class="iconfont icon-home"></span>
+    </a>
+    <a class="logo" href="{{@site.url}}">
+      {{#if @site.logo}}
+        <img src="{{img_url @site.logo size="m"}}" alt="{{@site.title}}" />
+      {{else}}
+        <span>{{@site.title}}</span>
+      {{/if}}
+    </a>
+  </div>
+  {{#is "post, page"}}
+    {{#post}}
+      <div class="gh-title">{{title}}</div>
+    {{/post}}
+  {{/is}}
+  <div class="gh-blank"></div>
+  {{!-- {#if $siteInfo.navigation} --}}
+  {{!-- <div class="gh-navigation-m" on:click={() => {isMobileMenuOpen = !isMobileMenuOpen}}>
+    <div class="home-icon" href={$siteInfo.url}>
+      <span class="iconfont {isMobileMenuOpen ? 'icon-close' : 'icon-menu'}"></span>
+    </div>
+  </div>
+  <div class="gh-navigation">
+    <nav>
+      {#each $siteInfo.navigation as navItem, i}
+        <a href={navItem.url}>{navItem.label}</a>
+      {/each}
+    </nav>
+  </div> --}}
+  {{!-- {/if} --}}
+  {{navigation}}
+</header>
+{{!-- <div class="gh-navigation-mpanel {isMobileMenuOpen ? 'show' : 'hide'}">
+  <div class="container">
+    {#if $siteInfo.navigation}
+      <nav>
+        {#each $siteInfo.navigation as navItem, i}
+          <a href={navItem.url}>{navItem.label}</a>
+        {/each}
+      </nav>
+    {/if}
+  </div>
+  <div class="mask" on:click={() => {isMobileMenuOpen = !isMobileMenuOpen}}></div>
+</div> --}}
