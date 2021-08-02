@@ -11,7 +11,7 @@
 
   const api = window.ghostAPI;
   let bgUrl = '';
-  let loaded = false;
+  let loaded = true;
   let customHeaderClass = '';
 
   loadCustomConfig();
@@ -64,6 +64,9 @@
 
   [ssr-render] {
     display: none;
+    &[show] {
+      display: block;
+    }
   }
 
   html {

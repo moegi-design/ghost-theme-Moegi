@@ -8,6 +8,7 @@
   let postContentDom;
 
   afterUpdate(() => {
+    console.log(postContentDom)
     renderMathInElement(postContentDom)
     Prism.highlightAll()
   })

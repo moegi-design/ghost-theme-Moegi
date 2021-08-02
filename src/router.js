@@ -22,6 +22,10 @@ router('/:slug', (ctx, next) => {
   params = ctx.params
   next()
 }, () => page = Post)
+router('/p/:slug', (ctx, next) => {
+  params = ctx.params
+  next()
+}, () => page = Post)
 
 router.start({ click: false })
 

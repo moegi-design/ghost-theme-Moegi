@@ -9,35 +9,42 @@
 
   const api = window.ghostAPI;
   const dispatch = createEventDispatcher();
+  let postContentContainer
   let data = {};
   let isPost = true;
   let siblingPostData = {
     prev: {},
     next: {}
   }
+  let ssrRenderingDom = document.getElementById('moegi-post-content')
+  console.log(ssrRenderingDom)
 
   onMount(async () => {
-    let tempData = await api.posts.read({ slug: params.slug }).catch(() => {});
-    if (!tempData) {
-      isPost = false;
-      tempData = await api.pages.read({ slug: params.slug }).catch(() => {});
-    }
-    if (tempData) {
-      data = tempData;
-    }
-    console.log(data);
-    if (data && data.title) {
-      postTitle.set(data.title);
-      if (isPost) {
-        getSublingPosts()
-      }
-      dispatch("message", {
-        func: "setLoadStatus",
-        data: {
-          loaded: true
-        }
-      });
-    }
+    // let tempData = await api.posts.read({ slug: params.slug }).catch(() => {});
+    // if (!tempData) {
+    //   isPost = false;
+    //   tempData = await api.pages.read({ slug: params.slug }).catch(() => {});
+    // }
+    // if (tempData) {
+    //   data = tempData;
+    // } else {
+    //   console.log(404)
+    // }
+    // console.log(data);
+    // if (data && data.title) {
+    //   postTitle.set(data.title);
+    //   if (isPost) {
+    //     getSublingPosts()
+    //   }
+    //   dispatch("message", {
+    //     func: "setLoadStatus",
+    //     data: {
+    //       loaded: true
+    //     }
+    //   });
+    // }
+    console.log(postContentContainer)
+    postContentContainer.appendChild(ssrRenderingDom)
     // if (data && data.feature_image) {
     //   dispatch("message", {
     //     func: "setBackground",
@@ -227,11 +234,12 @@
 
   <div
     class="gh-content gh-container bg-white {data.feature_image ? 'with-feature' : ''}">
-    {#if data.html}
+    <!-- {#if data.html} -->
       <PostContent>
-        {@html data.html}
+        <div bind:this={postContentContainer}></div>
+        <!-- {@html data.html} -->
       </PostContent>
-    {/if}
+    <!-- {/if} -->
   </div>
 
   <footer class="gh-footer" />
