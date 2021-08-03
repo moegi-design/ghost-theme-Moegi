@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <link rel="stylesheet" type="text/css" href="{{asset "assets/style.css"}}" />
-
+    {{#if !import.meta.env.DEV}}
+        <link rel="stylesheet" type="text/css" href="{{asset "assets/moegi.css"}}" />
+    {{/if}}
     {{ghost_head}}
 
 </head>
@@ -74,9 +74,12 @@
 </div>
 {{!-- /.viewport --}}
 
-{{!-- <script type="module" src="{{asset "assets/ghost-theme-moegi.es.js"}}"></script> --}}
-<script src="{{asset "assets/ghost-theme-moegi.umd.js"}}"></script>
-{{!-- <script src="{{asset "built/casper.js"}}"></script> --}}
+{{#if import.meta.env.DEV}}
+    <script type="module" src="http://localhost:3000/@vite/client"></script>
+    <script type="module" src="http://localhost:3000/main.js"></script>
+{{else}}
+    <script src="{{asset "assets/moegi.js"}}"></script>
+{{/if}}
 
 {{ghost_foot}}
 
