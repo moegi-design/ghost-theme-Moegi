@@ -15,7 +15,7 @@
 
 </head>
 <body class="{{body_class}}">
-<div class="pt-12">
+<div>
     {{> "header"}}
 
     <header id="gh-head" class="gh-head {{#if @site.cover_image}}has-cover{{/if}}">
@@ -62,16 +62,7 @@
         {{{body}}}
     </main>
 
-    {{!-- The global footer at the very bottom of the screen --}}
-    <footer class="site-footer outer">
-        <div class="inner">
-            <section class="copyright"><a href="{{@site.url}}">{{@site.title}}</a> &copy; {{date format="YYYY"}}</section>
-            <nav class="site-footer-nav">
-                {{navigation type="secondary"}}
-            </nav>
-            <div><a href="https://ghost.org/" target="_blank" rel="noopener">Powered by Ghost</a></div>
-        </div>
-    </footer>
+    {{> "footer"}}
 
 </div>
 {{!-- /.viewport --}}
