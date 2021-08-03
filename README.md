@@ -6,6 +6,7 @@
 ![Moegi Theme](screenshot.png)
 
 [中文文档](README_zh.md)
+[Moegi 3(WIP)](https://github.com/moegi-design/ghost-theme-Moegi/tree/v3)
 
 ## Download
 
