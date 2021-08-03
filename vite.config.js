@@ -1,12 +1,10 @@
 import { defineConfig } from 'vite'
-import copy from 'rollup-plugin-copy'
+import copy from 'rollup-plugin-copy-watch'
+import FullReload from 'vite-plugin-full-reload'
 
 export default defineConfig(({command, mode}) => {
   console.log('build mode: ', mode)
   return {
-    define: {
-      __ENVVV__: JSON.stringify('development')
-    },
     build: {
       lib: {
         entry: 'src/main.js',
@@ -20,25 +18,25 @@ export default defineConfig(({command, mode}) => {
           assetFileNames: `assets/moegi.[ext]`,
         },
       },
-      watch1: {
-        exclude: 'node_modules/**',
-        include: ['src/**', 'template/**']
-      }
     },
     plugins: [
       copy({
+        watch: ['package.json', 'template/**/*.hbs'],
         targets: [{
           src: 'package.json',
           dest: 'dist',
         }, {
           src: 'template/**/*.hbs',
           dest: 'dist',
-          transform: (contents, filename) => contents.toString().replace(/__ENVVV1__/g, 'envenv1')
+          transform: (contents, filename) => contents.toString().replace(/__IS_DEV__/g, mode === 'development')
         }],
         flatten: false,
-        verbose: true,
         hook: mode === 'development' ? 'buildStart' : 'writeBundle',
-      })
+      }),
+      FullReload([
+        'package.json',
+        'template/**/*.hbs',
+      ])
     ],
   }
 })
