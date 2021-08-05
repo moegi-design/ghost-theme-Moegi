@@ -1,47 +1,67 @@
-<header id="gh-head" class="fixed top-0 h-12 w-screen flex items-center px-8 border-b border-gray-100 bg-white bg-opacity-80 backdrop-filter backdrop-blur-lg backdrop-saturate-150">
-  <div class="gh-head-brand">
-    <a class="home-icon" href="{{@site.url}}">
-      <span class="iconfont icon-home"></span>
-    </a>
-    <a class="logo" href="{{@site.url}}">
-      {{#if @site.logo}}
-        <img src="{{img_url @site.logo size="m"}}" alt="{{@site.title}}" />
-      {{else}}
-        <span>{{@site.title}}</span>
-      {{/if}}
-    </a>
-  </div>
-  {{#is "post, page"}}
-    {{#post}}
-      <div class="gh-title">{{title}}</div>
-    {{/post}}
-  {{/is}}
-  <div class="gh-blank flex-1"></div>
-  {{!-- {#if $siteInfo.navigation} --}}
-  {{!-- <div class="gh-navigation-m" on:click={() => {isMobileMenuOpen = !isMobileMenuOpen}}>
-    <div class="home-icon" href={$siteInfo.url}>
-      <span class="iconfont {isMobileMenuOpen ? 'icon-close' : 'icon-menu'}"></span>
+<header id='gh-head'
+    class='fixed top-0 h-12 w-screen flex items-center px-8 border-b border-gray-100 bg-white bg-opacity-80 backdrop-filter backdrop-blur-lg backdrop-saturate-150'>
+    <div class='gh-head-brand'>
+        <a class='home-icon' href='{{@site.url}}'>
+            <span class='iconfont icon-home'></span>
+        </a>
+        <a class='logo' href='{{@site.url}}'>
+            {{#if @site.logo}}
+            <img src='{{img_url @site.logo size=' m'}}' alt='{{@site.title}}' />
+            {{else}}
+            <span>{{@site.title}}</span>
+            {{/if}}
+        </a>
     </div>
-  </div>
-  <div class="gh-navigation">
-    <nav>
-      {#each $siteInfo.navigation as navItem, i}
-        <a href={navItem.url}>{navItem.label}</a>
-      {/each}
-    </nav>
-  </div> --}}
-  {{!-- {/if} --}}
-  {{navigation}}
+    {{#is 'post, page'}}
+    {{#post}}
+    <div class='gh-title'>{{title}}</div>
+    {{/post}}
+    {{/is}}
+    <div class='gh-blank flex-1'></div>
+    {{! {#if $siteInfo.navigation} }}
+    {{!-- <div class="gh-navigation-m" on:click={()=> {isMobileMenuOpen = !isMobileMenuOpen}}>
+        <div class="home-icon" href={$siteInfo.url}>
+            <span class="iconfont {isMobileMenuOpen ? 'icon-close' : 'icon-menu'}"></span>
+        </div>
+    </div>
+    <div class="gh-navigation">
+        <nav>
+            {#each $siteInfo.navigation as navItem, i}
+            <a href={navItem.url}>{navItem.label}</a>
+            {/each}
+        </nav>
+    </div> --}}
+    {{! {/if} }}
+    <div class="moegi-header-nav">
+        {{navigation}}
+    </div>
+    <div class="moegi-header-actions">
+        <div class="gh-social">
+            {{#if @site.facebook}}
+            <a class="gh-social-facebook" href="{{facebook_url @site.facebook}}" title="Facebook" target="_blank"
+                rel="noopener">{{> icon/hubot}}</a>
+            {{/if}}
+            {{#if @site.twitter}}
+            <a class="gh-social-twitter" href="{{twitter_url @site.twitter}}" title="Twitter" target="_blank"
+                rel="noopener">{{> icon/hubot}}</a>
+            {{/if}}
+        </div>
+        {{#unless @member}}
+        <a class='gh-head-button mt-12' href='#/portal/signup'>Subscribe</a>
+        {{else}}
+        <a class='gh-head-button mt-12' href='#/portal/account'>Account</a>
+        {{/unless}}
+    </div>
 </header>
 {{!-- <div class="gh-navigation-mpanel {isMobileMenuOpen ? 'show' : 'hide'}">
-  <div class="container">
-    {#if $siteInfo.navigation}
-      <nav>
-        {#each $siteInfo.navigation as navItem, i}
-          <a href={navItem.url}>{navItem.label}</a>
-        {/each}
-      </nav>
-    {/if}
-  </div>
-  <div class="mask" on:click={() => {isMobileMenuOpen = !isMobileMenuOpen}}></div>
+    <div class="container">
+        {#if $siteInfo.navigation}
+        <nav>
+            {#each $siteInfo.navigation as navItem, i}
+            <a href={navItem.url}>{navItem.label}</a>
+            {/each}
+        </nav>
+        {/if}
+    </div>
+    <div class="mask" on:click={()=> {isMobileMenuOpen = !isMobileMenuOpen}}></div>
 </div> --}}

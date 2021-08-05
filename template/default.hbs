@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{@site.locale}}">
+
 <head>
     <title>{{meta_title}}</title>
     <meta charset="utf-8" />
@@ -9,72 +10,32 @@
     {{#if __IS_DEV__}}
         <link rel="stylesheet" type="text/css" href="http://localhost:3000/src/style.css" />
     {{else}}
-        <link rel="stylesheet" type="text/css" href="{{asset "assets/moegi.css"}}" />
+        <link rel="stylesheet" type="text/css" href="{{asset " assets/moegi.css"}}" />
     {{/if}}
     {{ghost_head}}
-
 </head>
+
 <body class="{{body_class}}">
-<div>
-    {{> "header"}}
+    <div>
+        {{> header}}
 
-    <header id="gh-head" class="gh-head {{#if @site.cover_image}}has-cover{{/if}}">
-        <nav class="gh-head-inner inner gh-container">
+        <main class="pt-12">
+            {{{body}}}
+        </main>
 
-            <div class="gh-head-brand">
-                <a class="gh-head-logo" href="{{@site.url}}">
-                    {{#if @site.logo}}
-                        <img src="{{@site.logo}}" alt="{{@site.title}}" />
-                    {{else}}
-                        {{@site.title}}
-                    {{/if}}
-                </a>
-                <a class="gh-burger" role="button">
-                    <div class="gh-burger-box">
-                        <div class="gh-burger-inner"></div>
-                    </div>
-                </a>
-            </div>
-            <div class="gh-head-menu">
-                {{!-- {{navigation}} --}}
-            </div>
-            <div class="gh-head-actions">
-                <div class="gh-social">
-                    {{!-- {{#if @site.facebook}}
-                        <a class="gh-social-facebook" href="{{facebook_url @site.facebook}}" title="Facebook" target="_blank" rel="noopener">{{> "icons/facebook"}}</a>
-                    {{/if}}
-                    {{#if @site.twitter}}
-                        <a class="gh-social-twitter" href="{{twitter_url @site.twitter}}" title="Twitter" target="_blank" rel="noopener">{{> "icons/twitter"}}</a>
-                    {{/if}} --}}
-                </div>
+        {{> footer}}
 
-                {{#unless @member}}
-                    <a class="gh-head-button" href="#/portal/signup">Subscribe</a>
-                {{else}}
-                    <a class="gh-head-button" href="#/portal/account">Account</a>
-                {{/unless}}
-            </div>
-        </nav>
-    </header>
+    </div>
 
-    <main>
-        {{!-- All other templates get inserted here, index.hbs, post.hbs, etc --}}
-        {{{body}}}
-    </main>
+    {{#if __IS_DEV__}}
+        <script type="module" src="http://localhost:3000/@vite/client"></script>
+        <script type="module" src="http://localhost:3000/src/main.js"></script>
+    {{else}}
+        <script src="{{asset " assets/moegi.js"}}"></script>
+    {{/if}}
 
-    {{> "footer"}}
-
-</div>
-{{!-- /.viewport --}}
-
-{{#if __IS_DEV__}}
-    <script type="module" src="http://localhost:3000/@vite/client"></script>
-    <script type="module" src="http://localhost:3000/src/main.js"></script>
-{{else}}
-    <script src="{{asset "assets/moegi.js"}}"></script>
-{{/if}}
-
-{{ghost_foot}}
+    {{ghost_foot}}
 
 </body>
+
 </html>
