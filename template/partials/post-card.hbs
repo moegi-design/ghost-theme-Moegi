@@ -1,4 +1,4 @@
-<article class="post-card {{post_class}} my-12">
+<article class="post-card {{post_class}}">
 
     {{#if feature_image}}
     <a class="post-card-image-link hidden" href="{{url}}">
@@ -20,12 +20,12 @@
             <header class="post-card-header">
                 {{#if primary_tag}}
                     {{#primary_tag}}
-                    <div class="post-card-primary-tag text-gray-400 text-sm">{{name}}</div>
+                    <div class="post-card-primary-tag text-gray-500 text-sm">{{name}}</div>
                     {{/primary_tag}}
                 {{/if}}
-                <h2 class="post-card-title text-xl font-bold">{{title}}</h2>
+                <h2 class="post-card-title text-xl font-bold hover:text-accent">{{title}}</h2>
             </header>
-            <section class="post-card-excerpt my-2 text-gray-400">
+            <section class="post-card-excerpt my-2 text-gray-500">
                 <p>{{excerpt}}</p>
             </section>
         </a>
@@ -36,11 +36,10 @@
                 <li class="author-list-item">
                     {{#if profile_image}}
                     <a href="{{url}}" class="static-avatar">
-                        <img class="author-profile-image h-6 mr-2" src="{{img_url profile_image size="xs"}}" alt="{{name}}" />
+                        <img class="author-profile-image h-6 mr-2 rounded-full" src="{{img_url profile_image size="xs"}}" alt="{{name}}" />
                     </a>
                     {{else}}
-                    {{!-- <a href="{{url}}" class="static-avatar author-profile-image">{{> "icons/avatar"}}</a> --}}
-                    <a href="{{url}}" class="static-avatar author-profile-image">123</a>
+                    <a href="{{url}}" class="static-avatar author-profile-image">{{> "icon/hubot"}}</a>
                     {{/if}}
                 </li>
                 {{/foreach}}

@@ -29,6 +29,7 @@
   "license": "MIT",
   "devDependencies": {
     "@tailwindcss/postcss7-compat": "^2.2.7",
+    "@tailwindcss/typography": "^0.4.1",
     "autoprefixer": "^9.8.6",
     "gscan": "^4.2.1",
     "postcss": "^7.0.36",

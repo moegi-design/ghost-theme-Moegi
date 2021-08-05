@@ -7,7 +7,7 @@ into the {body} tag of the default.hbs template --}}
 {{#post}}
 {{!-- Everything inside the #post block pulls data from the post --}}
 
-<article class="article {{post_class}}">
+<article class="article {{post_class}} prose max-w-prose px-4 mx-auto">
 
     <header class="article-header gh-canvas">
 
@@ -33,7 +33,7 @@ into the {body} tag of the default.hbs template --}}
                             <img class="author-profile-image" src="{{img_url profile_image size="xs"}}" alt="{{name}}" />
                         </a>
                         {{else}}
-                        <a href="{{url}}" class="author-avatar author-profile-image">{{> "icons/avatar"}}</a>
+                        <a href="{{url}}" class="author-avatar author-profile-image">{{> "icon/hubot"}}</a>
                         {{/if}}
                     </li>
                     {{/foreach}}
