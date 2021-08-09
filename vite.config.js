@@ -21,7 +21,7 @@ export default defineConfig(({command, mode}) => {
     },
     plugins: [
       copy({
-        watch: ['package.json', 'template/**/*.hbs'],
+        watch: mode === 'development' ? ['package.json', 'template/**/*.hbs'] : [],
         targets: [{
           src: 'package.json',
           dest: 'dist',

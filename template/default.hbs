@@ -8,9 +8,8 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     {{#if __IS_DEV__}}
-        <link rel="stylesheet" type="text/css" href="http://localhost:3000/src/style.css" />
     {{else}}
-        <link rel="stylesheet" type="text/css" href="{{asset " assets/moegi.css"}}" />
+        <link rel="stylesheet" type="text/css" href="{{asset "moegi.css"}}" />
     {{/if}}
     {{ghost_head}}
 </head>
@@ -31,8 +30,9 @@
         <script type="module" src="http://localhost:3000/@vite/client"></script>
         <script type="module" src="http://localhost:3000/src/main.js"></script>
     {{else}}
-        <script src="{{asset " assets/moegi.js"}}"></script>
+        <script src="{{asset "moegi.js"}}"></script>
     {{/if}}
+    {{{block "scripts"}}}
 
     {{ghost_foot}}
 
