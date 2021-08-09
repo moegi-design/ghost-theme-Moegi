@@ -1,41 +1,33 @@
-<header id='gh-head'
-    class='fixed top-0 h-12 w-screen flex items-center px-8 border-b border-gray-100 bg-white bg-opacity-80 backdrop-filter backdrop-blur-lg backdrop-saturate-150'>
-    <div class='gh-head-brand'>
-        <a class='home-icon' href='{{@site.url}}'>
-            <span class='iconfont icon-home'></span>
-        </a>
-        <a class='logo' href='{{@site.url}}'>
+<header id="moegi-header"
+    class="fixed left-0 right-0 top-0 h-12 z-10 flex items-center px-4 sm:px-8 border-b border-black/5 bg-white/80 backdrop-blur-lg backdrop-saturate-150 dark:bg-gray-600 dark:bg-opacity-80">
+    <div class="moegi-header-brand">
+        <a class="logo" href="{{@site.url}}">
             {{#if @site.logo}}
-            <img src='{{img_url @site.logo size=' m'}}' alt='{{@site.title}}' />
+            <img src="{{img_url @site.logo size="m"}}" alt="{{@site.title}}" />
             {{else}}
             <span>{{@site.title}}</span>
             {{/if}}
         </a>
+        <a class="home-icon hidden" href="{{@site.url}}">
+            {{> icon/home}}
+        </a>
     </div>
-    {{#is 'post, page'}}
+    {{#is "post, page"}}
     {{#post}}
-    <div class='gh-title'>{{title}}</div>
+    <div class="moegi-header-title opacity-0 mx-2 text-gray-400 text-sm font-bold whitespace-nowrap overflow-hidden overflow-ellipsis before:content-['|'] before:mr-2 -translate-x-4 transition-all duration-300">{{title}}</div>
     {{/post}}
     {{/is}}
-    <div class='gh-blank flex-1'></div>
-    {{! {#if $siteInfo.navigation} }}
-    {{!-- <div class="gh-navigation-m" on:click={()=> {isMobileMenuOpen = !isMobileMenuOpen}}>
-        <div class="home-icon" href={$siteInfo.url}>
-            <span class="iconfont {isMobileMenuOpen ? 'icon-close' : 'icon-menu'}"></span>
-        </div>
+    <div class="moegi-header-blank flex-1"></div>
+    <div class="moegi-header-nav-m sm:hidden">
+        <span id="moegi-header-menu-icon">
+            <span class="icon-menu">{{> icon/menu}}</span>
+            <span class="icon-x hidden">{{> icon/x}}</span>
+        </span>
     </div>
-    <div class="gh-navigation">
-        <nav>
-            {#each $siteInfo.navigation as navItem, i}
-            <a href={navItem.url}>{navItem.label}</a>
-            {/each}
-        </nav>
-    </div> --}}
-    {{! {/if} }}
-    <div class="moegi-header-nav">
+    <div class="moegi-header-nav hidden sm:block">
         {{navigation}}
     </div>
-    <div class="moegi-header-actions">
+    {{!-- <div class="moegi-header-actions hidden sm:block">
         <div class="gh-social">
             {{#if @site.facebook}}
             <a class="gh-social-facebook" href="{{facebook_url @site.facebook}}" title="Facebook" target="_blank"
@@ -47,21 +39,15 @@
             {{/if}}
         </div>
         {{#unless @member}}
-        <a class='gh-head-button mt-12' href='#/portal/signup'>Subscribe</a>
+        <a class="gh-head-button mt-12" href="#/portal/signup">Subscribe</a>
         {{else}}
-        <a class='gh-head-button mt-12' href='#/portal/account'>Account</a>
+        <a class="gh-head-button mt-12" href="#/portal/account">Account</a>
         {{/unless}}
-    </div>
+    </div> --}}
 </header>
-{{!-- <div class="gh-navigation-mpanel {isMobileMenuOpen ? 'show' : 'hide'}">
-    <div class="container">
-        {#if $siteInfo.navigation}
-        <nav>
-            {#each $siteInfo.navigation as navItem, i}
-            <a href={navItem.url}>{navItem.label}</a>
-            {/each}
-        </nav>
-        {/if}
+<div class="moegi-navigation-mpanel h-0 overflow-hidden sm:hidden fixed left-0 right-0 top-12 bottom-0 z-10">
+    <div class="panel relative z-20 bg-white/80 px-4 sm:px-8 py-2 backdrop-blur-lg -translate-y-full transition-transform duration-300">
+        {{navigation}}
     </div>
-    <div class="mask" on:click={()=> {isMobileMenuOpen = !isMobileMenuOpen}}></div>
-</div> --}}
+    <div class="mask bg-black/10 absolute inset-0"></div>
+</div>

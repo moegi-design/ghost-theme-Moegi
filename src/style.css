@@ -3,4 +3,49 @@
 @tailwind components;
 @tailwind utilities;
 
-/* --ghost-accent-color */
+/* @layer utilities {
+  @variants hover {
+    .text-accent {
+      color: var(--ghost-accent-color);
+    }
+  }
+} */
+
+/* @layer utilities {
+  @variants responsive {
+    .in-view {
+      scroll-snap-type: none;
+    }
+    .scroll-snap-x {
+      scroll-snap-type: x;
+    }
+    .scroll-snap-y {
+      scroll-snap-type: y;
+    }
+  }
+} */
+
+@layer components {
+  .moegi-header-in-post-view .moegi-header-brand .logo {
+    @apply hidden sm:block;
+  }
+  .moegi-header-in-post-view .moegi-header-brand .home-icon {
+    @apply block sm:hidden;
+  }
+  .moegi-header-in-post-view .moegi-header-title {
+    @apply block opacity-100 translate-x-0;
+  }
+
+  .moegi-header-menu-open+.moegi-navigation-mpanel {
+    @apply h-auto;
+  }
+  .moegi-header-menu-open+.moegi-navigation-mpanel .panel {
+    @apply translate-y-0;
+  }
+  .moegi-header-menu-open #moegi-header-menu-icon .icon-menu {
+    @apply hidden;
+  }
+  .moegi-header-menu-open #moegi-header-menu-icon .icon-x {
+    @apply inline;
+  }
+}
