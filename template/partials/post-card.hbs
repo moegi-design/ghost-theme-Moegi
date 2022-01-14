@@ -26,11 +26,11 @@
                 <h2 class="post-card-title text-xl font-bold hover:text-main">{{title}}</h2>
             </header>
             <section class="post-card-excerpt my-2 text-gray-500">
-                <p>{{excerpt}}</p>
+                <p class="line-clamp-4">{{excerpt}}</p>
             </section>
         </a>
 
-        <footer class="post-card-meta flex items-center">
+        {{!-- <footer class="post-card-meta flex items-center">
             <ul class="author-list">
                 {{#foreach authors}}
                 <li class="author-list-item">
@@ -48,7 +48,7 @@
                 <span>{{#has author="count:>2"}}Multiple authors{{else}}{{authors}}{{/has}}</span>
                 <span class="post-card-byline-date"><time datetime="{{date format="YYYY-MM-DD"}}">{{date}}</time> <span class="bull">&bull;</span> {{reading_time}}</span>
             </div>
-        </footer>
+        </footer> --}}
 
     </div>
 

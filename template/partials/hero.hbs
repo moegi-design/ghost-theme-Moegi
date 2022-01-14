@@ -1,6 +1,6 @@
 <div class="moegi-hero h-48 flex flex-col items-center justify-center">
     {{#if @site.cover_image}}
-        {{!-- <img class="site-header-cover"
+        <img class="site-header-cover"
             srcset="{{img_url @site.cover_image size="s"}} 300w,
                     {{img_url @site.cover_image size="m"}} 600w,
                     {{img_url @site.cover_image size="l"}} 1000w,
@@ -8,7 +8,7 @@
             sizes="100vw"
             src="{{img_url @site.cover_image size="xl"}}"
             alt=""
-        /> --}}
+        />
     {{/if}}
     <h1 class="site-title text-4xl leading-relaxed">
       {{#if @site.logo}}
