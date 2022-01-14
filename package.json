@@ -26,11 +26,6 @@
   "config": {
     "posts_per_page": 10,
     "custom": {
-      "typography": {
-        "type": "select",
-        "options": ["Modern sans-serif", "Elegant serif"],
-        "default": "Modern sans-serif"
-      },
       "comment_widget": {
         "type": "select",
         "options": ["None", "utterances"],
