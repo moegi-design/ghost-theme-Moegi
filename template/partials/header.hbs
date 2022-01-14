@@ -1,11 +1,11 @@
 <header id="moegi-header"
-    class="fixed left-0 right-0 top-0 h-12 z-10 flex items-center px-6 sm:px-8 border-b border-black/5 bg-white/80 backdrop-blur-lg backdrop-saturate-150 dark:bg-gray-600 dark:bg-opacity-80">
+    class="fixed left-0 right-0 top-0 h-12 z-10 flex items-center px-6 border-b border-black/5 bg-white/80 backdrop-blur-xl backdrop-saturate-150 dark:bg-gray-600/80">
     <div class="moegi-header-brand">
         <a class="logo" href="{{@site.url}}">
             {{#if @site.logo}}
             <img src="{{img_url @site.logo size="m"}}" alt="{{@site.title}}" />
             {{else}}
-            <span>{{@site.title}}</span>
+            <span class="font-medium">{{@site.title}}</span>
             {{/if}}
         </a>
         <a class="home-icon hidden" href="{{@site.url}}">
@@ -13,15 +13,15 @@
         </a>
     </div>
     {{#is "post, page"}}
-    {{#post}}
-    <div class="moegi-header-title opacity-0 mx-2 text-gray-400 text-sm font-bold whitespace-nowrap overflow-hidden overflow-ellipsis before:content-['|'] before:mr-2 -translate-x-4 transition-all duration-300">{{title}}</div>
-    {{/post}}
+        {{#post}}
+            <div class="moegi-header-title opacity-0 mx-2 text-black/50 text-sm font-medium whitespace-nowrap overflow-hidden overflow-ellipsis before:content-['|'] before:mr-2 -translate-x-4 transition-all duration-300">{{title}}</div>
+        {{/post}}
     {{/is}}
     <div class="moegi-header-blank flex-1"></div>
     <div class="moegi-header-nav-m sm:hidden">
         <span id="moegi-header-menu-icon">
             <span class="icon-menu">{{> icon/menu}}</span>
-            <span class="icon-x hidden">{{> icon/x}}</span>
+            <span class="icon-x hidden">{{> icon/close}}</span>
         </span>
     </div>
     <div class="moegi-header-nav hidden sm:block">
@@ -46,8 +46,8 @@
     </div> --}}
 </header>
 <div class="moegi-navigation-mpanel h-0 overflow-hidden sm:hidden fixed left-0 right-0 top-12 bottom-0 z-10">
-    <div class="panel relative z-20 bg-white/80 px-6 sm:px-8 py-2 backdrop-blur-lg -translate-y-full transition-transform duration-300">
+    <div class="panel relative z-20 bg-white/80 px-6 sm:px-8 py-2 backdrop-blur-xl -translate-y-full transition-transform duration-300">
         {{navigation}}
     </div>
-    <div class="mask bg-black/10 absolute inset-0"></div>
+    <div class="mask bg-black/20 absolute inset-0"></div>
 </div>
