@@ -31,7 +31,7 @@
             </section>
             {{/if}} --}}
 
-            <h1 class="article-title relative text-2xl md:text-4xl my-6">{{title}}</h1>
+            <h1 class="article-title relative text-4xl my-6">{{title}}</h1>
 
             {{#if custom_excerpt}}
             <p class="article-excerpt relative text-black/50">{{custom_excerpt}}</p>
@@ -54,11 +54,27 @@
         
     </header>
 
-    <section class="gh-content prose mt-10 mx-4">
+    <section class="gh-content prose mt-10 mx-6">
         {{content}}
     </section>
 
     {{!-- {{> subscribe}} --}}
+    
+    {{#match @custom.comment_widget "utterances"}}
+        {{#if @custom.utterances_repo}}
+            <section class="article-comments mt-12 mx-12 px-6 border-t pt-12">
+                <div class="-mx-12">
+                    <script src="https://utteranc.es/client.js"
+                        repo="{{@custom.utterances_repo}}"
+                        issue-term="pathname"
+                        theme="preferred-color-scheme"
+                        crossorigin="anonymous"
+                        async>
+                    </script>
+                </div>
+            </section>
+        {{/if}}
+    {{/match}}
 
 </article>
 
