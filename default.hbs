@@ -1,47 +1,41 @@
 <!DOCTYPE html>
-<html lang="{{@site.lang}}">
-<head>
+<html lang="{{@site.locale}}">
 
+<head>
+    <title>{{meta_title}}</title>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="{{asset "moegi.css"}}" />
-
-    <title>{{meta_title}}</title>
-
+    {{#if false}}
+    {{else}}
+        <link rel="stylesheet" type="text/css" href="{{asset "moegi.css"}}" />
+    {{/if}}
     {{ghost_head}}
-    {{!-- Outputs SEO meta+structured data and important settings, should always be in <head> --}}
-
 </head>
+
 <body class="{{body_class}}">
-  {{ghost_foot}}
-  {{#is "post"}}
-    {{#post}}
-      <article ssr-render>
-        <header>
-          <h1>{{title}}</h1>
-        </header>
-        <section>
-          {{content}}
-        </section>
-      </article>
-    {{/post}}
-  {{/is}}
-  {{#is "page"}}
-    {{#post}}
-      <article ssr-render>
-        <header>
-          <h1>{{title}}</h1>
-        </header>
-        <section>
-          {{content}}
-        </section>
-      </article>
-    {{/post}}
-  {{/is}}
-  {{!-- Outputs important scripts - should always be included before closing body tag --}}
-  <script src="{{asset "moegi.js"}}" data-autoloader-path="/assets/prism/"></script>
-  <p ssr-render>Published with Ghost | Moegi</p>
+    <div>
+        {{> header}}
+
+        <main class="pt-12">
+            {{{body}}}
+        </main>
+
+        {{> footer}}
+
+    </div>
+
+    {{#if false}}
+        <script type="module" src="http://localhost:3000/@vite/client"></script>
+        <script type="module" src="http://localhost:3000/src/main.js"></script>
+    {{else}}
+        <script src="{{asset "moegi.js"}}"></script>
+    {{/if}}
+    {{{block "scripts"}}}
+
+    {{ghost_foot}}
+
 </body>
+
 </html>

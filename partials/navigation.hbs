@@ -1,0 +1,7 @@
+<ul class="nav flex flex-col sm:flex-row">
+    {{#foreach navigation}}
+    <li class="{{link_class for=(url) class=(concat "nav-" slug)}} sm:mx-2 border-b sm:border-0 border-black/5 last:border-0 hover:text-main">
+        <a href="{{url absolute="true"}}" class="flex h-12 sm:h-auto items-center">{{label}}</a>
+    </li>
+    {{/foreach}}
+</ul>
