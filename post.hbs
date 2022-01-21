@@ -24,7 +24,7 @@
             </figure>
             {{/if}}
         </div> --}}
-        <div class="header-foreground px-6 py-6 md:pt-12">
+        <div class="header-foreground px-6 py-6 md:pt-12 md:px-0">
             {{!-- {{#if primary_tag}}
             <section class="article-tag">
                 <a href="{{primary_tag.url}}">{{primary_tag.name}}</a>
@@ -50,11 +50,9 @@
                 </section>
             </div>
         </div>
-
-        
     </header>
 
-    <section class="gh-content prose mt-10 mx-6">
+    <section class="gh-content prose mt-10 px-6 md:px-0">
         {{content}}
     </section>
 
@@ -62,7 +60,7 @@
     
     {{#match @custom.comment_widget "utterances"}}
         {{#if @custom.utterances_repo}}
-            <section class="article-comments mt-12 mx-12 px-6 border-t pt-12">
+            <section class="article-comments mt-12 mx-12 px-6 border-t pt-12 md:px-0">
                 <div class="-mx-12">
                     <script src="https://utteranc.es/client.js"
                         repo="{{@custom.utterances_repo}}"
