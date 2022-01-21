@@ -16,7 +16,8 @@ module.exports = {
             blockquote: {
               fontWeight: 'normal',
               fontStyle: 'normal',
-              opacity: 0.75,
+              opacity: 0.8,
+              color: 'var(--tw-prose-body)',
             },
             'blockquote p:first-of-type::before': {
               content: '',
@@ -29,6 +30,7 @@ module.exports = {
               backgroundColor: colors.slate[100],
               borderRadius: '0.25rem',
               padding: '0.2em 0.35em',
+              margin: '0 0.2em',
             },
             'code::before': {
               content: '""'
