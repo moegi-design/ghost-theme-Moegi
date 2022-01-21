@@ -13,9 +13,20 @@ module.exports = {
       typography: {
         DEFAULT: {
           css: {
+            blockquote: {
+              fontWeight: 'normal',
+              fontStyle: 'normal',
+              opacity: 0.75,
+            },
+            'blockquote p:first-of-type::before': {
+              content: '',
+            },
+            'blockquote p:last-of-type::after': {
+              content: '',
+            },
             code: {
               fontWeight: 'normal',
-              backgroundColor: colors.slate[200],
+              backgroundColor: colors.slate[100],
               borderRadius: '0.25rem',
               padding: '0.2em 0.35em',
             },
