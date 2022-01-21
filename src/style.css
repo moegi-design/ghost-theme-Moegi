@@ -28,9 +28,12 @@
     @apply inline;
   }
   .ghost-article {
+    /* a */
     @apply prose-a:no-underline prose-a:underline-offset-4;
     @apply hover:prose-a:underline;
     @apply prose-a:text-main;
+    /* figcaption */
+    @apply prose-figcaption:text-center;
   }
 }
 
