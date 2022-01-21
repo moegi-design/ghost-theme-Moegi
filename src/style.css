@@ -27,6 +27,11 @@
   .moegi-header-menu-open #moegi-header-menu-icon .icon-x {
     @apply inline;
   }
+  .ghost-article {
+    @apply prose-a:no-underline prose-a:underline-offset-4;
+    @apply hover:prose-a:underline;
+    @apply prose-a:text-main;
+  }
 }
 
 :root {
