@@ -1,4 +1,5 @@
 @import "kg.css";
+@import "prism-theme.css";
 
 @tailwind base;
 @tailwind components;

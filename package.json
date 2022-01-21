@@ -28,7 +28,10 @@
     "custom": {
       "comment_widget": {
         "type": "select",
-        "options": ["None", "utterances"],
+        "options": [
+          "None",
+          "utterances"
+        ],
         "default": "None",
         "group": "post"
       },
@@ -46,6 +49,8 @@
     "autoprefixer": "^10.4.2",
     "gscan": "^4.21.0",
     "postcss": "^8.4.5",
+    "prism-theme-vars": "^0.2.2",
+    "prismjs": "^1.26.0",
     "pump": "^3.0.0",
     "rollup-plugin-copy-watch": "^0.0.1",
     "tailwindcss": "^3.0.13",

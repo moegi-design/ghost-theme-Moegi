@@ -1,4 +1,5 @@
 import './style.css'
+import Prism from 'prismjs'
 
 if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
   document.documentElement.classList.add('dark')
@@ -46,3 +47,12 @@ function setHeaderListener() {
   document.querySelector('.moegi-navigation-mpanel .mask').addEventListener('click', handleClick, false)
 }
 setHeaderListener()
+
+function postRender() {
+  const selector = 'code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code, pre > code';
+  const container = document.getElementById('ghost-article')
+  const nodes = container.querySelectorAll(selector)
+  nodes.forEach(node => {
+    Prism.highlightElement(node)
+  })
+}
