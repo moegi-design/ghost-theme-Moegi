@@ -45,6 +45,7 @@ module.exports = {
             'pre code': {
               color: null,
               backgroundColor: 'transparent',
+              margin: 0,
             },
           }
         }
