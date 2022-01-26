@@ -46,6 +46,7 @@ module.exports = {
               color: null,
               backgroundColor: 'transparent',
               margin: 0,
+              padding: 0,
             },
           }
         }

@@ -29,6 +29,8 @@
     @apply inline;
   }
   .ghost-article {
+    /* break */
+    @apply break-words;
     /* a */
     @apply prose-a:no-underline prose-a:underline-offset-4;
     @apply hover:prose-a:underline;
