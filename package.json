@@ -30,12 +30,13 @@
         "type": "select",
         "options": [
           "None",
-          "utterances"
+          "utterances",
+          "giscus"
         ],
         "default": "None",
         "group": "post"
       },
-      "utterances_repo": {
+      "comment_repo": {
         "type": "text",
         "default": "",
         "group": "post"

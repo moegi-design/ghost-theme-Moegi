@@ -59,13 +59,35 @@
     {{!-- {{> subscribe}} --}}
     
     {{#match @custom.comment_widget "utterances"}}
-        {{#if @custom.utterances_repo}}
+        {{#if @custom.comment_repo}}
             <section class="article-comments mt-12 mx-12 px-6 border-t pt-12 md:px-0">
                 <div class="-mx-12">
                     <script src="https://utteranc.es/client.js"
-                        repo="{{@custom.utterances_repo}}"
+                        repo="{{@custom.comment_repo}}"
                         issue-term="pathname"
                         theme="preferred-color-scheme"
+                        crossorigin="anonymous"
+                        async>
+                    </script>
+                </div>
+            </section>
+        {{/if}}
+    {{/match}}
+    {{#match @custom.comment_widget "giscus"}}
+        {{#if @custom.comment_repo}}
+            <section class="article-comments mt-12 mx-12 px-6 border-t pt-12 md:px-0">
+                <div class="-mx-12">
+                    <script src="https://giscus.app/client.js"
+                        data-repo="{{@custom.comment_repo}}"
+                        data-repo-id="MDEwOlJlcG9zaXRvcnkzOTQ1NDgxNDQ="
+                        data-category="Announcements"
+                        data-category-id="DIC_kwDOF4RTsM4CBJ8l"
+                        data-mapping="pathname"
+                        data-reactions-enabled="1"
+                        data-emit-metadata="1"
+                        data-input-position="bottom"
+                        data-theme="light"
+                        data-lang="zh-CN"
                         crossorigin="anonymous"
                         async>
                     </script>
