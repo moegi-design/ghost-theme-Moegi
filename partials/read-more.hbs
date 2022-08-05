@@ -1,0 +1,10 @@
+{{!-- Read more links, just above the footer --}}
+<aside class="read-more-wrap px-4 grid grid-cols-1 gap-16">
+    {{#get "posts" filter="id:-{{comment_id}}" include="authors" limit="3" as |more_posts|}}
+      {{#if more_posts}}
+        {{#foreach more_posts}}
+          {{> post-card}}
+        {{/foreach}}
+      {{/if}}
+    {{/get}}
+</aside>

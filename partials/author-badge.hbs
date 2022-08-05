@@ -1,0 +1,22 @@
+<div class="inline-flex items-center">
+  <ul class="flex -space-x-1 overflow-hidden">
+    {{#foreach authors}}
+    <li>
+      {{#if profile_image}}
+      <a href="{{url}}" class="author-avatar">
+        <img class="author-profile-image inline-block h-6 w-6 rounded-full ring-2 ring-white"
+          src="{{img_url profile_image size=" xs"}}"
+          alt="{{name}}" />
+      </a>
+      {{else}}
+      <a href="{{url}}" class="author-avatar">
+        <img class="author-profile-image inline-block h-6 w-6 rounded-full ring-2 ring-white"
+          src=""
+          alt="" />
+      </a>
+      {{/if}}
+    </li>
+    {{/foreach}}
+  </ul>
+  {{!-- <h4 class="ml-1">{{authors}}</h4> --}}
+</div>

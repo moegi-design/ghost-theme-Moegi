@@ -1,0 +1,35 @@
+<header id="moegi-header"
+    class="fixed left-0 right-0 top-0 h-12 z-10 flex items-center px-6 border-b border-black/5 bg-white/70 backdrop-blur-xl backdrop-saturate-150">
+    <div class="moegi-header-brand">
+        <a class="logo" href="{{@site.url}}">
+            {{#if @site.logo}}
+            <img src="{{img_url @site.logo size="m"}}" alt="{{@site.title}}" />
+            {{else}}
+            <span class="font-medium text-sm">{{@site.title}}</span>
+            {{/if}}
+        </a>
+    </div>
+    {{#is "post, page"}}
+        {{#post}}
+            <div
+                class="moegi-header-title opacity-0 mr-2 md:ml-4 md:mt-[0.1rem] text-black/50 text-xs font-medium whitespace-nowrap overflow-hidden overflow-ellipsis -translate-x-4 transition-all duration-300"
+            >{{title}}</div>
+        {{/post}}
+    {{/is}}
+    <div class="flex-1"></div>
+    <div class="sm:hidden">
+        <span id="moegi-header-menu-icon">
+            <span class="icon-menu">{{> icon/menu}}</span>
+            <span class="icon-x hidden">{{> icon/close}}</span>
+        </span>
+    </div>
+    <div class="moegi-header-nav hidden sm:block">
+        {{navigation}}
+    </div>
+</header>
+<div class="moegi-navigation-mpanel h-0 overflow-hidden sm:hidden fixed left-0 right-0 top-12 bottom-0 z-10">
+    <div class="panel relative z-20 bg-white/80 px-6 sm:px-8 py-2 backdrop-blur-xl -translate-y-full transition-transform duration-300">
+        {{navigation}}
+    </div>
+    <div class="mask bg-black/20 absolute inset-0"></div>
+</div>

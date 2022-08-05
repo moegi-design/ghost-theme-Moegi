@@ -1,0 +1,61 @@
+{
+  "name": "ghost-theme-moegi",
+  "version": "3.0.0",
+  "description": "An elegant & fresh ghost theme.",
+  "demo": "https://notes.ljl.li",
+  "author": {
+    "name": "ddiu8081",
+    "email": "ddiu8081@gmail.com",
+    "url": "https://notes.ljl.li"
+  },
+  "scripts": {
+    "gulp": "gulp",
+    "dev": "vite",
+    "build": "vite build",
+    "test": "gscan dist"
+  },
+  "keywords": [
+    "ghost-theme",
+    "theme",
+    "ghost"
+  ],
+  "engines": {
+    "ghost": ">=4.0.0",
+    "ghost-api": "v4"
+  },
+  "config": {
+    "posts_per_page": 15,
+    "custom": {
+      "comment_widget": {
+        "type": "select",
+        "options": [
+          "None",
+          "utterances",
+          "giscus"
+        ],
+        "default": "None",
+        "group": "post"
+      },
+      "comment_repo": {
+        "type": "text",
+        "default": "",
+        "group": "post"
+      }
+    }
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@tailwindcss/line-clamp": "^0.3.1",
+    "@tailwindcss/typography": "^0.5.0",
+    "autoprefixer": "^10.4.2",
+    "gscan": "^4.21.0",
+    "postcss": "^8.4.5",
+    "prism-theme-vars": "^0.2.2",
+    "prismjs": "^1.27.0",
+    "pump": "^3.0.0",
+    "rollup-plugin-copy-watch": "^0.0.1",
+    "tailwindcss": "^3.0.13",
+    "vite": "^2.7.11",
+    "vite-plugin-full-reload": "^0.2.2"
+  }
+}
