@@ -7,11 +7,17 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - run: npm ci
-      - run: npm run build
+      - uses: actions/checkout@v3
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: Install dependencies
+        run: pnpm install
       - name: GScan Theme
-        run: npm run test
+        run: pnpm run test
       - name: push to dist branch
         uses: peaceiris/actions-gh-pages@v3
         with:
@@ -22,11 +28,11 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           ref: dist
       - name: Deploy Ghost Theme
-        uses: TryGhost/action-deploy-theme@v1.4.1
+        uses: TryGhost/action-deploy-theme@v1.5.0
         with:
           api-url: ${{ secrets.GHOST_ADMIN_API_URL }}
           api-key: ${{ secrets.GHOST_ADMIN_API_KEY }}
