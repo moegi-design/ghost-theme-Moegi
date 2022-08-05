@@ -2,70 +2,78 @@
 
 {{#post}}
 
-<article id="ghost-article" class="ghost-article {{post_class}} prose max-w-prose mx-auto">
-
-    <header class="article-header relative overflow-hidden -mt-12 pt-12">
-        {{!-- <div class="header-background absolute z-[-10] inset-0">
-            {{#if feature_image}}
-            <figure class="article-image opacity-25 h-full w-full">
-                <img
-                    srcset="{{img_url feature_image size="s"}} 300w,
-                            {{img_url feature_image size="m"}} 600w,
-                            {{img_url feature_image size="l"}} 1000w,
-                            {{img_url feature_image size="xl"}} 2000w"
-                    sizes="(min-width: 1400px) 1400px, 100vw"
-                    class="h-full w-full object-cover"
-                    src="{{img_url feature_image size="xl"}}"
-                    alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
-                />
-                {{#if feature_image_caption}}
-                    <figcaption>{{feature_image_caption}}</figcaption>
-                {{/if}}
-            </figure>
+<article id="ghost-article" class="ghost-article {{post_class}} max-w-prose mx-auto px-6 md:px-0">
+    <header id="article-header" class="overflow-hidden pt-6 pb-6 md:pt-12">
+        {{#if feature_image}}
+        <figure class="rounded-2xl overflow-hidden mb-4">
+            <img
+                srcset="{{img_url feature_image size="s"}} 300w,
+                        {{img_url feature_image size="m"}} 600w,
+                        {{img_url feature_image size="l"}} 1000w,
+                        {{img_url feature_image size="xl"}} 2000w"
+                sizes="(min-width: 1400px) 1400px, 100vw"
+                class="h-full w-full object-cover"
+                src="{{img_url feature_image size="xl"}}"
+                alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
+            />
+            {{#if feature_image_caption}}
+                <figcaption>{{feature_image_caption}}</figcaption>
             {{/if}}
-        </div> --}}
-        <div class="header-foreground px-6 py-6 md:pt-12 md:px-0">
-            {{!-- {{#if primary_tag}}
-            <section class="article-tag">
-                <a href="{{primary_tag.url}}">{{primary_tag.name}}</a>
-            </section>
-            {{/if}} --}}
-
-            <h1 class="article-title relative text-4xl my-6">{{title}}</h1>
+        </figure>
+        {{/if}}
+        <div class="pt-4 md:pt-6">
+            <h1 class="text-[2rem] text-zinc-800 font-bold leading-snug mb-4 md:mb-6 md:text-[2.6rem]">{{title}}</h1>
 
             {{#if custom_excerpt}}
-            <p class="article-excerpt relative text-black/50">{{custom_excerpt}}</p>
+            <p class="text-black/40 mb-6">{{custom_excerpt}}</p>
             {{/if}}
 
-            <div class="article-byline">
-                <section class="article-byline-content text-sm">
-                    {{!-- {{> author-badge data=authors}} --}}
-                    <div class='byline-meta-content'>
-                        <time class='byline-meta-date' datetime='{{date format=' YYYY-MM-DD'}}'>{{date}}</time>
-                    <span class='byline-reading-time'>
-                        <span class='bull'>&bull;</span>
-                        {{reading_time}}
-                    </span>
+            <div class="text-black/80">
+                <section class="flex items-center gap-3 text-sm">
+                    {{> author-badge data=authors}}
+                    <div>
+                        <time datetime='{{date format='YYYY-MM-DD'}}'>{{date}}</time>
+                        {{!-- <span class='byline-reading-time'>
+                            <span class='bull'>&bull;</span>
+                            {{reading_time}}
+                        </span> --}}
                     </div>
                 </section>
             </div>
         </div>
     </header>
 
-    <section class="gh-content prose mt-10 px-6 md:px-0">
+    <section class="gh-content mt-10 prose">
         {{content}}
     </section>
 
-    {{!-- {{> subscribe}} --}}
+    {{> subscribe}}
+
+    <div class="mt-12 pt-6 border-t border-gray-200">
+        {{#if primary_tag}}
+        <div>
+            <span
+                class="bg-gray-100 px-2 py-1 text-sm rounded-md transition-colors hover:bg-gray-200"
+            >
+                <a
+                    href="{{primary_tag.url}}"
+                    class="text-black/50 no-underline hover:text-black/70"
+                >
+                    {{primary_tag.name}}
+                </a>
+            </span>
+        </div>
+        {{/if}}
+    </div>
     
     {{#match @custom.comment_widget "utterances"}}
         {{#if @custom.comment_repo}}
-            <section class="article-comments mt-12 mx-12 px-6 border-t pt-12 md:px-0">
-                <div class="-mx-12">
+            <section class="article-comments mt-12">
+                <div>
                     <script src="https://utteranc.es/client.js"
                         repo="{{@custom.comment_repo}}"
                         issue-term="pathname"
-                        theme="preferred-color-scheme"
+                        theme1="preferred-color-scheme"
                         crossorigin="anonymous"
                         async>
                     </script>
@@ -75,8 +83,8 @@
     {{/match}}
     {{#match @custom.comment_widget "giscus"}}
         {{#if @custom.comment_repo}}
-            <section class="article-comments mt-12 mx-12 px-6 border-t pt-12 md:px-0">
-                <div class="-mx-12">
+            <section class="article-comments mt-12">
+                <div>
                     <script src="https://giscus.app/client.js"
                         data-repo="{{@custom.comment_repo}}"
                         data-repo-id="MDEwOlJlcG9zaXRvcnkzOTQ1NDgxNDQ="
@@ -97,6 +105,8 @@
     {{/match}}
 
 </article>
+
+
 
 {{!-- {{> read-more}} --}}
 

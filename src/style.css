@@ -9,9 +9,6 @@
   .moegi-header-in-post-view .moegi-header-brand .logo {
     @apply hidden sm:block;
   }
-  .moegi-header-in-post-view .moegi-header-brand .home-icon {
-    @apply block sm:hidden;
-  }
   .moegi-header-in-post-view .moegi-header-title {
     @apply block opacity-100 translate-x-0;
   }
@@ -59,4 +56,14 @@
 }
 ::-webkit-scrollbar-track {
   background-color: #ffffff;
+}
+
+/** override */
+
+.gh-content img {
+  border-radius: 8px;
+}
+
+.gh-content figcaption {
+  opacity: 0.5;
 }

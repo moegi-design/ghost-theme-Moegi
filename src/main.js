@@ -11,7 +11,7 @@ localStorage.theme = 'light'
 
 function setPostScrollListener() {
   const navDom = document.querySelector('#moegi-header')
-  const headerDom = document.querySelector('.article-header')
+  const headerDom = document.querySelector('#article-header')
   if (navDom && headerDom) {
     var ticking = false
 

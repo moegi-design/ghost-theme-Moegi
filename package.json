@@ -24,7 +24,7 @@
     "ghost-api": "v4"
   },
   "config": {
-    "posts_per_page": 10,
+    "posts_per_page": 15,
     "custom": {
       "comment_widget": {
         "type": "select",
