@@ -18,6 +18,7 @@ jobs:
           node-version: 16
       - name: Install dependencies
         run: pnpm install
+      - run: pnpm run build
       - name: GScan Theme
         run: pnpm run test
       - name: push to dist branch
