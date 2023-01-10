@@ -7,37 +7,69 @@ into the {body} tag of the default.hbs template --}}
 {{#post}}
 {{!-- Everything inside the #post block pulls data from the page --}}
 
-<article class="article {{post_class}}">
-
-    <header class="article-header gh-canvas">
+<article class="article ghost-article {{post_class}} max-w-prose mx-auto px-6 md:px-0">
+    <header id="article-header" class="overflow-hidden pt-6 pb-6 md:pt-12">
         {{#if feature_image}}
-        <figure class="article-image">
-            {{!-- This is a responsive image, it loads different sizes depending on device
-            https://medium.freecodecamp.org/a-guide-to-responsive-images-with-ready-to-use-templates-c400bd65c433 --}}
-            <img
-                srcset="{{img_url feature_image size="s"}} 300w,
+            <figure class="rounded-2xl overflow-hidden mb-4">
+                <img
+                        srcset="{{img_url feature_image size="s"}} 300w,
                         {{img_url feature_image size="m"}} 600w,
                         {{img_url feature_image size="l"}} 1000w,
                         {{img_url feature_image size="xl"}} 2000w"
-                sizes="(min-width: 1400px) 1400px, 92vw"
-                src="{{img_url feature_image size="xl"}}"
-                alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
-            />
-            {{#if feature_image_caption}}
-                <figcaption>{{feature_image_caption}}</figcaption>
-            {{/if}}
-        </figure>
+                        sizes="(min-width: 1400px) 1400px, 100vw"
+                        class="h-full w-full object-cover"
+                        src="{{img_url feature_image size="xl"}}"
+                        alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
+                />
+                {{#if feature_image_caption}}
+                    <figcaption>{{feature_image_caption}}</figcaption>
+                {{/if}}
+            </figure>
         {{/if}}
+        <div class="pt-4 md:pt-6">
+            <h1 class="text-[2rem] text-zinc-800 font-bold leading-snug mb-4 md:mb-6 md:text-[2.6rem]">{{title}}</h1>
+
+            {{#if custom_excerpt}}
+                <p class="text-black/40 mb-6">{{custom_excerpt}}</p>
+            {{/if}}
+
+            <div class="text-black/80">
+                <section class="flex items-center gap-3 text-sm">
+                    {{> author-badge data=authors}}
+                    <div>
+                        <time datetime='{{date format='YYYY-MM-DD'}}'>{{date}}</time>
+                        {{!-- <span class='byline-reading-time'>
+                            <span class='bull'>&bull;</span>
+                            {{reading_time}}
+                        </span> --}}
+                    </div>
+                </section>
+            </div>
+        </div>
     </header>
 
-    <section class="gh-content gh-canvas">
-
-        <h1 class="article-title">{{title}}</h1>
-
+    <section class="gh-content mt-10 prose">
         {{content}}
-
     </section>
 
+    {{> subscribe}}
+
+    <div class="mt-12 pt-6 border-t border-gray-200">
+        {{#if primary_tag}}
+            <div>
+            <span
+                    class="bg-gray-100 px-2 py-1 text-sm rounded-md transition-colors hover:bg-gray-200"
+            >
+                <a
+                        href="{{primary_tag.url}}"
+                        class="text-black/50 no-underline hover:text-black/70"
+                >
+                    {{primary_tag.name}}
+                </a>
+            </span>
+            </div>
+        {{/if}}
+    </div>
 </article>
 
 {{/post}}
