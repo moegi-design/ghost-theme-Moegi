@@ -36,8 +36,8 @@ devDependencies:
     specifier: ^3.0.13
     version: 3.1.7(postcss@8.4.14)
   vite:
-    specifier: ^2.7.11
-    version: 2.9.14
+    specifier: ^2.9.16
+    version: 2.9.16
   vite-plugin-full-reload:
     specifier: ^0.2.2
     version: 0.2.2
@@ -3006,8 +3006,8 @@ packages:
       picomatch: 2.3.1
     dev: true
 
-  /vite@2.9.14:
-    resolution: {integrity: sha512-P/UCjSpSMcE54r4mPak55hWAZPlyfS369svib/gpmz8/01L822lMPOJ/RYW6tLCe1RPvMvOsJ17erf55bKp4Hw==}
+  /vite@2.9.16:
+    resolution: {integrity: sha512-X+6q8KPyeuBvTQV8AVSnKDvXoBMnTx8zxh54sOwmmuOdxkjMmEJXH2UEchA+vTMps1xw9vL64uwJOWryULg7nA==}
     engines: {node: '>=12.2.0'}
     hasBin: true
     peerDependencies:
